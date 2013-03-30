@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Paperless.WCF;
 using Paperless.Library;
 using Paperless.Implementor;
+using Paperless.WCF.Contract;
 
 namespace Paperless.Orchestrator
 {

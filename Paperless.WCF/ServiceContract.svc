@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Paperless.WCF.ServiceContract" CodeBehind="Paperless.Orchestrator.WCFOrchestrator.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Paperless.Orchestrator.WCFOrchestrator"%>

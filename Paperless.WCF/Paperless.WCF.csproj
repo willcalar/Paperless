@@ -40,7 +40,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -62,7 +61,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IServiceContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +70,14 @@
     <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
       <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>
       <Name>Paperless.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paperless.Orchestrator\Paperless.Orchestrator.csproj">
+      <Project>{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}</Project>
+      <Name>Paperless.Orchestrator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paperless.WCF.Contract\Paperless.WCF.Contract.csproj">
+      <Project>{60438519-9DE8-4B80-9896-0995E7FECDA6}</Project>
+      <Name>Paperless.WCF.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

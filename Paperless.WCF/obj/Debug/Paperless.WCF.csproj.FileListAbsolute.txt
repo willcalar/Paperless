@@ -5,3 +5,11 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.L
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Implementor.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.DataAccess.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Implementor.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.DataAccess.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.pdb

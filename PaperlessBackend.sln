@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Orchestrator", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Implementor", "Paperless.Implementor\Paperless.Implementor.csproj", "{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.WCF.Contract", "Paperless.WCF.Contract\Paperless.WCF.Contract.csproj", "{60438519-9DE8-4B80-9896-0995E7FECDA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,17 +57,22 @@ Global
 		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60438519-9DE8-4B80-9896-0995E7FECDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60438519-9DE8-4B80-9896-0995E7FECDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60438519-9DE8-4B80-9896-0995E7FECDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60438519-9DE8-4B80-9896-0995E7FECDA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{78B25053-301F-4AF3-B371-1C9F276A3B4D} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{7EC7738D-B707-4495-AD46-8F7627DB7A53} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
 		{C429DD71-A6A9-4A98-AA78-DD43440C500F} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
+		{60438519-9DE8-4B80-9896-0995E7FECDA6} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35

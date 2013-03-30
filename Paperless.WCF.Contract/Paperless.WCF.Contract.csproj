@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}</ProjectGuid>
+    <ProjectGuid>{60438519-9DE8-4B80-9896-0995E7FECDA6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Paperless.Orchestrator</RootNamespace>
-    <AssemblyName>Paperless.Orchestrator</AssemblyName>
+    <RootNamespace>Paperless.WCF.Contract</RootNamespace>
+    <AssemblyName>Paperless.WCF.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,27 +33,21 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WCFOrchestrator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Paperless.Implementor\Paperless.Implementor.csproj">
-      <Project>{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}</Project>
-      <Name>Paperless.Implementor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
       <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>
       <Name>Paperless.Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Paperless.WCF.Contract\Paperless.WCF.Contract.csproj">
-      <Project>{60438519-9DE8-4B80-9896-0995E7FECDA6}</Project>
-      <Name>Paperless.WCF.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
