@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Paperless.WCF;
 using Paperless.Library;
+using Paperless.Implementor;
 
 namespace Paperless.Orchestrator
 {
@@ -64,7 +65,7 @@ namespace Paperless.Orchestrator
         /// <returns>True si se logueo correctamente</returns>
         public bool LogOn(string nombreUsuario, string contrasena)
         {
-            throw new NotImplementedException();
+            return UsuariosImplementor.Instance.LogInUsuario(nombreUsuario, contrasena);
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Paperless.Orchestrator
         /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
         public Usuario[] ObtenerUsuario(string nombreUsuario)
         {
-            throw new NotImplementedException();
+            return UsuariosImplementor.Instance.ObtenerUsuario(nombreUsuario);
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Paperless.Orchestrator
         /// <returns>Historial del usuario</returns>
         public Historial[] ObtenerHistorialUsuario(string nombreUsuario)
         {
-            throw new NotImplementedException();
+            return UsuariosImplementor.Instance.ObtenerHistorialUsuario(nombreUsuario);
         }
         #endregion
 
@@ -95,7 +96,7 @@ namespace Paperless.Orchestrator
         /// <returns>Lista de eventos en el sistema sin revisar</returns>
         public Evento[] ObtenerEventos()
         {
-            throw new NotImplementedException();
+            
         }
         #endregion        
     }

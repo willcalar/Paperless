@@ -44,6 +44,10 @@
     <Compile Include="WCFOrchestrator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Paperless.Implementor\Paperless.Implementor.csproj">
+      <Project>{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}</Project>
+      <Name>Paperless.Implementor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
       <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>
       <Name>Paperless.Library</Name>
