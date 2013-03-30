@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/GUI_Web/Views/Account
+END
+ChangePassword.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/GUI_Web/Views/Account/ChangePassword.aspx
+END
+LogOn.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/GUI_Web/Views/Account/LogOn.aspx
+END
+ChangePasswordSuccess.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/GUI_Web/Views/Account/ChangePasswordSuccess.aspx
+END
+Register.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/GUI_Web/Views/Account/Register.aspx
+END

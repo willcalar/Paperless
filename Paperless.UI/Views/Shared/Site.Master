@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../../Content/style9.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body>
+<div id="wrapper">
+
+	<div id="sitename" class="clear">
+		<h1><a href="~/">Paperless</a></h1>
+	</div>
+
+    <div class="loginDisplay">
+        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+            <AnonymousTemplate>
+                [ <a href="/Account/LogOn" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+            </LoggedInTemplate>
+        </asp:LoginView>
+    </div>
+
+	<div id="navbar">
+		<div class="clear">
+
+            <div id="Menu1">
+	            <ul class="level1">
+                    <li><a href="/" >Inicio</a></li>
+                    <li><a href="/WebAdmin/DocumentAudit" >Auditoría de documentos</a></li>
+                    <li><a href="/WebAdmin/UserAudit" >Auditoría de usuarios</a></li>
+                    <li><a href="/WebAdmin/DocumentMigration" >Migración de documentos</a></li>
+                    <li><a href="/WebAdmin/IrregularEvents" >Eventos irregulares</a></li>
+                    <li><a href="/WebAdmin/DocumentResults" >Búsqueda de documentos</a></li>
+                 </ul>
+            </div>
+
+		</div>
+	</div>
+
+	<div id="header" class="clear">
+		<div class="header-text">
+            <!-- Placeholder para el título (entre tags h2 )y la descripción de la página (entre tags <p>) -->
+			<asp:ContentPlaceHolder ID="TitleContent" runat="server"/>
+		</div>
+	</div>
+	<div class="header-bottom"></div>
+
+	<div id="body-wrapper">
+
+    	<!-- BREADCRUMB NAVIGATION -->
+		<div class="bcnav">
+			<div class="bcnav-left">
+				<div class="bcnav-right clear">
+					<h3>se encuentra aquí:</h3>
+                    <!--<asp:SiteMapPath ID="SiteMapPath1" class="bcnavlist" runat="server" />-->
+				</div>
+			</div>
+		</div>
+
+		<div id="body" class="clear">
+
+			<div class="clear">
+
+				<div class="column column-650 column-left">
+                    <!-- Placeholder para el contenido de la página -->
+					<asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+				</div>
+
+				<div id="sidebar" class="column column-240 column-right">
+                    <ul>
+
+                        <!-- Widget #1 -->
+                        <li>
+                            <h4>Secciones</h4>
+
+                            <div id="Menu2">
+	                            <ul class="level1">
+                                    <li><a href="/" >Inicio</a></li>
+                                    <li><a href="/WebAdmin/DocumentAudit" >Auditoría de documentos</a></li>
+                                    <li><a href="/WebAdmin/UserAudit" >Auditoría de usuarios</a></li>
+                                    <li><a href="/WebAdmin/DocumentMigration" >Migración de documentos</a></li>
+                                    <li><a href="/WebAdmin/IrregularEvents" >Eventos irregulares</a></li>
+                                    <li><a href="/WebAdmin/DocumentResults" >Búsqueda de documentos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- Fin Widget #1 -->
+
+                    </ul>
+				</div>
+
+			</div><!-- termina div.clear -->
+
+		</div><!-- termina div body -->
+
+	</div><!-- termina #body-wrapper -->
+
+	<div id="footer">
+		<p>&copy; 2011. Sistema Paperless. ITCR</p>
+	</div>
+
+</div>
+</body>
+</html>

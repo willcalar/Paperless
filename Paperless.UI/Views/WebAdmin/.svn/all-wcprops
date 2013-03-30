@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/8/trunk/GUI_Web/Views/WebAdmin
+END
+DocumentAudit.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/8/trunk/GUI_Web/Views/WebAdmin/DocumentAudit.aspx
+END
+UserAudit.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/9/trunk/GUI_Web/Views/WebAdmin/UserAudit.aspx
+END
+DocumentMigration.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/GUI_Web/Views/WebAdmin/DocumentMigration.aspx
+END
+DocumentResults.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/8/trunk/GUI_Web/Views/WebAdmin/DocumentResults.aspx
+END
+UserResults.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/9/trunk/GUI_Web/Views/WebAdmin/UserResults.aspx
+END
+IrregularEvents.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/GUI_Web/Views/WebAdmin/IrregularEvents.aspx
+END

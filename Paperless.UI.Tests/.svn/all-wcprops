@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/8/trunk/GUI_Web.Tests
+END
+GUI_Web.Tests.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/GUI_Web.Tests/GUI_Web.Tests.csproj
+END
+App.config
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/GUI_Web.Tests/App.config
+END

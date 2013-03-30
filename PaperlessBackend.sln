@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.DataAccess", "Paperless.DataAccess\Paperless.DataAccess.csproj", "{78B25053-301F-4AF3-B371-1C9F276A3B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Library", "Paperless.Library\Paperless.Library.csproj", "{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.UI", "Paperless.UI\Paperless.UI.csproj", "{388867FD-791F-4239-9566-19251F37FD7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.UI.Tests", "Paperless.UI.Tests\Paperless.UI.Tests.csproj", "{7EC7738D-B707-4495-AD46-8F7627DB7A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.WCF", "Paperless.WCF\Paperless.WCF.csproj", "{C429DD71-A6A9-4A98-AA78-DD43440C500F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{DE621C35-0D0D-40EB-A401-26FB0B50ABAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8E9CB471-26CF-4F37-9BA5-2B926396342F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebServices", "WebServices", "{32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Orchestrator", "Paperless.Orchestrator\Paperless.Orchestrator.csproj", "{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Implementor", "Paperless.Implementor\Paperless.Implementor.csproj", "{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{388867FD-791F-4239-9566-19251F37FD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{388867FD-791F-4239-9566-19251F37FD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{388867FD-791F-4239-9566-19251F37FD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{388867FD-791F-4239-9566-19251F37FD7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC7738D-B707-4495-AD46-8F7627DB7A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC7738D-B707-4495-AD46-8F7627DB7A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC7738D-B707-4495-AD46-8F7627DB7A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC7738D-B707-4495-AD46-8F7627DB7A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78B25053-301F-4AF3-B371-1C9F276A3B4D} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
+		{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
+		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
+		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
+		{7EC7738D-B707-4495-AD46-8F7627DB7A53} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal
