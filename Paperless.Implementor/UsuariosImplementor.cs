@@ -62,7 +62,7 @@ namespace Paperless.Implementor
                     {
                         Evento = item["Evento"].ToString(),
                         TipoEvento = item["TipoEvento"].ToString(),
-                        Username = item["Username"].ToString()
+                        Username = item["Username"].ToString(),
                         Fecha = Convert.ToDateTime(item["Fecha"].ToString())
                     });                    
                 }

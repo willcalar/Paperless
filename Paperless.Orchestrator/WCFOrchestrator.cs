@@ -96,7 +96,7 @@ namespace Paperless.Orchestrator
         /// <returns>Lista de eventos en el sistema sin revisar</returns>
         public Evento[] ObtenerEventos()
         {
-            
+            return EventosImplementor.Instance.ObtenerEventos();
         }
         #endregion        
     }
