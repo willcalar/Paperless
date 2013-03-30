@@ -1,0 +1,9 @@
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb

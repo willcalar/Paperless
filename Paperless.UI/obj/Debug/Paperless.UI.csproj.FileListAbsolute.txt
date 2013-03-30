@@ -1,0 +1,5 @@
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\bin\Paperless.UI.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\bin\Paperless.UI.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb

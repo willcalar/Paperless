@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/8/trunk/GUI_Web.Tests/bin/Debug
+END
+GUI_Web.Tests.dll.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/GUI_Web.Tests/bin/Debug/GUI_Web.Tests.dll.config
+END
+GUI_Web.pdb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/GUI_Web.Tests/bin/Debug/GUI_Web.pdb
+END
+GUI_Web.Tests.pdb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/9/trunk/GUI_Web.Tests/bin/Debug/GUI_Web.Tests.pdb
+END
+GUI_Web.dll
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/9/trunk/GUI_Web.Tests/bin/Debug/GUI_Web.dll
+END
+GUI_Web.Tests.dll
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/9/trunk/GUI_Web.Tests/bin/Debug/GUI_Web.Tests.dll
+END

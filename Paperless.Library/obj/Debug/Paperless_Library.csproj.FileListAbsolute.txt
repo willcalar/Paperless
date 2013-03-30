@@ -1,0 +1,10 @@
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\Paperless_Library\bin\Debug\Paperless_Library.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\Paperless_Library\bin\Debug\Paperless_Library.pdb
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\Paperless_Library\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\Paperless_Library\obj\Debug\Paperless_Library.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\Paperless_Library\obj\Debug\Paperless_Library.pdb
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\PaperlessWebService\Paperless_Library\bin\Debug\Paperless_Library.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\PaperlessWebService\Paperless_Library\bin\Debug\Paperless_Library.pdb
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\PaperlessWebService\Paperless_Library\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\PaperlessWebService\Paperless_Library\obj\Debug\Paperless_Library.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\PaperlessWebService\Paperless_Library\obj\Debug\Paperless_Library.pdb

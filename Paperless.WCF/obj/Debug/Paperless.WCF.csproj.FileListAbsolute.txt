@@ -1,0 +1,6 @@
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Library.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Library.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb

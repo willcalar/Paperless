@@ -1,0 +1,20 @@
+c:\users\gloriana\documents\visual studio 2010\Projects\GUI_Web\GUI_Web\bin\GUI_Web.dll
+c:\users\gloriana\documents\visual studio 2010\Projects\GUI_Web\GUI_Web\bin\GUI_Web.pdb
+c:\users\gloriana\documents\visual studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\ResolveAssemblyReference.cache
+c:\users\gloriana\documents\visual studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\GUI_Web.dll
+c:\users\gloriana\documents\visual studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\GUI_Web.pdb
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\GUI_Web\bin\GUI_Web.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\GUI_Web\bin\GUI_Web.pdb
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\ResolveAssemblyReference.cache
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\GUI_Web.dll
+D:\Users\Alex\Documents\Visual Studio 2010\Projects\GUI_Web\GUI_Web\obj\Debug\GUI_Web.pdb
+C:\Users\Gloriana\Desktop\Proyecto Paperless\GUI_Web\bin\GUI_Web.dll
+C:\Users\Gloriana\Desktop\Proyecto Paperless\GUI_Web\bin\GUI_Web.pdb
+C:\Users\Gloriana\Desktop\Proyecto Paperless\GUI_Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gloriana\Desktop\Proyecto Paperless\GUI_Web\obj\Debug\GUI_Web.dll
+C:\Users\Gloriana\Desktop\Proyecto Paperless\GUI_Web\obj\Debug\GUI_Web.pdb
+C:\temp\GUI_Web\GUI_Web\bin\GUI_Web.dll
+C:\temp\GUI_Web\GUI_Web\bin\GUI_Web.pdb
+C:\temp\GUI_Web\GUI_Web\obj\Debug\ResolveAssemblyReference.cache
+C:\temp\GUI_Web\GUI_Web\obj\Debug\GUI_Web.dll
+C:\temp\GUI_Web\GUI_Web\obj\Debug\GUI_Web.pdb
