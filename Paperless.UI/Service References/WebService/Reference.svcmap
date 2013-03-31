@@ -21,10 +21,11 @@
     <MetadataSource Address="http://localhost:49472/ServiceContract.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="ServiceContract3.xsd" MetadataType="Schema" ID="40abbbca-6d2a-4d1b-b711-510cdc6d2b07" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?xsd=xsd3" />
     <MetadataFile FileName="ServiceContract.xsd" MetadataType="Schema" ID="9e9c794b-1f8c-4923-860a-86b36decdc37" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceContract2.xsd" MetadataType="Schema" ID="5eaf8f99-a31e-46fa-8755-c5687f33bf40" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?xsd=xsd0" />
     <MetadataFile FileName="ServiceContract1.xsd" MetadataType="Schema" ID="860c8cde-fc1e-4b35-9eda-5f6b809f80d1" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceContract.wsdl" MetadataType="Wsdl" ID="775924b8-4c86-447e-bc9e-1db2699a866d" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?wsdl" />
-    <MetadataFile FileName="ServiceContract2.xsd" MetadataType="Schema" ID="5eaf8f99-a31e-46fa-8755-c5687f33bf40" SourceId="1" SourceUrl="http://localhost:49472/ServiceContract.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

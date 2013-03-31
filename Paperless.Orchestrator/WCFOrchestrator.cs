@@ -23,7 +23,7 @@ namespace Paperless.Orchestrator
         /// <returns>Lista de documentos que cumple con los filtros</returns>
         public Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción)
         {
-            throw new NotImplementedException();
+            return DocumentosImplementor.Instance.ObtenerDocumentos(usuarioEmisor,usuarioReceptor,departamento,tipoDocumento,fechaEmision,fechaRecepción);
         }
 
         /// <summary>
@@ -99,5 +99,23 @@ namespace Paperless.Orchestrator
             return EventosImplementor.Instance.ObtenerEventos();
         }
         #endregion        
+
+        #region Varios
+        /// <summary>
+        /// Obtiene departamentos registrados en el sistema
+        /// </summary>
+        public String[] ObtenerDepartamentos()
+        {
+            return OrganizacionImplementor.Instance.ObtenerDepartamentos();
+        }
+
+        /// <summary>
+        /// Obtiene los tipos de documento registrados en el sistema
+        /// </summary>
+        public String[] ObtenerTiposDocumento()
+        {
+            return SistemaImplementor.Instance.ObtenerTiposDocumento();
+        }
+        #endregion
     }
 }

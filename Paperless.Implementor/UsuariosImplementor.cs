@@ -82,7 +82,7 @@ namespace Paperless.Implementor
         #region Singleton
         private UsuariosImplementor()
         {
-            _AccesoDatos = new DataAccess.DataAccess(ConfigurationManager.ConnectionStrings["PaperlessJavier"].ConnectionString);
+            _AccesoDatos = new DataAccess.DataAccess();
         }
         
         public static UsuariosImplementor Instance

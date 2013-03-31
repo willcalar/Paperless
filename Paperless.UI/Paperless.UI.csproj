@@ -170,6 +170,7 @@
     <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Scripts\jquery.ui.datepicker-es.js" />
     <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
     <Content Include="Views\WebAdmin\DocumentAudit.aspx" />
     <Content Include="Views\WebAdmin\DocumentMigration.aspx" />
     <Content Include="Views\WebAdmin\DocumentResults.aspx" />
@@ -207,6 +208,9 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.sitemap" />
+    <None Include="Service References\WebService\ServiceContract3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

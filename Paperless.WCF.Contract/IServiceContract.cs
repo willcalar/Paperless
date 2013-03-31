@@ -42,5 +42,13 @@ namespace Paperless.WCF.Contract
         [OperationContract]
         Evento[] ObtenerEventos();
         #endregion
+
+        #region Metodos Varios
+        [OperationContract]
+        String[] ObtenerDepartamentos();
+
+        [OperationContract]
+        String[] ObtenerTiposDocumento();
+        #endregion
     }
 }

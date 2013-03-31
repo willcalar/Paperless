@@ -3,3 +3,8 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\bin\Debug\P
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\obj\Debug\Paperless.Library.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\bin\Debug\Paperless.Library.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\bin\Debug\Paperless.Library.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb

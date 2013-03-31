@@ -43,6 +43,7 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult DocumentAudit()
         {
+            fillComboBoxAuditModel();
             return View();
         }
 
@@ -79,13 +80,8 @@ namespace Paperless.UI.Controllers
             {
                 /*Aqui procesa la consulta para todos los documentos almacenados en el sistema*/
                 /* S redirige a la página de resultados con la lista de docs obtenida*/
-                docs = new Documento[1]; // aqui llama al web service?
-                docs[0] = new Documento();
-                docs[0].NombreDocumento = "a";
-                docs[0].NombreUsuarioEmisor = "a";
-                docs[0].NombreUsuarioReceptor = "s";
-                docs[0].TipoDocumento = "he";
-                docs[0].Fecha = new DateTime(1999, 12, 25);
+                docs = clienteWCF.ObtenerDocumentos(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate);
+
             }
             else
             {
@@ -175,5 +171,42 @@ namespace Paperless.UI.Controllers
         }
         #endregion
 
+
+
+        #region Data Methods
+
+        private void fillComboBoxAuditModel()
+        {
+            
+            String[] departamentos = clienteWCF.ObtenerDepartamentos();
+            List<SelectListItem> departamentosList = new List<SelectListItem>();
+            foreach (String departamento in departamentos)
+            {
+                SelectListItem dep = new SelectListItem();
+                dep.Value = departamento;
+                dep.Text = departamento;
+                dep.Selected = false;
+                departamentosList.Add(dep);
+            }
+
+            String[] tiposDocumento = clienteWCF.ObtenerTiposDocumento();
+            List<SelectListItem> tiposDocumentoList = new List<SelectListItem>();
+            foreach (String tipoDocumento in tiposDocumento)
+            {
+                SelectListItem tipo = new SelectListItem();
+                tipo.Value = tipoDocumento;
+                tipo.Text = tipoDocumento;
+                tipo.Selected = false;
+                tiposDocumentoList.Add(tipo);
+            }
+
+
+
+            ViewData["Departments"] = departamentosList;
+            ViewData["TypesOfDocument"] = tiposDocumentoList;
+
+        }
+
+        #endregion 
     }
 }

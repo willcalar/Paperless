@@ -39,35 +39,36 @@
                     <%: Html.LabelFor(m => m.Department) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.DropDownListFor(m => m.Department, new SelectList(""))%>
+                    <%: Html.DropDownListFor(m => m.Department, (IEnumerable<SelectListItem>) ViewData["Departments"])%>
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.DocumentType) %>
                 </div>
                 <div class="editor-field">
-                    <%: Html.DropDownListFor(m => m.DocumentType, new SelectList(""))%>
+                    <%: Html.DropDownListFor(m => m.DocumentType, (IEnumerable<SelectListItem>)ViewData["TypesOfDocument"])%>
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.IssueDate)%>
                 </div>
                 <div class="editor-field">
-                    <script>
-                        $(function () {
-                            $("#datepicker").datepicker();
-                        });
-	                </script>
-                    <input type="text" id="datepicker" />
+                    <%: Html.EditorFor(m => m.IssueDate, new { @class = "dp" })%>
+                    <script  type="text/javascript">
+                        $(document).ready(function () {
+                            $(".dp").datepicker({
+                                changeMonth: true,
+                                changeYear: true,
+                                dateFormat: 'yy-mm-dd',
+                                minDate: new Date('1999/10/25')
+                            });
+                        });  
+                     </script> 
                 </div>
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.ReceptionDate)%>
                 </div>
                 <div class="editor-field">
-                    <script>
-                        $(function () {
-                            $("#datepicker1").datepicker();
-                        });
-	                </script>
-                    <input type="text" id="datepicker1" />
+                     <%: Html.EditorFor(m => m.ReceptionDate, new { @class = "dp" })%>
+                    
                 </div>
             </fieldset>
             <p>

@@ -7,3 +7,12 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\bin\Debu
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb

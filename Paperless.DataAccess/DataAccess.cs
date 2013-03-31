@@ -2,23 +2,25 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace Paperless.DataAccess
 {
     public class DataAccess
     {
         #region Constructor
-
+        /*
         public DataAccess(string pConnectionString)
         {
             _Connection = new SqlConnection(pConnectionString);
         }
+         */
 
-        /*public DataAccess()
+        public DataAccess()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             _Connection = new SqlConnection(connectionString);
-        }*/
+        }
 
         #endregion
 

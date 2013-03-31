@@ -11,3 +11,16 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\De
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.dll
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.pdb
+C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
