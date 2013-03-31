@@ -5,6 +5,8 @@ using System.Text;
 using Paperless.Library;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+using Paperless.DataAccess;
 
 namespace Paperless.Implementor
 {
@@ -20,7 +22,7 @@ namespace Paperless.Implementor
 
         public Usuario[] ObtenerUsuario(string pNombreUsuario)
         {
-            DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerUsuario", new List<SqlParameter>()
+            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuario", new List<SqlParameter>()
             {
                 new SqlParameter("@criterioBusqueda",pNombreUsuario)
             });
@@ -47,7 +49,7 @@ namespace Paperless.Implementor
 
         public Historial[] ObtenerHistorialUsuario(string pNombreUsuario)
         {
-            DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerHistorialEventos", new List<SqlParameter>()
+            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerHistorialEventos", new List<SqlParameter>()
             {
                 new SqlParameter("@criterioBusqueda",pNombreUsuario),
                 new SqlParameter("@fechaInicio", new DateTime(1999,1,1)),
@@ -78,8 +80,11 @@ namespace Paperless.Implementor
         #endregion
 
         #region Singleton
-        private UsuariosImplementor() { }
-
+        private UsuariosImplementor()
+        {
+            _AccesoDatos = new DataAccess.DataAccess(ConfigurationManager.ConnectionStrings["PaperlessJavier"].ConnectionString);
+        }
+        
         public static UsuariosImplementor Instance
         {
             get 
@@ -102,7 +107,7 @@ namespace Paperless.Implementor
         #region Attributes
         private static volatile UsuariosImplementor instance;
         private static object syncRoot = new Object();
-        private DataAccess.DataAccess _AccesoDB;
+        private static DataAccess.DataAccess _AccesoDatos;
         #endregion
 
     }

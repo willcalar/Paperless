@@ -8,6 +8,7 @@
     <p>Ingrese con su nombre de usuario y contraseña.</p>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <form id="formLogIn" runat="server">
     <h2>
         Ingresar
     </h2>
@@ -51,4 +52,5 @@
             </div>
         </LayoutTemplate>
     </asp:Login>
+    </form>
 </asp:Content>

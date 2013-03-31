@@ -7,6 +7,7 @@
     <p>Eventos registrados que presentan alguna irregularidad en el sistema.</p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<form id="formIrregularEvents" action="SaveEvent" runat="server">
     <asp:GridView ID="GridViewEventos" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:TemplateField HeaderText="Tipo de evento"></asp:TemplateField>
@@ -19,4 +20,5 @@
     </asp:GridView>
 
     <asp:Button ID="BotonGuardar" runat="server" Text="Guardar" CssClass="boton"/>
+    </form>
 </asp:Content>

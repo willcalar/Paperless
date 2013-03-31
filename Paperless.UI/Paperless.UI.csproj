@@ -90,16 +90,16 @@
     <Content Include="Global.asax" />
     <None Include="Service References\WebService\configuration91.svcinfo" />
     <None Include="Service References\WebService\configuration.svcinfo" />
-    <None Include="Service References\WebService\GUI_Web.WebService.Documento.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.Documento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\GUI_Web.WebService.Evento.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\GUI_Web.WebService.Historial.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.Historial.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\GUI_Web.WebService.Usuario.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WebService\Reference.svcmap">

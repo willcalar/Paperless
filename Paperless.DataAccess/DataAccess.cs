@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Paperless.DataAccess
 {
-    public abstract class DataAccess
+    public class DataAccess
     {
         #region Constructor
 
-        protected DataAccess(string pConnectionString)
+        public DataAccess(string pConnectionString)
         {
             _Conexion = new SqlConnection(pConnectionString);
         }

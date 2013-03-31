@@ -10,6 +10,7 @@ namespace Paperless.UI.Controllers
 {
     public class WebAdminController : Controller
     {
+        ServiceContractClient clienteWCF = new ServiceContractClient();
 
         /// <summary>
         /// URL: /WebAdmin/
@@ -17,6 +18,22 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult WebAdmin ()
         {            
+            return View();
+        }
+
+
+        /// <summary>
+        /// URL: /WebAdmin/DocumentMigration/
+        /// </summary>
+        /// <returns>View</returns>
+        public ActionResult DocumentMigration() 
+        {
+            return View();
+        }
+
+
+        public ActionResult IrregularEvents()
+        {
             return View();
         }
 
@@ -122,7 +139,9 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult UserResults(UserAuditModel model)
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            Usuario[] lstUsuarios = clienteWCF.ObtenerUsuario(model.UserName);
+            
+            /*List<Usuario> usuarios = new List<Usuario>();
             Usuario u = new Usuario();
             u.Departamento = "a";
             u.NombreUsuario = "a";
@@ -135,9 +154,9 @@ namespace Paperless.UI.Controllers
             u2.NombreUsuario = "a2";
             u2.PrimerApellido = "a2";
             u2.SegundoApellido = "a2";
-            usuarios.Add(u2);
+            usuarios.Add(u2);*/
 
-            return View(usuarios);
+            return View(lstUsuarios.ToList());
         }
 
         #region Validations

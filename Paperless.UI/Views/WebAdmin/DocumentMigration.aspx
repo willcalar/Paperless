@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Selección de documentos:</h2>
-
+    <form id="DocumentMigration" runat="server">
     <asp:GridView ID="GridViewResultados" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:TemplateField HeaderText="Nombre del documento"></asp:TemplateField>
@@ -21,5 +21,6 @@
     </asp:GridView>
 
     <asp:Button ID="BotonMigrar" runat="server" Text="Migrar documentos" CssClass="boton"/>
+    </form>
 </asp:Content>
 
