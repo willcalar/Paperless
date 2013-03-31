@@ -11,79 +11,112 @@ namespace Paperless.DataAccess
 
         public DataAccess(string pConnectionString)
         {
-            _Conexion = new SqlConnection(pConnectionString);
+            _Connection = new SqlConnection(pConnectionString);
         }
+
+        /*public DataAccess()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            _Connection = new SqlConnection(connectionString);
+        }*/
 
         #endregion
 
+
         #region Metodos
 
-        private SqlCommand CreateCommand(string pProcedureName, IEnumerable<SqlParameter> pParametros)
+        private SqlCommand CreateCommand(string pProcedureName, IEnumerable<SqlParameter> pParameters, bool pAddOutput)
         {
-            var comando = new SqlCommand(pProcedureName, _Conexion)
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = pProcedureName;
+            command.Connection = _Connection;
+
+            if (pParameters != null)
             {
-                CommandType = CommandType.StoredProcedure
-            };
-            foreach (var parametro in pParametros)
-            {
-                comando.Parameters.Add(parametro);
+                foreach (var parameter in pParameters)
+                {
+                    command.Parameters.Add(parameter);
+                }
             }
-            return comando;
+
+            return command;
         }
 
-        public DataSet ExecuteQuery(string pProcedureName, IEnumerable<SqlParameter> pParametros)
+        public DataSet ExecuteQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
         {
-            var dataSet = new DataSet();
+            var dataset = new DataSet();
             try
             {
-                var adapter = new SqlDataAdapter(CreateCommand(pProcedureName, pParametros));
-                _Conexion.Open();
-                adapter.Fill(dataSet);
+                _Connection.Open();
+
+                var command = CreateCommand(pProcedureName, pParameters, true);
+                var adapter = new SqlDataAdapter(command);
+                var commandBuilder = new SqlCommandBuilder(adapter);
+
+                adapter.Fill(dataset);
+
+                command.Dispose();
+
+                _Connection.Close();
             }
             catch (Exception ex)
             {
-                //ExceptionLogger.LogExcepcion(ex, "Error consulta ejecutando: " + pProcedureName);
-                dataSet = null;
+                dataset = null;
             }
             finally
             {
-                if (_Conexion != null && _Conexion.State == ConnectionState.Open)
+                if (_Connection.State == ConnectionState.Open)
                 {
-                    _Conexion.Close();
+                    _Connection.Close();
                 }
             }
-            return dataSet;
+            return dataset;
         }
 
-        public bool ExecuteNonQuery(string pProcedureName, IEnumerable<SqlParameter> pParametros)
+        public bool ExecuteNonQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
         {
+            int result;
             try
             {
-                var comando = CreateCommand(pProcedureName, pParametros);
-                _Conexion.Open();
-                int resultado = comando.ExecuteNonQuery();
-                _Conexion.Close();
-                return resultado == -1;
+                _Connection.Open();
+                var command = CreateCommand(pProcedureName, pParameters, false);
+                result = command.ExecuteNonQuery();
+                _Connection.Close();
             }
             catch (Exception ex)
             {
-                //ExceptionLogger.LogExcepcion(ex, "Error no consulta ejecutando: " + pProcedureName);
                 return false;
             }
             finally
             {
-                if (_Conexion != null && _Conexion.State == ConnectionState.Open)
+                if (_Connection.State == ConnectionState.Open)
                 {
-                    _Conexion.Close();
+                    _Connection.Close();
                 }
             }
+            return true;
+        }
+
+        public bool TryConnection()
+        {
+            try
+            {
+                _Connection.Open();
+                _Connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
 
         #endregion
 
         #region Atributos
 
-        private SqlConnection _Conexion;
+        private SqlConnection _Connection;
 
         #endregion
     }
