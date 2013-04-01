@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+<form id="formBut" runat="server">
 
 
 <script>
@@ -54,10 +54,11 @@
                 <%: item.NombreUsuarioEmisor %>
             </td>
             <td>
+                
                 <%: item.NombreUsuarioReceptor %>
             </td>
             <td>
-                <%: "CheckBox" %>
+                <asp:CheckBox ID="Check" runat="server"/>
             </td>
         </tr>
     
@@ -111,7 +112,7 @@
 	    </form>
     </div>
 
-    <form id="formBut" runat="server">
+    
         <asp:Button ID="ButtonMigrar" runat="server" Text="Migrar documentos" CssClass="boton"/>
     </form>
     
