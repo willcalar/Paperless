@@ -381,6 +381,9 @@ namespace Paperless.UI.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerEventos", ReplyAction="http://tempuri.org/IServiceContract/ObtenerEventosResponse")]
         Paperless.UI.WebService.Evento[] ObtenerEventos();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerEventosIrregulares", ReplyAction="http://tempuri.org/IServiceContract/ObtenerEventosIrregularesResponse")]
+        Paperless.UI.WebService.Evento[] ObtenerEventosIrregulares();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDepartamentos", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDepartamentosResponse")]
         string[] ObtenerDepartamentos();
         
@@ -445,6 +448,10 @@ namespace Paperless.UI.WebService {
         
         public Paperless.UI.WebService.Evento[] ObtenerEventos() {
             return base.Channel.ObtenerEventos();
+        }
+        
+        public Paperless.UI.WebService.Evento[] ObtenerEventosIrregulares() {
+            return base.Channel.ObtenerEventosIrregulares();
         }
         
         public string[] ObtenerDepartamentos() {

@@ -8,3 +8,8 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.UI\bin\Paperless.UI.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.UI\bin\Paperless.UI.pdb
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Paperless.UI.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Paperless.UI.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb

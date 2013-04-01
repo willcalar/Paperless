@@ -34,7 +34,21 @@ namespace Paperless.UI.Controllers
 
         public ActionResult IrregularEvents()
         {
-            return View();
+            Evento[] events = null;
+            events = clienteWCF.ObtenerEventosIrregulares();
+
+            //Revisar si docs null tirar mensaje de error
+            //Revisar si docs vacío tirar mensaje de no resultados
+            //si no retorna los resultados
+
+            if (events.Length == 0)
+            {
+                ViewData["Message"] = "No hay resultados que mostrar.";
+                return View(events);
+            }
+            else
+                return View(events);
+
         }
 
         /// <summary>

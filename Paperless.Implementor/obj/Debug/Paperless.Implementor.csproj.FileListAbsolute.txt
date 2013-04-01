@@ -16,3 +16,12 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.Implementor\bin\Debug\Paperle
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Implementor\bin\Debug\Paperless.Library.pdb
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.Implementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.Implementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.DataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.Library.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paperless.Library.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.pdb

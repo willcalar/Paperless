@@ -24,3 +24,16 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperl
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.pdb
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.pdb
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb

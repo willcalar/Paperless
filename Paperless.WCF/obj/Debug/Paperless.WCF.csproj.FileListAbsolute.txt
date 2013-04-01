@@ -28,3 +28,18 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.WCF\bin\Paperless.Implementor
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.WCF\bin\Paperless.DataAccess.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.WCF\bin\Paperless.Implementor.pdb
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.WCF\bin\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb

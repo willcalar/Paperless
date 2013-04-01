@@ -41,6 +41,9 @@ namespace Paperless.WCF.Contract
         #region Metodos Eventos
         [OperationContract]
         Evento[] ObtenerEventos();
+
+        [OperationContract]
+        Evento[] ObtenerEventosIrregulares();
         #endregion
 
         #region Metodos Varios

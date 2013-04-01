@@ -11,7 +11,35 @@ namespace Paperless.Implementor
 {
     public class EventosImplementor
     {
+        
         #region Methods
+
+        public Evento[] ObtenerEventosIrregulares()
+        {
+            DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerEventosIrregulares", new List<SqlParameter>());
+            try
+            {
+                List<Evento> lstEvento = new List<Evento>();
+                foreach (DataRow item in dsResul.Tables[0].Rows)
+                {
+                    Evento evento = new Evento();
+                    evento.TipoEvento = (String)item["TipoEvento"];
+                    evento.Descripcion = (String)item["Evento"];
+                    evento.FechaHora = (DateTime)item["Fecha"];
+                    evento.NombreUsuario = (String)item["Usuario"];
+                    lstEvento.Add(evento);
+                }
+                return lstEvento.ToArray();
+            }
+            catch (Exception)
+            {
+                //Exception logger!
+                return null;
+            }
+        }
+
+
+
         public Evento[] ObtenerEventos()
         {
             DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerBitacoraDocumentos", new List<SqlParameter>()

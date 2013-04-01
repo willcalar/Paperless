@@ -16,3 +16,12 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\bin\Debug\Microsof
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb

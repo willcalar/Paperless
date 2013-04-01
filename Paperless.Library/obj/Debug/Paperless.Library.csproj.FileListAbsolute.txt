@@ -8,3 +8,8 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\bin\Debug\Paperless.L
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\ResolveAssemblyReference.cache
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
 C:\Program Files (x86)\Git\bin\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb

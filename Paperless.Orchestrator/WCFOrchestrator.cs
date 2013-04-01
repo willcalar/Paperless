@@ -98,6 +98,15 @@ namespace Paperless.Orchestrator
         {
             return EventosImplementor.Instance.ObtenerEventos();
         }
+
+        /// <summary>
+        /// Obtiene la lista de eventos irregulares del sistema
+        /// </summary>
+        /// <returns>Lista de eventos en el sistema sin revisar</returns>
+        public Evento[] ObtenerEventosIrregulares()
+        {
+            return EventosImplementor.Instance.ObtenerEventosIrregulares();
+        }
         #endregion        
 
         #region Varios
