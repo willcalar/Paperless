@@ -360,11 +360,11 @@ namespace Paperless.UI.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentos", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosResponse")]
         Paperless.UI.WebService.Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerHistorialDocumento", ReplyAction="http://tempuri.org/IServiceContract/ObtenerHistorialDocumentoResponse")]
-        Paperless.UI.WebService.Historial[] ObtenerHistorialDocumento(int idDocumento);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrar", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrarResponse")]
         Paperless.UI.WebService.Documento[] ObtenerDocumentosPorMigrar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerHistorialDocumento", ReplyAction="http://tempuri.org/IServiceContract/ObtenerHistorialDocumentoResponse")]
+        Paperless.UI.WebService.Historial[] ObtenerHistorialDocumento(int idDocumento);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentosUsuario", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosUsuarioResponse")]
         Paperless.UI.WebService.Documento[] ObtenerDocumentosUsuario(string nombreUsuario);
@@ -422,12 +422,12 @@ namespace Paperless.UI.WebService {
             return base.Channel.ObtenerDocumentos(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
         }
         
-        public Paperless.UI.WebService.Historial[] ObtenerHistorialDocumento(int idDocumento) {
-            return base.Channel.ObtenerHistorialDocumento(idDocumento);
-        }
-        
         public Paperless.UI.WebService.Documento[] ObtenerDocumentosPorMigrar() {
             return base.Channel.ObtenerDocumentosPorMigrar();
+        }
+        
+        public Paperless.UI.WebService.Historial[] ObtenerHistorialDocumento(int idDocumento) {
+            return base.Channel.ObtenerHistorialDocumento(idDocumento);
         }
         
         public Paperless.UI.WebService.Documento[] ObtenerDocumentosUsuario(string nombreUsuario) {

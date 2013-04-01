@@ -18,10 +18,10 @@ namespace Paperless.WCF.Contract
         Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción);
 
         [OperationContract]
-        Historial[] ObtenerHistorialDocumento(int idDocumento);
+        Documento[] ObtenerDocumentosPorMigrar();
 
         [OperationContract]
-        Documento[] ObtenerDocumentosPorMigrar();
+        Historial[] ObtenerHistorialDocumento(int idDocumento);
 
         [OperationContract]
         Documento[] ObtenerDocumentosUsuario(string nombreUsuario);

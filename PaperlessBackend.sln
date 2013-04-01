@@ -6,6 +6,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Library", "Paperless.Library\Paperless.Library.csproj", "{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.UI", "Paperless.UI\Paperless.UI.csproj", "{388867FD-791F-4239-9566-19251F37FD7B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C429DD71-A6A9-4A98-AA78-DD43440C500F} = {C429DD71-A6A9-4A98-AA78-DD43440C500F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.UI.Tests", "Paperless.UI.Tests\Paperless.UI.Tests.csproj", "{7EC7738D-B707-4495-AD46-8F7627DB7A53}"
 EndProject

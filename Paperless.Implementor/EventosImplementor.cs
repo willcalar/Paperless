@@ -83,7 +83,10 @@ namespace Paperless.Implementor
                 lock (syncRoot) 
                 {
                     if (instance == null)
+                    {
                         instance = new EventosImplementor();
+                        instance._AccesoDB = new DataAccess.DataAccess();
+                    }
                 }
                 }
 

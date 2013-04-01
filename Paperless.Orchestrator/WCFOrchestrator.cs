@@ -26,6 +26,16 @@ namespace Paperless.Orchestrator
             return DocumentosImplementor.Instance.ObtenerDocumentos(usuarioEmisor,usuarioReceptor,departamento,tipoDocumento,fechaEmision,fechaRecepción);
         }
 
+
+        /// <summary>
+        /// Obtiene documentos por migrar del sistema
+        /// </summary>
+        /// <returns>Lista de documentos que deberían migrarse</returns>
+        public Documento[] ObtenerDocumentosPorMigrar()
+        {
+            return DocumentosImplementor.Instance.ObtenerDocumentosPorMigrar();
+        }
+
         /// <summary>
         /// Obtiene el historial de un documento específico
         /// </summary>
@@ -36,14 +46,6 @@ namespace Paperless.Orchestrator
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Obtiene una lista de documentos que faltan de migrar
-        /// </summary>
-        /// <returns>Lista de documentos sin migrar</returns>
-        public Documento[] ObtenerDocumentosPorMigrar()
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor

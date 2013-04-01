@@ -28,7 +28,24 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult DocumentMigration() 
         {
-            return View();
+            Documento[] docs = null;
+            docs = clienteWCF.ObtenerDocumentosPorMigrar();
+
+            //Revisar si docs null tirar mensaje de error
+            //Revisar si docs vacío tirar mensaje de no resultados
+            //si no retorna los resultados
+            if (docs == null)
+            {
+                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
+                return View(docs);
+            }
+            if (docs.Length == 0)
+            {
+                ViewData["Message"] = "No hay documentos por migrar que mostrar.";
+                return View(docs);
+            }
+            else
+                return View(docs);
         }
 
 
@@ -37,8 +54,7 @@ namespace Paperless.UI.Controllers
             Evento[] events = null;
             events = clienteWCF.ObtenerEventosIrregulares();
 
-            //Revisar si docs null tirar mensaje de error
-            //Revisar si docs vacío tirar mensaje de no resultados
+            //Revisar si events vacío tirar mensaje de no resultados
             //si no retorna los resultados
 
             if (events.Length == 0)

@@ -1,60 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Paperless.Library" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Paperless.Library" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfDocumento">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Documento" nillable="true" type="tns:Documento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDocumento" nillable="true" type="tns:ArrayOfDocumento" />
-  <xs:complexType name="Documento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreUsuarioEmisor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreUsuarioReceptor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Documento" nillable="true" type="tns:Documento" />
-  <xs:complexType name="ArrayOfHistorial">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Historial" nillable="true" type="tns:Historial" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfHistorial" nillable="true" type="tns:ArrayOfHistorial" />
-  <xs:complexType name="Historial">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:element name="Historial" nillable="true" type="tns:Historial" />
-  <xs:complexType name="ArrayOfUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
-  <xs:complexType name="Usuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
-  <xs:complexType name="ArrayOfEvento">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Evento" nillable="true" type="tns:Evento" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfEvento" nillable="true" type="tns:ArrayOfEvento" />
-  <xs:complexType name="Evento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FechaHora" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TipoEvento" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Evento" nillable="true" type="tns:Evento" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Paperless.Library" />
+  <xs:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ObtenerDocumentos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuarioEmisor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuarioReceptor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="departamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaEmision" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaRecepción" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentosResult" nillable="true" type="q1:ArrayOfDocumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosPorMigrar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosPorMigrarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentosPorMigrarResult" nillable="true" type="q2:ArrayOfDocumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHistorialDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHistorialDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerHistorialDocumentoResult" nillable="true" type="q3:ArrayOfHistorial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentosUsuarioResult" nillable="true" type="q4:ArrayOfDocumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogOnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogOnResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerUsuarioResult" nillable="true" type="q5:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHistorialUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerHistorialUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerHistorialUsuarioResult" nillable="true" type="q6:ArrayOfHistorial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEventos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEventosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosResult" nillable="true" type="q7:ArrayOfEvento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEventosIrregulares">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEventosIrregularesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosIrregularesResult" nillable="true" type="q8:ArrayOfEvento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDepartamentos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDepartamentosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerDepartamentosResult" nillable="true" type="q9:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposDocumento">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerTiposDocumentoResult" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

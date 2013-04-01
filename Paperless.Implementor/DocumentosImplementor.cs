@@ -48,6 +48,28 @@ namespace Paperless.Implementor
 
             return documentos.ToArray();
         }
+
+
+        public Documento[] ObtenerDocumentosPorMigrar()
+        {
+
+            var documentos = new List<Documento>();
+
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
+
+            if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
+            {
+                foreach (DataRow fila in result.Tables[0].Rows)
+                {
+                    var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
+                        fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
+                    documentos.Add(documento);
+                }
+            }
+
+            return documentos.ToArray();
+        }
+
         #endregion
 
         #region Singleton
