@@ -14,3 +14,11 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Paperles
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\Paperless.UI.Tests.dll.config
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\Paperless.UI.Tests.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\Paperless.UI.Tests.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\Paperless.UI.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\Paperless.UI.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.pdb

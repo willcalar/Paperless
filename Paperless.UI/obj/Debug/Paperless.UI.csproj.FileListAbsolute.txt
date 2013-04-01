@@ -8,3 +8,8 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Paperless.UI.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\bin\Paperless.UI.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\bin\Paperless.UI.pdb
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
+D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
