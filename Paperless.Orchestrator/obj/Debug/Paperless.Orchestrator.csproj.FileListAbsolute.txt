@@ -24,7 +24,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Pape
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
-<<<<<<< HEAD
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
@@ -39,7 +38,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Micr
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.pdb
-=======
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.dll
@@ -53,4 +51,3 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\De
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
->>>>>>> dc0360c87333dbab912d9b25e6cb41ae88f429e0

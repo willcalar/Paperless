@@ -28,7 +28,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAcces
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
-<<<<<<< HEAD
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
@@ -43,7 +42,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.pdb
-=======
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Library.dll
@@ -59,4 +57,3 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.D
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
->>>>>>> dc0360c87333dbab912d9b25e6cb41ae88f429e0

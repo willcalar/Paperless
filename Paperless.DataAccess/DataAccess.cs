@@ -67,7 +67,7 @@ namespace Paperless.DataAccess
             {
                 dataset = null;
                 ExceptionManager.HandleException(ex,Policy.DATA_ACCESS, ex.GetType(),
-                    (int) ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP,pProcedureName));
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP, pProcedureName), false);
 
             }
             finally
@@ -92,6 +92,8 @@ namespace Paperless.DataAccess
             }
             catch (Exception ex)
             {
+                ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP, pProcedureName),false);
                 return false;
             }
             finally

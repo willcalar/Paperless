@@ -16,7 +16,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paper
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.pdb
-<<<<<<< HEAD
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesExceptions.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
@@ -31,7 +30,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Micro
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.pdb
-=======
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\bin\Debug\Paperless.Implementor.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\bin\Debug\Paperless.Implementor.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\bin\Debug\Paperless.DataAccess.dll
@@ -41,4 +39,3 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\bin\Deb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.pdb
->>>>>>> dc0360c87333dbab912d9b25e6cb41ae88f429e0
