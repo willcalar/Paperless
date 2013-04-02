@@ -43,3 +43,17 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAcces
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.pdb

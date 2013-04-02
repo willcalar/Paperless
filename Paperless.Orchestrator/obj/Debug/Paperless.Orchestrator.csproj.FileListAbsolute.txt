@@ -37,3 +37,17 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Pape
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.pdb

@@ -25,3 +25,10 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Micros
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.pdb

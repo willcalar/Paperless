@@ -25,3 +25,17 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Paper
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\obj\Debug\Paperless.Implementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.pdb

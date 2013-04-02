@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Configuration;
+using Exceptions;
 
 namespace Paperless.DataAccess
 {
@@ -65,6 +66,9 @@ namespace Paperless.DataAccess
             catch (Exception ex)
             {
                 dataset = null;
+                ExceptionManager.HandleException(ex,Policy.DATA_ACCESS, ex.GetType(),
+                    (int) ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP,pProcedureName));
+
             }
             finally
             {
@@ -121,5 +125,16 @@ namespace Paperless.DataAccess
         private SqlConnection _Connection;
 
         #endregion
+
+
+        
+        #region Constants
+        /// <summary>
+        /// Used to get/set the Error message in Data dictionary
+        /// </summary>
+        public const string ERROR_EXECUTING_SP = "Error executing the SP: /0.";
+
+        #endregion Constants
+      
     }
 }
