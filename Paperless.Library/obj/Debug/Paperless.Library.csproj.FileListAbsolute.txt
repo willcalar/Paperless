@@ -16,4 +16,3 @@ D:\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.dll
 D:\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.pdb
 D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
 D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb
-D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.csprojResolveAssemblyReference.cache

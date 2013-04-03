@@ -175,7 +175,7 @@ namespace Paperless.UI.Controllers
         /// al contrario retorna falso</returns>
         public bool IsSearchParamsEmpty(string userSender, string userReciever, string department, string docType, DateTime issueDate, DateTime receptionDate)
         {
-            if (String.IsNullOrEmpty(userSender) && String.IsNullOrEmpty(userReciever) && department.Equals(CUALQUIERA) && docType.Equals(CUALQUIERA) && String.IsNullOrEmpty(issueDate.ToString()) && String.IsNullOrEmpty(receptionDate.ToString()))
+            if (String.IsNullOrEmpty(userSender) && String.IsNullOrEmpty(userReciever) && department.Equals(CUALQUIERA) && docType.Equals(CUALQUIERA) && issueDate.Equals(DateTime.MinValue) && receptionDate.Equals(DateTime.MinValue))
                 return true;
             else
                 return false;

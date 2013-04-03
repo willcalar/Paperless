@@ -38,7 +38,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManagerImplementor", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManagerLibrary", "Paperless.Logger\Library\LogManagerLibrary.csproj", "{1E816EB1-A63C-4A23-8D6E-427AD3B160A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Implementor.Tests", "Paperless.Implementor.Tests\Paperless.Implementor.Tests.csproj", "{7F61DCD2-1420-4313-A403-5E2243307206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40C4A54D-3ABC-4FE9-900C-A7430A9B7365}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		PaperlessBackend.vsmdi = PaperlessBackend.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = PaperlessBackend.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
@@ -126,6 +138,12 @@ Global
 		{1E816EB1-A63C-4A23-8D6E-427AD3B160A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E816EB1-A63C-4A23-8D6E-427AD3B160A2}.Release|x86.ActiveCfg = Release|x86
 		{1E816EB1-A63C-4A23-8D6E-427AD3B160A2}.Release|x86.Build.0 = Release|x86
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +154,8 @@ Global
 		{9D519E49-7D81-43D4-AE79-01A2C8C1B9E6} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{9B482F4B-DF92-49F4-90FF-0BDAC7CF0970} = {DE621C35-0D0D-40EB-A401-26FB0B50ABAD}
 		{7EC7738D-B707-4495-AD46-8F7627DB7A53} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
+		{7F61DCD2-1420-4313-A403-5E2243307206} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
+		{40C4A54D-3ABC-4FE9-900C-A7430A9B7365} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
 		{C429DD71-A6A9-4A98-AA78-DD43440C500F} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
 		{60438519-9DE8-4B80-9896-0995E7FECDA6} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
 		{7357E663-9450-4A15-B01F-825C5F4F2D49} = {31DC68B2-80F5-46AF-888B-5AEF7191B026}
@@ -145,6 +165,6 @@ Global
 		{1E816EB1-A63C-4A23-8D6E-427AD3B160A2} = {3F8AFFAA-5F9B-449D-A3A8-48814CEEEB7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

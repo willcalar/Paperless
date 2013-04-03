@@ -38,16 +38,8 @@ D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAcces
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.pdb
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\CoreLibrariesExceptions.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.dll
 D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\CoreLibrariesExceptions.pdb
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.xml
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-D:\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.xml

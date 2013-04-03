@@ -6,6 +6,7 @@ using Paperless.Library;
 using Paperless.DataAccess;
 using System.Data.SqlClient;
 using System.Data;
+using LogManager.Implementor;
 
 namespace Paperless.Implementor
 {
@@ -43,9 +44,12 @@ namespace Paperless.Implementor
 
                     documentos.Add(documento);
                 }
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos", 
+                    "Se obtuvo documentos para auditoría del usuario emisor:"+usuarioEmisor+
+                    ", usuario receptor: "+ usuarioReceptor);    
                 return documentos.ToArray();
             }
-
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvieron documentos para auditoría");
             return null;
 
         }
@@ -63,8 +67,11 @@ namespace Paperless.Implementor
 
                     documentos.Add(documento);
                 }
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos Auditoría",
+                    "Se obtuvo todos los documentos para auditoría");  
                 return documentos.ToArray();
             }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos Auditoría", "No se obtuvieron documentos para auditoría");
             return null;
         }
 
@@ -80,8 +87,11 @@ namespace Paperless.Implementor
                         fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
                     documentos.Add(documento);
                 }
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos Auditoría",
+                    "Se obtuvo todos los documentos para auditoría");  
                 return documentos.ToArray();
             }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos Auditoría", "No se obtuvieron documentos para auditoría");
             return null;
         }
 

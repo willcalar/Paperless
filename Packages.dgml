@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Common\Logger\LogManagerImplementor" Label="LogManagerImplementor" Category="Project" />
+    <Node Id="CommonServiceLocator 1.0" Label="CommonServiceLocator 1.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 5.0.505.0" Label="EnterpriseLibrary.Common 5.0.505.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Logging 5.0.505.1" Label="EnterpriseLibrary.Logging 5.0.505.1" Category="Package" />
+    <Node Id="Unity 2.1.505.2" Label="Unity 2.1.505.2" Category="Package" />
+    <Node Id="Unity.Interception 2.1.505.2" Label="Unity.Interception 2.1.505.2" Category="Package" />
+    <Node Id="Common\Logger\LogManagerDataAccess" Label="LogManagerDataAccess" Category="Project" />
+    <Node Id="CommonServiceLocator 1.0" Label="CommonServiceLocator 1.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 5.0.505.0" Label="EnterpriseLibrary.Common 5.0.505.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Data 5.0.505.0" Label="EnterpriseLibrary.Data 5.0.505.0" Category="Package" />
+    <Node Id="Unity 2.1.505.2" Label="Unity 2.1.505.2" Category="Package" />
+    <Node Id="Unity.Interception 2.1.505.2" Label="Unity.Interception 2.1.505.2" Category="Package" />
+    <Node Id="Common\Paperless.Exceptions" Label="Paperless.Exceptions" Category="Project" />
+    <Node Id="CommonServiceLocator 1.0" Label="CommonServiceLocator 1.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 5.0.505.0" Label="EnterpriseLibrary.Common 5.0.505.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.ExceptionHandling 5.0.505.0" Label="EnterpriseLibrary.ExceptionHandling 5.0.505.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Logging 5.0.505.1" Label="EnterpriseLibrary.Logging 5.0.505.1" Category="Package" />
+    <Node Id="Unity 2.1.505.2" Label="Unity 2.1.505.2" Category="Package" />
+    <Node Id="Unity.Interception 2.1.505.2" Label="Unity.Interception 2.1.505.2" Category="Package" />
+    <Node Id="Backend\Paperless.DataAccess" Label="Paperless.DataAccess" Category="Project" />
+    <Node Id="CommonServiceLocator 1.0" Label="CommonServiceLocator 1.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Common 5.0.505.0" Label="EnterpriseLibrary.Common 5.0.505.0" Category="Package" />
+    <Node Id="EnterpriseLibrary.Data 5.0.505.0" Label="EnterpriseLibrary.Data 5.0.505.0" Category="Package" />
+    <Node Id="Unity 2.1.505.2" Label="Unity 2.1.505.2" Category="Package" />
+    <Node Id="Unity.Interception 2.1.505.2" Label="Unity.Interception 2.1.505.2" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="EnterpriseLibrary.Common 5.0.505.0" Target="Unity.Interception 2.1.505.2" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.Logging 5.0.505.1" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Package Dependency" />
+    <Link Source="Unity 2.1.505.2" Target="CommonServiceLocator 1.0" Category="Package Dependency" />
+    <Link Source="Unity.Interception 2.1.505.2" Target="Unity 2.1.505.2" Category="Package Dependency" />
+    <Link Source="Common\Logger\LogManagerImplementor" Target="CommonServiceLocator 1.0" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerImplementor" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerImplementor" Target="EnterpriseLibrary.Logging 5.0.505.1" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerImplementor" Target="Unity 2.1.505.2" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerImplementor" Target="Unity.Interception 2.1.505.2" Category="Installed Package" />
+    <Link Source="EnterpriseLibrary.Common 5.0.505.0" Target="Unity.Interception 2.1.505.2" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.Data 5.0.505.0" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Package Dependency" />
+    <Link Source="Unity 2.1.505.2" Target="CommonServiceLocator 1.0" Category="Package Dependency" />
+    <Link Source="Unity.Interception 2.1.505.2" Target="Unity 2.1.505.2" Category="Package Dependency" />
+    <Link Source="Common\Logger\LogManagerDataAccess" Target="CommonServiceLocator 1.0" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerDataAccess" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerDataAccess" Target="EnterpriseLibrary.Data 5.0.505.0" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerDataAccess" Target="Unity 2.1.505.2" Category="Installed Package" />
+    <Link Source="Common\Logger\LogManagerDataAccess" Target="Unity.Interception 2.1.505.2" Category="Installed Package" />
+    <Link Source="EnterpriseLibrary.Common 5.0.505.0" Target="Unity.Interception 2.1.505.2" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.ExceptionHandling 5.0.505.0" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.Logging 5.0.505.1" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Package Dependency" />
+    <Link Source="Unity 2.1.505.2" Target="CommonServiceLocator 1.0" Category="Package Dependency" />
+    <Link Source="Unity.Interception 2.1.505.2" Target="Unity 2.1.505.2" Category="Package Dependency" />
+    <Link Source="Common\Paperless.Exceptions" Target="CommonServiceLocator 1.0" Category="Installed Package" />
+    <Link Source="Common\Paperless.Exceptions" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Installed Package" />
+    <Link Source="Common\Paperless.Exceptions" Target="EnterpriseLibrary.ExceptionHandling 5.0.505.0" Category="Installed Package" />
+    <Link Source="Common\Paperless.Exceptions" Target="EnterpriseLibrary.Logging 5.0.505.1" Category="Installed Package" />
+    <Link Source="Common\Paperless.Exceptions" Target="Unity 2.1.505.2" Category="Installed Package" />
+    <Link Source="Common\Paperless.Exceptions" Target="Unity.Interception 2.1.505.2" Category="Installed Package" />
+    <Link Source="EnterpriseLibrary.Common 5.0.505.0" Target="Unity.Interception 2.1.505.2" Category="Package Dependency" />
+    <Link Source="EnterpriseLibrary.Data 5.0.505.0" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Package Dependency" />
+    <Link Source="Unity 2.1.505.2" Target="CommonServiceLocator 1.0" Category="Package Dependency" />
+    <Link Source="Unity.Interception 2.1.505.2" Target="Unity 2.1.505.2" Category="Package Dependency" />
+    <Link Source="Backend\Paperless.DataAccess" Target="CommonServiceLocator 1.0" Category="Installed Package" />
+    <Link Source="Backend\Paperless.DataAccess" Target="EnterpriseLibrary.Common 5.0.505.0" Category="Installed Package" />
+    <Link Source="Backend\Paperless.DataAccess" Target="EnterpriseLibrary.Data 5.0.505.0" Category="Installed Package" />
+    <Link Source="Backend\Paperless.DataAccess" Target="Unity 2.1.505.2" Category="Installed Package" />
+    <Link Source="Backend\Paperless.DataAccess" Target="Unity.Interception 2.1.505.2" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

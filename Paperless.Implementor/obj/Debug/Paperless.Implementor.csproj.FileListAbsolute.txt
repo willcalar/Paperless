@@ -55,9 +55,10 @@ D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practice
 D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.dll
 D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesExceptions.pdb
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.Interception.xml
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.Unity.xml
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\LogManagerImplementor.dll
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesLogManager.dll
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\LogManagerDataAccess.dll
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\LogManagerImplementor.pdb
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\CoreLibrariesLogManager.pdb
+D:\Documents\GitHub\Paperless\Paperless.Implementor\bin\Debug\LogManagerDataAccess.pdb

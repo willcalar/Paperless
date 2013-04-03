@@ -99,13 +99,13 @@ namespace LogManager.DataAccess
 				//pType, pMessage, pSourceId, Identity.GetInstance().MachineName, string.Empty, Environment.NickName, pReferenceObjectId,
                 _AccesoDB.ExecuteNonQuery("dbo.PLSSP_EscribirLog", new List<SqlParameter>()
 				                                   	{
-				                                   		new SqlParameter("@activityType", pType),
-				                                   		new SqlParameter("@description", pMessage),
-				                                   		new SqlParameter("@sourceId", pSourceId),
-				                                   		//new SqlParameter("@computerName", Identity.GetInstance().MachineName),
-				                                   		new SqlParameter("@computerIp", ipAddress),
-				                                   		//new SqlParameter("@userName", Identity.GetInstance().Username),
-				                                   		new SqlParameter("@referenceObject", pReferenceObjectId),
+				                                   		new SqlParameter("@tipoActividad", pType),
+				                                   		new SqlParameter("@descripcion", pMessage),
+				                                   		new SqlParameter("@fuenteId", pSourceId),
+				                                   		new SqlParameter("@nombreComputadora", computerName),
+				                                   		new SqlParameter("@ipComputadora", ipAddress),
+				                                   		new SqlParameter("@usuario", "CAMBIAR ESTO"),
+				                                   		new SqlParameter("@reference1", pReferenceObjectId),
 				                                   		new SqlParameter("@checksum", checksum)
 				                                   	});
 			}
@@ -141,8 +141,8 @@ namespace LogManager.DataAccess
                 var cantRegistros = new SqlParameter("@CantidadRegistros", 0);
 
                 var dsLogActivities = _AccesoDB.ExecuteQuery("dbo.PLSSP_ObtenerLogActividad", new List<SqlParameter>() { 
-                    new SqlParameter("@FilterType", (byte)pFilterType),
-                    new SqlParameter("@ActivityCategoryName", pCategoryName),
+                    new SqlParameter("@tipoFiltro", (byte)pFilterType),
+                    new SqlParameter("@NombreCategoriaActividad", pCategoryName),
                     new SqlParameter("@TopRecordCount", pAmountOfRecordsToReturn),                    
                     new SqlParameter("@baseId", pBaseId),
                     cantRegistros,
