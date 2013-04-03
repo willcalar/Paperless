@@ -48,7 +48,7 @@ namespace Exceptions
                 }
                 catch
                 {
-                    Trace.WriteLineIf(TraceExceptions, "** EXCEPTION HANDLED: Invalid Excpetion Policy: " + pPolicy);
+                    Trace.WriteLineIf(TraceExceptions, "** EXCEPTION HANDLED: Invalid Exception Policy: " + pPolicy);
                     return;
                 }
 
