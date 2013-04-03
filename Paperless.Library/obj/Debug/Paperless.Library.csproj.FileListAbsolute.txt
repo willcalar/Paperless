@@ -12,3 +12,8 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\bin\Debug\P
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\bin\Debug\Paperless.Library.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb
+D:\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.dll
+D:\Documents\GitHub\Paperless\Paperless.Library\bin\Debug\Paperless.Library.pdb
+D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.dll
+D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.pdb
+D:\Documents\GitHub\Paperless\Paperless.Library\obj\Debug\Paperless.Library.csprojResolveAssemblyReference.cache

@@ -26,7 +26,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Implementor", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.WCF.Contract", "Paperless.WCF.Contract\Paperless.WCF.Contract.csproj", "{60438519-9DE8-4B80-9896-0995E7FECDA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{7357E663-9450-4A15-B01F-825C5F4F2D49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.Exceptions", "Exceptions\Paperless.Exceptions.csproj", "{7357E663-9450-4A15-B01F-825C5F4F2D49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{31DC68B2-80F5-46AF-888B-5AEF7191B026}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,8 +106,9 @@ Global
 		{7EC7738D-B707-4495-AD46-8F7627DB7A53} = {8E9CB471-26CF-4F37-9BA5-2B926396342F}
 		{C429DD71-A6A9-4A98-AA78-DD43440C500F} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
 		{60438519-9DE8-4B80-9896-0995E7FECDA6} = {32BA5F91-7FC9-430D-9F9F-CDD62DD67F06}
+		{7357E663-9450-4A15-B01F-825C5F4F2D49} = {31DC68B2-80F5-46AF-888B-5AEF7191B026}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

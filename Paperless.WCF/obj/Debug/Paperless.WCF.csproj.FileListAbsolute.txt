@@ -57,3 +57,31 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.D
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.dll
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.xml
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.xml
+D:\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.xml

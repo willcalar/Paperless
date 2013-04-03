@@ -51,3 +51,29 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\De
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Library.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.WCF.Contract.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.DataAccess.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.xml
