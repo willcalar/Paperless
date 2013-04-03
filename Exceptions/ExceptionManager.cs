@@ -34,7 +34,7 @@ namespace Exceptions
 		{
             if (pException != null)
             {
-
+                
                 Trace.WriteLineIf(TraceExceptions, "** EXCEPTION HANDLED: " + pException.Message + " / INTERNAL MESSAGE: " + pMessage);
 
                 pException.Data[ERROR_CODE_DATA_KEY] = pErrorCode;
