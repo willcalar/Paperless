@@ -8,11 +8,17 @@
       <xsd:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServiceContract_ObtenerDocumentos_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerDocumentos" />
+  <wsdl:message name="IServiceContract_ObtenerDocumentosAuditoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentosAuditoria" />
   </wsdl:message>
-  <wsdl:message name="IServiceContract_ObtenerDocumentos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerDocumentosResponse" />
+  <wsdl:message name="IServiceContract_ObtenerDocumentosAuditoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentosAuditoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerTodosDocumentosAuditoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosDocumentosAuditoria" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerTodosDocumentosAuditoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosDocumentosAuditoriaResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerDocumentosPorMigrar_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumentosPorMigrar" />
@@ -75,9 +81,13 @@
     <wsdl:part name="parameters" element="tns:ObtenerTiposDocumentoResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceContract">
-    <wsdl:operation name="ObtenerDocumentos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentos" message="tns:IServiceContract_ObtenerDocumentos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosResponse" message="tns:IServiceContract_ObtenerDocumentos_OutputMessage" />
+    <wsdl:operation name="ObtenerDocumentosAuditoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria" message="tns:IServiceContract_ObtenerDocumentosAuditoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoriaResponse" message="tns:IServiceContract_ObtenerDocumentosAuditoria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosDocumentosAuditoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoria" message="tns:IServiceContract_ObtenerTodosDocumentosAuditoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoriaResponse" message="tns:IServiceContract_ObtenerTodosDocumentosAuditoria_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerDocumentosPorMigrar">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrar" message="tns:IServiceContract_ObtenerDocumentosPorMigrar_InputMessage" />
@@ -122,8 +132,17 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceContract" type="tns:IServiceContract">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="ObtenerDocumentos">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentos" style="document" />
+    <wsdl:operation name="ObtenerDocumentosAuditoria">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosDocumentosAuditoria">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

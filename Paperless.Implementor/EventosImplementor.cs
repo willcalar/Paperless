@@ -17,7 +17,7 @@ namespace Paperless.Implementor
         public Evento[] ObtenerEventosIrregulares()
         {
             DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerEventosIrregulares", new List<SqlParameter>());
-            try
+            if (dsResul != null)
             {
                 List<Evento> lstEvento = new List<Evento>();
                 foreach (DataRow item in dsResul.Tables[0].Rows)
@@ -31,11 +31,8 @@ namespace Paperless.Implementor
                 }
                 return lstEvento.ToArray();
             }
-            catch (Exception)
-            {
-                //Exception logger!
-                return null;
-            }
+            return null;
+            
         }
 
 

@@ -13,3 +13,17 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\bin\Paperless.UI
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.pdb

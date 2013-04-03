@@ -357,8 +357,11 @@ namespace Paperless.UI.WebService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebService.IServiceContract")]
     public interface IServiceContract {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentos", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosResponse")]
-        Paperless.UI.WebService.Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoriaResponse")]
+        Paperless.UI.WebService.Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoriaResponse")]
+        Paperless.UI.WebService.Documento[] ObtenerTodosDocumentosAuditoria();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrar", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrarResponse")]
         Paperless.UI.WebService.Documento[] ObtenerDocumentosPorMigrar();
@@ -418,8 +421,12 @@ namespace Paperless.UI.WebService {
                 base(binding, remoteAddress) {
         }
         
-        public Paperless.UI.WebService.Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción) {
-            return base.Channel.ObtenerDocumentos(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
+        public Paperless.UI.WebService.Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción) {
+            return base.Channel.ObtenerDocumentosAuditoria(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
+        }
+        
+        public Paperless.UI.WebService.Documento[] ObtenerTodosDocumentosAuditoria() {
+            return base.Channel.ObtenerTodosDocumentosAuditoria();
         }
         
         public Paperless.UI.WebService.Documento[] ObtenerDocumentosPorMigrar() {

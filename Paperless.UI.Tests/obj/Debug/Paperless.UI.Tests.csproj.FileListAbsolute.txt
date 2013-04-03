@@ -22,3 +22,17 @@ D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\bin\Debug\
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.UI.Tests\obj\Debug\Paperless.UI.Tests.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\CoreLibrariesExceptions.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\CoreLibrariesExceptions.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.UI.Tests\bin\Debug\Microsoft.Practices.Unity.pdb

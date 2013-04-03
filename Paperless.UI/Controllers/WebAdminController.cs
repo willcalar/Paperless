@@ -5,19 +5,23 @@ using System.Web.Mvc;
 using Paperless.UI.WebService;
 using Paperless.UI.Models;
 using System.Collections.Generic;
+using Exceptions;
 
 namespace Paperless.UI.Controllers
 {
     public class WebAdminController : Controller
     {
+        #region Attributes
         ServiceContractClient clienteWCF = new ServiceContractClient();
+        #endregion
 
+        #region Action Results
         /// <summary>
         /// URL: /WebAdmin/
         /// </summary>
         /// <returns>View</returns>
         public ActionResult WebAdmin ()
-        {            
+        {
             return View();
         }
 
@@ -26,44 +30,37 @@ namespace Paperless.UI.Controllers
         /// URL: /WebAdmin/DocumentMigration/
         /// </summary>
         /// <returns>View</returns>
-        public ActionResult DocumentMigration() 
+        public ActionResult DocumentMigration()
         {
             Documento[] docs = null;
-            docs = clienteWCF.ObtenerDocumentosPorMigrar();
-
-            //Revisar si docs null tirar mensaje de error
-            //Revisar si docs vacío tirar mensaje de no resultados
-            //si no retorna los resultados
-            if (docs == null)
+            try
             {
-                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
-                return View(docs);
+                docs = clienteWCF.ObtenerDocumentosPorMigrar();
             }
-            if (docs.Length == 0)
+            catch (Exception ex)
             {
-                ViewData["Message"] = "No hay documentos por migrar que mostrar.";
-                return View(docs);
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
             }
-            else
-                return View(docs);
+            docs = IsEmptyResult(docs); 
+            return View(docs);
         }
 
 
         public ActionResult IrregularEvents()
         {
             Evento[] events = null;
-            events = clienteWCF.ObtenerEventosIrregulares();
-
-            //Revisar si events vacío tirar mensaje de no resultados
-            //si no retorna los resultados
-
-            if (events.Length == 0)
+            try
             {
-                ViewData["Message"] = "No hay resultados que mostrar.";
-                return View(events);
+                events = clienteWCF.ObtenerEventosIrregulares();
             }
-            else
-                return View(events);
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
+            }
+            events= IsEmptyResult(events);
+            return View(events);
 
         }
 
@@ -106,35 +103,24 @@ namespace Paperless.UI.Controllers
         public ActionResult DocumentResults(DocumentAuditModel model)
         {
             Documento[] docs = null;
-            if (!this.IsSearchParamsEmpty(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate))
+            try
             {
-                /*Aqui procesa la consulta para todos los documentos almacenados en el sistema*/
-                /* S redirige a la página de resultados con la lista de docs obtenida*/
-                docs = clienteWCF.ObtenerDocumentos(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate);
-
+                if (!this.IsSearchParamsEmpty(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate))
+                {
+                    docs = clienteWCF.ObtenerDocumentosAuditoria(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate);
+                }
+                else
+                {
+                    docs = clienteWCF.ObtenerTodosDocumentosAuditoria();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                /*Aqui procesa la consulta para todos los documentos almacenados en el sistema*/
-                /* S redirige a la página de resultados con la lista de docs obtenida*/
-                docs = new Documento[0]; // aqui llama al web service?  
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
             }
-
-            //Revisar si docs null tirar mensaje de error
-            //Revisar si docs vacío tirar mensaje de no resultados
-            //si no retorna los resultados
-            if (docs == null)
-            {
-                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
-                return View(docs);
-            }
-            if (docs.Length == 0)
-            {
-                ViewData["Message"] = "No hay resultados que mostrar.";
-                return View(docs);
-            }
-            else
-                return View(docs);
+            docs = IsEmptyResult(docs);
+            return View(docs);
         }
 
         /// <summary>
@@ -165,25 +151,20 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult UserResults(UserAuditModel model)
         {
-            Usuario[] lstUsuarios = clienteWCF.ObtenerUsuario(model.UserName);
-            
-            /*List<Usuario> usuarios = new List<Usuario>();
-            Usuario u = new Usuario();
-            u.Departamento = "a";
-            u.NombreUsuario = "a";
-            u.PrimerApellido = "a";
-            u.SegundoApellido = "a";
-            usuarios.Add(u);
-
-            Usuario u2 = new Usuario();
-            u2.Departamento = "a2";
-            u2.NombreUsuario = "a2";
-            u2.PrimerApellido = "a2";
-            u2.SegundoApellido = "a2";
-            usuarios.Add(u2);*/
-
+            Usuario[] lstUsuarios = null;
+            try
+            {
+                lstUsuarios = clienteWCF.ObtenerUsuario(model.UserName);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
+            }
+            lstUsuarios = IsEmptyResult(lstUsuarios);
             return View(lstUsuarios.ToList());
         }
+        #endregion
 
         #region Validations
         /// <summary>
@@ -194,49 +175,102 @@ namespace Paperless.UI.Controllers
         /// al contrario retorna falso</returns>
         public bool IsSearchParamsEmpty(string userSender, string userReciever, string department, string docType, DateTime issueDate, DateTime receptionDate)
         {
-            if (String.IsNullOrEmpty(userSender) && String.IsNullOrEmpty(userReciever) && String.IsNullOrEmpty(department) && String.IsNullOrEmpty(docType) && String.IsNullOrEmpty(issueDate.ToString()) && String.IsNullOrEmpty(receptionDate.ToString()))
+            if (String.IsNullOrEmpty(userSender) && String.IsNullOrEmpty(userReciever) && department.Equals(CUALQUIERA) && docType.Equals(CUALQUIERA) && String.IsNullOrEmpty(issueDate.ToString()) && String.IsNullOrEmpty(receptionDate.ToString()))
                 return true;
             else
                 return false;
         }
+
+        public Evento[] IsEmptyResult(Evento[] result)
+        {
+            if (result == null)
+            {
+                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
+                return new Evento[] { };
+
+            }
+            else if (result.Length == 0)
+            {
+                ViewData["Message"] = "No hay resultados que mostrar.";
+
+            }
+            return result;
+        }
+
+        public Documento[] IsEmptyResult(Documento[] result)
+        {
+            if (result == null)
+            {
+                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
+                return new Documento[] { };
+
+            }
+            else if (result.Length == 0)
+            {
+                ViewData["Message"] = "No hay resultados que mostrar.";
+
+            }
+            return result;
+        }
+
+        public Usuario[] IsEmptyResult(Usuario[] result)
+        {
+            if (result == null)
+            {
+                ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
+                return new Usuario[] { };
+
+            }
+            else if (result.Length == 0)
+            {
+                ViewData["Message"] = "No hay resultados que mostrar.";
+
+            }
+            return result;
+        }
         #endregion
-
-
 
         #region Data Methods
 
         private void fillComboBoxAuditModel()
         {
-            
-            String[] departamentos = clienteWCF.ObtenerDepartamentos();
-            List<SelectListItem> departamentosList = new List<SelectListItem>();
-            foreach (String departamento in departamentos)
+            String[] departamentos = new String[]{};
+            String[] tiposDocumento = new String[]{};
+            List<SelectListItem> tiposDocumentoList = new List<SelectListItem>() { new SelectListItem(){ Value= CUALQUIERA, Text= CUALQUIERA, Selected= false }};
+            List<SelectListItem> departamentosList = new List<SelectListItem>() { new SelectListItem() { Value = CUALQUIERA, Text = CUALQUIERA, Selected = false }};
+            try
             {
-                SelectListItem dep = new SelectListItem();
-                dep.Value = departamento;
-                dep.Text = departamento;
-                dep.Selected = false;
-                departamentosList.Add(dep);
+                departamentos = clienteWCF.ObtenerDepartamentos();
+                tiposDocumento = clienteWCF.ObtenerTiposDocumento();
+            }
+            catch(Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
             }
 
-            String[] tiposDocumento = clienteWCF.ObtenerTiposDocumento();
-            List<SelectListItem> tiposDocumentoList = new List<SelectListItem>();
+            
+            foreach (String departamento in departamentos)
+            {
+                SelectListItem dep = new SelectListItem(){Value=departamento, Text= departamento, Selected= false};
+                departamentosList.Add(dep);
+            }
+            
             foreach (String tipoDocumento in tiposDocumento)
             {
-                SelectListItem tipo = new SelectListItem();
-                tipo.Value = tipoDocumento;
-                tipo.Text = tipoDocumento;
-                tipo.Selected = false;
+                SelectListItem tipo = new SelectListItem() { Value = tipoDocumento, Text = tipoDocumento, Selected = false };
                 tiposDocumentoList.Add(tipo);
             }
 
-
-
             ViewData["Departments"] = departamentosList;
             ViewData["TypesOfDocument"] = tiposDocumentoList;
-
         }
 
         #endregion 
+
+        #region Constants
+        public const string CUALQUIERA = "Cualquiera";
+        #endregion
+
     }
 }

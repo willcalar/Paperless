@@ -14,14 +14,12 @@ namespace Paperless.Implementor
 
         #region Methods
 
-        public Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepcion)
+        public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepcion)
         {
-            
-            var documentos = new List<Documento>();
             if (usuarioEmisor == null) usuarioEmisor = "null";
             if (usuarioReceptor == null) usuarioReceptor = "null";
-            if (departamento.Equals("Cualquiera")) departamento = "null";
-            if (tipoDocumento.Equals("Cualquiera")) departamento = "null";
+            if (departamento.Equals(CUALQUIERA)) departamento = "null";
+            if (tipoDocumento.Equals(CUALQUIERA)) departamento = "null";
             if (fechaEmision.Equals(DateTime.MinValue)) fechaEmision = DateTime.Now;
             if (fechaRecepcion.Equals(DateTime.MinValue)) fechaRecepcion = DateTime.Now;
 
@@ -35,8 +33,9 @@ namespace Paperless.Implementor
                 new SqlParameter("fechaRecepcion", fechaRecepcion)
             });
 
-            if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
+            if (result != null)
             {
+                var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
                 {
                     var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
@@ -44,30 +43,46 @@ namespace Paperless.Implementor
 
                     documentos.Add(documento);
                 }
+                return documentos.ToArray();
             }
 
-            return documentos.ToArray();
+            return null;
+
         }
 
+        public Documento[] ObtenerDocumentosAuditoria()
+        {
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerTodosDocumentosAuditoria", new List<SqlParameter>());
+            if (result != null)
+            {
+                var documentos = new List<Documento>();
+                foreach (DataRow fila in result.Tables[0].Rows)
+                {
+                    var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
+                        fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
+
+                    documentos.Add(documento);
+                }
+                return documentos.ToArray();
+            }
+            return null;
+        }
 
         public Documento[] ObtenerDocumentosPorMigrar()
         {
-
-            var documentos = new List<Documento>();
-
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
-
-            if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
+            if (result != null)
             {
+                var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
                 {
                     var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
                         fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
                     documentos.Add(documento);
                 }
+                return documentos.ToArray();
             }
-
-            return documentos.ToArray();
+            return null;
         }
 
         #endregion
@@ -101,6 +116,10 @@ namespace Paperless.Implementor
         private static volatile DocumentosImplementor instance;
         private static object syncRoot = new Object();
         private DataAccess.DataAccess _AccesoDB;
+        #endregion
+
+        #region Constants
+        public const string CUALQUIERA = "Cualquiera";
         #endregion
     }
 }

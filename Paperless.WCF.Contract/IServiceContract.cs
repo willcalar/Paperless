@@ -15,7 +15,10 @@ namespace Paperless.WCF.Contract
 
         #region Metodos Documentos
         [OperationContract]
-        Documento[] ObtenerDocumentos(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción);
+        Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción);
+
+        [OperationContract]
+        Documento[] ObtenerTodosDocumentosAuditoria();
 
         [OperationContract]
         Documento[] ObtenerDocumentosPorMigrar();

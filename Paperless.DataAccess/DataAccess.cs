@@ -25,10 +25,31 @@ namespace Paperless.DataAccess
 
         #endregion
 
-
         #region Metodos
 
-        private SqlCommand CreateCommand(string pProcedureName, IEnumerable<SqlParameter> pParameters, bool pAddOutput)
+        /// <summary>
+        /// Open the connection with the DB
+        /// </summary>
+        private void OpenConnection()
+        {
+            try
+            {
+                _Connection.Open();
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
+                    (int)ErrorCode.ERROR_ESTABLISHING_CONNECTION_LINQ, ExceptionMessages.Instance[ErrorCode.ERROR_ESTABLISHING_CONNECTION_LINQ], false);
+            }
+        }
+
+        /// <summary>
+        /// Creates the command to be executed
+        /// </summary>
+        /// <param name="pProcedureName">Name of the SP</param>
+        /// <param name="pParameters">Params of the SP</param>
+        /// <returns>Object of type SQLCommand that represents the SP</returns>
+        private SqlCommand CreateCommand(string pProcedureName, IEnumerable<SqlParameter> pParameters)
         {
             var command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
@@ -46,14 +67,20 @@ namespace Paperless.DataAccess
             return command;
         }
 
+        /// <summary>
+        /// Executes a SP that returns data
+        /// </summary>
+        /// <param name="pProcedureName">Name of the SP</param>
+        /// <param name="pParameters">Params of the SP</param>
+        /// <returns>A DataSet with the data returned by the SP</returns>
         public DataSet ExecuteQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
         {
             var dataset = new DataSet();
+            OpenConnection();
             try
             {
-                _Connection.Open();
 
-                var command = CreateCommand(pProcedureName, pParameters, true);
+                var command = CreateCommand(pProcedureName, pParameters);
                 var adapter = new SqlDataAdapter(command);
                 var commandBuilder = new SqlCommandBuilder(adapter);
 
@@ -66,9 +93,9 @@ namespace Paperless.DataAccess
             catch (Exception ex)
             {
                 dataset = null;
-                ExceptionManager.HandleException(ex,Policy.DATA_ACCESS, ex.GetType(),
-                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP, pProcedureName), false);
-
+                ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP], pProcedureName), false);
+                
             }
             finally
             {
@@ -80,20 +107,27 @@ namespace Paperless.DataAccess
             return dataset;
         }
 
+        /// <summary>
+        /// Executes a SP that doesnt return data
+        /// </summary>
+        /// <param name="pProcedureName">Name of the SP</param>
+        /// <param name="pParameters">Params of the SP</param>
+        /// <returns></returns>
         public bool ExecuteNonQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
         {
             int result;
+            OpenConnection();
             try
             {
-                _Connection.Open();
-                var command = CreateCommand(pProcedureName, pParameters, false);
+                
+                var command = CreateCommand(pProcedureName, pParameters);
                 result = command.ExecuteNonQuery();
                 _Connection.Close();
             }
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
-                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ERROR_EXECUTING_SP, pProcedureName),false);
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP] , pProcedureName),false);
                 return false;
             }
             finally
@@ -106,6 +140,10 @@ namespace Paperless.DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Try the connection with the DB
+        /// </summary>
+        /// <returns>Bool that represents the state of the connection</returns>
         public bool TryConnection()
         {
             try
@@ -127,16 +165,8 @@ namespace Paperless.DataAccess
         private SqlConnection _Connection;
 
         #endregion
-
-
-        
-        #region Constants
-        /// <summary>
-        /// Used to get/set the Error message in Data dictionary
-        /// </summary>
-        public const string ERROR_EXECUTING_SP = "Error executing the SP: /0.";
-
-        #endregion Constants
+     
+       
       
     }
 }

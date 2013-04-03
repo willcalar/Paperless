@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Exceptions
 {
-	public class CoreExceptionMessages
+	public class ExceptionMessages
 	{
 		#region Constructors
 		/// <summary>
 		/// Private constructor for singleton pattern
 		/// </summary>
-		private CoreExceptionMessages()
+		private ExceptionMessages()
         {
             #region Users and Security
             _Messages.Add(ErrorCode.UNEXPECTED_ERROR, "An unexpected error had been occour");
@@ -40,6 +40,14 @@ namespace Exceptions
             _Messages.Add(ErrorCode.QUEUE_PREPARING_TO_SEND_FAILED, "Publishing messages had been failed");
             _Messages.Add(ErrorCode.QUEUE_MAINTENANCE, "There's a problem in the internal maintenance of the messaging system");
             #endregion
+
+            #region LINQ to SQL codes 64350 -> 64399
+            _Messages.Add(ErrorCode.ERROR_ESTABLISHING_CONNECTION_LINQ, "Error while establishing connection with SQL Server.");
+            _Messages.Add(ErrorCode.ERROR_SUBMITTING_CHANGES_LINQ, "Publishing messages had been failed");
+            _Messages.Add(ErrorCode.ERROR_GETTING_TABLE_LINQ, "There's a problem in the internal maintenance of the messaging system");
+            _Messages.Add(ErrorCode.ERROR_QUERY_LINQ, "The destiny queue is unreachabled");
+            _Messages.Add(ErrorCode.ERROR_EXECUTING_SP, "Error executing the SP: /0.");
+             #endregion
 
             #region Report Mail Sender
             _Messages.Add(ErrorCode.ERROR_SENDING_MAIL, "Error sending mail");
@@ -75,7 +83,7 @@ namespace Exceptions
 		/// <summary>
 		/// Gets the singleton class instance
 		/// </summary>
-		public static CoreExceptionMessages Instance
+		public static ExceptionMessages Instance
 		{
 			get
 			{
@@ -85,7 +93,7 @@ namespace Exceptions
 					{
 						if (_SingletonInstance == null)
 						{
-							_SingletonInstance = new CoreExceptionMessages();
+							_SingletonInstance = new ExceptionMessages();
 						}
 					}
 				}
@@ -114,7 +122,7 @@ namespace Exceptions
 		/// <summary>
 		/// Stores the singleton instance of this class
 		/// </summary>
-		private static CoreExceptionMessages _SingletonInstance;
+		private static ExceptionMessages _SingletonInstance;
 		/// <summary>
 		/// Use as flag to lock the singleton instance
 		/// </summary>
