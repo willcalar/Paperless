@@ -12,7 +12,7 @@ $(document).ready(function() {
 }); 
 </script>
 
-    <h2>Detalles</h2>
+    <h2>Detalles De Documentos Del Usuario</h2>
 
     <table class="tablesorter" >
         <tr>
@@ -106,7 +106,7 @@ $(document).ready(function() {
     </div>
 
     <p>
-        <%: Html.ActionLink("Volver", "DocumentResults") %>
+        <%: Html.ActionLink("Volver", "UserResults") %>
     </p>
 
 </asp:Content>
