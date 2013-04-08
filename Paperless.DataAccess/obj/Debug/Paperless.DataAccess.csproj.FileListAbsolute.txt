@@ -10,9 +10,7 @@ C:\Program Files (x86)\Git\bin\Paperless\Paperless.DataAccess\obj\Debug\Paperles
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Paperless.DataAccess.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb
@@ -55,3 +53,8 @@ C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.dll
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.DataAccess\obj\Debug\Paperless.DataAccess.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.DataAccess\bin\Debug\Microsoft.Practices.Unity.pdb

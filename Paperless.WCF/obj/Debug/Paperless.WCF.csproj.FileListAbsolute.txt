@@ -37,11 +37,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Library.dll
@@ -115,3 +110,10 @@ C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDa
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.pdb

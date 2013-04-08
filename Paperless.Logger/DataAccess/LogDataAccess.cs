@@ -211,7 +211,7 @@ namespace LogManager.DataAccess
         /// <summary>
         /// Singleton instance
         /// </summary>
-        private static Paperless.DataAccess.DataAccess _InstanceDataAccess;
+       // private static Paperless.DataAccess.DataAccess _InstanceDataAccess;
         /// <summary>
         /// Log for the creation of the singleton class
         /// </summary>

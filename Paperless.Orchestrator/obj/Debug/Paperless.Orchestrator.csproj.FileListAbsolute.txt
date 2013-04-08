@@ -33,11 +33,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Micr
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesExceptions.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.Unity.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Orchestrator.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.Orchestrator\bin\Debug\Paperless.Implementor.dll
@@ -105,3 +100,10 @@ C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Deb
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.dll
 C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.Orchestrator\obj\Debug\Paperless.Orchestrator.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\LogManagerImplementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesLogManager.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\LogManagerDataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\LogManagerImplementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\CoreLibrariesLogManager.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.Orchestrator\bin\Debug\LogManagerDataAccess.pdb
