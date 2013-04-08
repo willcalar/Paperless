@@ -39,3 +39,15 @@ D:\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
 D:\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.Interception.dll
 D:\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.ServiceLocation.dll
 D:\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Paperless.UI.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Paperless.UI.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\CoreLibrariesExceptions.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\Microsoft.Practices.Unity.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\bin\CoreLibrariesExceptions.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.UI\obj\Debug\Paperless.UI.pdb
