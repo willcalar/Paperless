@@ -18,6 +18,10 @@ namespace Paperless.WCF.Contract
         Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción);
 
         [OperationContract]
+        DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento);
+
+
+        [OperationContract]
         Documento[] ObtenerTodosDocumentosAuditoria();
 
         [OperationContract]
@@ -39,6 +43,9 @@ namespace Paperless.WCF.Contract
 
         [OperationContract]
         Historial[] ObtenerHistorialUsuario(string nombreUsuario);
+
+        [OperationContract]
+        DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
         #endregion
 
         #region Metodos Eventos

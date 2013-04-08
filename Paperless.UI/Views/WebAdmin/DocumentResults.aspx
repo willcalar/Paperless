@@ -40,7 +40,7 @@ $(document).ready(function() {
     
         <tr>
             <td>
-                <%: Html.ActionLink("Ver", "DetallesDocumento", new {  id=item.NombreDocumento }) %>
+                <%: Html.ActionLink("Ver", "DetailsUserResults", new {  id=item.NombreDocumento }) %>
             </td>
             <td>
                 <%: String.Format("{0:g}", item.Fecha) %>

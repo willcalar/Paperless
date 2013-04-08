@@ -156,6 +156,9 @@
     <None Include="Service References\WebService\Paperless.UI.WebService.Documento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\WebService\Paperless.UI.WebService.DocumentoDetalleMovimiento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WebService\Paperless.UI.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -173,8 +176,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
-    <Content Include="Views\WebAdmin\DetailsDocumentAudit.aspx" />
     <Content Include="Views\WebAdmin\DetailsDocumentResults.aspx" />
+    <Content Include="Views\WebAdmin\DetailsUserResults.aspx" />
     <Content Include="Views\WebAdmin\DocumentAudit.aspx" />
     <Content Include="Views\WebAdmin\DocumentMigration.aspx" />
     <Content Include="Views\WebAdmin\DocumentResults.aspx" />

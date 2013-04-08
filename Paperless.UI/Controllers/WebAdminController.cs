@@ -123,6 +123,23 @@ namespace Paperless.UI.Controllers
             return View(docs);
         }
 
+
+
+        public ActionResult DetailsDocumentResults(string id)
+        {
+            DocumentoDetalleMovimiento[] movs = null;
+            try
+            {
+                movs = clienteWCF.ObtenerDetalleDocumentoAuditoria(id);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
+            }
+            return View(movs);
+        }
+
         /// <summary>
         /// URL: /WebAdmin/UserAudit/
         /// </summary>
@@ -164,6 +181,22 @@ namespace Paperless.UI.Controllers
             lstUsuarios = IsEmptyResult(lstUsuarios);
             return View(lstUsuarios.ToList());
         }
+
+        public ActionResult DetailsDUserResults(string id)
+        {
+            DocumentoDetalleMovimiento[] movs = null;
+            try
+            {
+                movs = clienteWCF.ObtenerDetalleUsuarioAuditoria(id);
+            }
+            catch (Exception ex)
+            {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
+            }
+            return View(movs);
+        }
+
         #endregion
 
         #region Validations

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteNoBar.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Paperless.UI.WebService.Documento>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteNoBar.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Paperless.UI.WebService.DocumentoDetalleMovimiento>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	<h2>Resultados de búsqueda</h2>
-    <p>Muestra los resultados de acuerdo a los filtros escogidos.</p>
+	<h2>Detalle del documento</h2>
+    <p>Muestra los movimientos asociados al documento seleccionado.</p>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,16 +23,10 @@ $(document).ready(function() {
                 NombreDocumento
             </th>
             <th>
-                NombreUsuarioEmisor
+                Usuario
             </th>
             <th>
-                NombreUsuarioReceptor
-            </th>
-            <th>
-                TipoDocumento
-            </th>
-            <th>
-                TipoEvento
+                TipoMovimiento
             </th>
             <th>
                 Ruta
@@ -49,16 +43,10 @@ $(document).ready(function() {
                 <%: item.NombreDocumento %>
             </td>
             <td>
-                <%: item.NombreUsuarioEmisor %>
+                <%: item.Usuario %>
             </td>
             <td>
-                <%: item.NombreUsuarioReceptor %>
-            </td>
-            <td>
-                <%: item.TipoDocumento %>
-            </td>
-            <td>
-                <%: item.TipoEvento %>
+                <%: item.TipoAccion %>
             </td>
             <td>
                 <%: item.Ruta %>

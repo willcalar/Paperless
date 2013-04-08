@@ -14,6 +14,12 @@
   <wsdl:message name="IServiceContract_ObtenerDocumentosAuditoria_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumentosAuditoriaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDetalleDocumentoAuditoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleDocumentoAuditoria" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDetalleDocumentoAuditoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleDocumentoAuditoriaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerTodosDocumentosAuditoria_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerTodosDocumentosAuditoria" />
   </wsdl:message>
@@ -56,6 +62,12 @@
   <wsdl:message name="IServiceContract_ObtenerHistorialUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerHistorialUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleUsuarioAuditoria" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDetalleUsuarioAuditoria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleUsuarioAuditoriaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerEventos_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerEventos" />
   </wsdl:message>
@@ -85,6 +97,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria" message="tns:IServiceContract_ObtenerDocumentosAuditoria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoriaResponse" message="tns:IServiceContract_ObtenerDocumentosAuditoria_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleDocumentoAuditoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoAuditoria" message="tns:IServiceContract_ObtenerDetalleDocumentoAuditoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoAuditoriaResponse" message="tns:IServiceContract_ObtenerDetalleDocumentoAuditoria_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ObtenerTodosDocumentosAuditoria">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoria" message="tns:IServiceContract_ObtenerTodosDocumentosAuditoria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoriaResponse" message="tns:IServiceContract_ObtenerTodosDocumentosAuditoria_OutputMessage" />
@@ -113,6 +129,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerHistorialUsuario" message="tns:IServiceContract_ObtenerHistorialUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerHistorialUsuarioResponse" message="tns:IServiceContract_ObtenerHistorialUsuario_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleUsuarioAuditoria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoria" message="tns:IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoriaResponse" message="tns:IServiceContract_ObtenerDetalleUsuarioAuditoria_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ObtenerEventos">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerEventos" message="tns:IServiceContract_ObtenerEventos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerEventosResponse" message="tns:IServiceContract_ObtenerEventos_OutputMessage" />
@@ -134,6 +154,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ObtenerDocumentosAuditoria">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleDocumentoAuditoria">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoAuditoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -197,6 +226,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerHistorialUsuario">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerHistorialUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleUsuarioAuditoria">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

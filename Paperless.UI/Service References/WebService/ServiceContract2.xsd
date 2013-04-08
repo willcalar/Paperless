@@ -16,6 +16,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Documento" nillable="true" type="tns:Documento" />
+  <xs:complexType name="ArrayOfDocumentoDetalleMovimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentoDetalleMovimiento" nillable="true" type="tns:DocumentoDetalleMovimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentoDetalleMovimiento" nillable="true" type="tns:ArrayOfDocumentoDetalleMovimiento" />
+  <xs:complexType name="DocumentoDetalleMovimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ruta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentoDetalleMovimiento" nillable="true" type="tns:DocumentoDetalleMovimiento" />
   <xs:complexType name="ArrayOfHistorial">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Historial" nillable="true" type="tns:Historial" />
