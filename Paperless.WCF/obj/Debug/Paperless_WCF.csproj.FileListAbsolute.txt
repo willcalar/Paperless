@@ -1,7 +1,0 @@
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\obj\Debug\ResolveAssemblyReference.cache
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\bin\Paperless_WCF.dll
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\bin\Paperless_WCF.pdb
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\bin\Paperless_Library.dll
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\bin\Paperless_Library.pdb
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\obj\Debug\Paperless_WCF.dll
-d:\users\alex\documents\visual studio 2010\Projects\PaperlessWebService\Paperless_WCF\obj\Debug\Paperless_WCF.pdb
