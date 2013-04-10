@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteNoBar.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Paperless.UI.WebService.Documento>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/SiteNoBar.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Paperless.UI.WebService.DocumentoDetalleMovimiento>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	<h2>Resultados de búsqueda</h2>
-    <p>Muestra los resultados de acuerdo a los filtros escogidos.</p>
+	<h2>Detalle del usuario</h2>
+    <p>Muestra los movimientos asociados al usuario seleccionado.</p>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -12,13 +12,10 @@ $(document).ready(function() {
 }); 
 </script>
 
-    <h2>DocumentResults</h2>
+    <h2>Detalles De Documentos Del Usuario</h2>
 
     <table class="tablesorter" >
         <tr>
-            <th>
-                Detalles
-            </th>
             <th>
                 Fecha
             </th>
@@ -26,13 +23,13 @@ $(document).ready(function() {
                 NombreDocumento
             </th>
             <th>
-                NombreUsuarioEmisor
+                Usuario
             </th>
             <th>
-                NombreUsuarioReceptor
+                TipoMovimiento
             </th>
             <th>
-                TipoDocumento
+                Ruta
             </th>
         </tr>
         
@@ -40,22 +37,19 @@ $(document).ready(function() {
     
         <tr>
             <td>
-                <%: Html.ActionLink("Ver", "DetailsUserResults", new {  id=item.NombreDocumento }) %>
-            </td>
-            <td>
                 <%: String.Format("{0:g}", item.Fecha) %>
             </td>
             <td>
                 <%: item.NombreDocumento %>
             </td>
             <td>
-                <%: item.NombreUsuarioEmisor %>
+                <%: item.Usuario %>
             </td>
             <td>
-                <%: item.NombreUsuarioReceptor %>
+                <%: item.TipoAccion %>
             </td>
             <td>
-                <%: item.TipoDocumento %>
+                <%: item.Ruta %>
             </td>
         </tr>
     
@@ -106,7 +100,7 @@ $(document).ready(function() {
     </div>
 
     <p>
-        <%: Html.ActionLink("Volver", "DocumentAudit") %>
+        <%: Html.ActionLink("Volver", "UserResults") %>
     </p>
 
 </asp:Content>

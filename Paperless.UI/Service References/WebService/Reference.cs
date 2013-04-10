@@ -124,6 +124,115 @@ namespace Paperless.UI.WebService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentoDetalleMovimiento", Namespace="http://schemas.datacontract.org/2004/07/Paperless.Library")]
+    [System.SerializableAttribute()]
+    public partial class DocumentoDetalleMovimiento : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreDocumentoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RutaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoAccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreDocumento {
+            get {
+                return this.NombreDocumentoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreDocumentoField, value) != true)) {
+                    this.NombreDocumentoField = value;
+                    this.RaisePropertyChanged("NombreDocumento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ruta {
+            get {
+                return this.RutaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RutaField, value) != true)) {
+                    this.RutaField = value;
+                    this.RaisePropertyChanged("Ruta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoAccion {
+            get {
+                return this.TipoAccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoAccionField, value) != true)) {
+                    this.TipoAccionField = value;
+                    this.RaisePropertyChanged("TipoAccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Historial", Namespace="http://schemas.datacontract.org/2004/07/Paperless.Library")]
     [System.SerializableAttribute()]
     public partial class Historial : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -360,6 +469,9 @@ namespace Paperless.UI.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentosAuditoriaResponse")]
         Paperless.UI.WebService.Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, System.DateTime fechaEmision, System.DateTime fechaRecepción);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoAuditoriaResponse")]
+        Paperless.UI.WebService.DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerTodosDocumentosAuditoriaResponse")]
         Paperless.UI.WebService.Documento[] ObtenerTodosDocumentosAuditoria();
         
@@ -380,6 +492,9 @@ namespace Paperless.UI.WebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerHistorialUsuario", ReplyAction="http://tempuri.org/IServiceContract/ObtenerHistorialUsuarioResponse")]
         Paperless.UI.WebService.Historial[] ObtenerHistorialUsuario(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoria", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoriaResponse")]
+        Paperless.UI.WebService.DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerEventos", ReplyAction="http://tempuri.org/IServiceContract/ObtenerEventosResponse")]
         Paperless.UI.WebService.Evento[] ObtenerEventos();
@@ -425,6 +540,10 @@ namespace Paperless.UI.WebService {
             return base.Channel.ObtenerDocumentosAuditoria(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
         }
         
+        public Paperless.UI.WebService.DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento) {
+            return base.Channel.ObtenerDetalleDocumentoAuditoria(nombreDocumento);
+        }
+        
         public Paperless.UI.WebService.Documento[] ObtenerTodosDocumentosAuditoria() {
             return base.Channel.ObtenerTodosDocumentosAuditoria();
         }
@@ -451,6 +570,10 @@ namespace Paperless.UI.WebService {
         
         public Paperless.UI.WebService.Historial[] ObtenerHistorialUsuario(string nombreUsuario) {
             return base.Channel.ObtenerHistorialUsuario(nombreUsuario);
+        }
+        
+        public Paperless.UI.WebService.DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario) {
+            return base.Channel.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
         }
         
         public Paperless.UI.WebService.Evento[] ObtenerEventos() {

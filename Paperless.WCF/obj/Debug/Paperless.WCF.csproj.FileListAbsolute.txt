@@ -37,11 +37,6 @@ C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.pdb
 C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.pdb
-C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
 D:\Documents\Visual Studio 2010\Projects\Paperless\Paperless.WCF\bin\Paperless.Library.dll
@@ -86,3 +81,39 @@ D:\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.dll
 D:\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.pdb
 D:\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.pdb
 D:\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.Interception.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.Unity.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Library.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Orchestrator.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.WCF.Contract.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.Implementor.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\Paperless.DataAccess.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesExceptions.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.pdb
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.dll
+C:\Users\Juan-Crawford\Documents\GitHub\Paperless\Paperless.WCF\obj\Debug\Paperless.WCF.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.dll
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerImplementor.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\CoreLibrariesLogManager.pdb
+C:\Users\Javier\Documents\GitHub\Paperless\Paperless.WCF\bin\LogManagerDataAccess.pdb

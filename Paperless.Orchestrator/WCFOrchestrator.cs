@@ -27,6 +27,8 @@ namespace Paperless.Orchestrator
         }
 
 
+        
+
         /// <summary>
         /// Obtiene documentos para auditoria
         /// </summary>
@@ -36,6 +38,15 @@ namespace Paperless.Orchestrator
             return DocumentosImplementor.Instance.ObtenerDocumentosAuditoria();
         }
 
+        /// <summary>
+        /// Obtiene la lista de movimientos asociados a un documento
+        /// </summary>
+        /// <param name="nombreDocumento">nombre del documento</param>
+        /// <returns></returns>
+        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
+        {
+            return DocumentosImplementor.Instance.ObtenerDetalleDocumentoAuditoria(nombreDocumento);
+        }
 
         /// <summary>
         /// Obtiene documentos por migrar del sistema
@@ -98,6 +109,17 @@ namespace Paperless.Orchestrator
         public Historial[] ObtenerHistorialUsuario(string nombreUsuario)
         {
             return UsuariosImplementor.Instance.ObtenerHistorialUsuario(nombreUsuario);
+        }
+
+
+        /// <summary>
+        /// Obtiene la lista de movimientos asociados a un usuario
+        /// </summary>
+        /// <param name="nombreUsuario">nombre del usuario</param>
+        /// <returns></returns>
+        public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario)
+        {
+            return UsuariosImplementor.Instance.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
         }
         #endregion
 

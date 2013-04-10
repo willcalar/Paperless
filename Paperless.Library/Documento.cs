@@ -15,7 +15,12 @@ namespace Paperless.Library
         private DateTime _Fecha;        
         private string _TipoDocumento;
         private string _NombreUsuarioEmisor;
-        private string _NombreUsuarioReceptor;        
+        private string _NombreUsuarioReceptor;
+        /*
+        private string _TipoEvento;
+        private string _TipoAccion;
+        private string _Ruta;
+        */
         #endregion
 
         #region Propiedades
@@ -52,7 +57,30 @@ namespace Paperless.Library
         {
             get { return _NombreUsuarioReceptor; }
             set { _NombreUsuarioReceptor = value; }
-        }        
+        }
+
+        /*
+        [DataMember]
+        public string TipoEvento
+        {
+            get { return _TipoEvento; }
+            set { _TipoEvento = value; }
+        }
+
+        [DataMember]
+        public string TipoAccion
+        {
+            get { return _TipoAccion; }
+            set { _TipoAccion = value; }
+        }
+
+        [DataMember]
+        public string Ruta
+        {
+            get { return _Ruta; }
+            set { _Ruta = value; }
+        }
+        */
         #endregion
 
         #region Contructores
@@ -79,7 +107,11 @@ namespace Paperless.Library
             _TipoDocumento = tipoDocumento;
             _NombreUsuarioEmisor = nombreUsuarioEmisor;
             _NombreUsuarioReceptor = nombreUsuarioReceptor;
-            
+            /*
+            _TipoEvento = tipoEvento;
+            _TipoAccion = tipoAccion;
+            _Ruta = ruta;
+            */
         }
         #endregion
     }

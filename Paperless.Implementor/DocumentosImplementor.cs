@@ -75,6 +75,37 @@ namespace Paperless.Implementor
             return null;
         }
 
+
+
+        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
+        {
+
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDetalleDocumentoAuditoria", new List<SqlParameter>()
+            {
+                new SqlParameter("nombreDocumento", nombreDocumento)
+            });
+
+            if (result != null)
+            {
+                var movimientos = new List<DocumentoDetalleMovimiento>();
+                foreach (DataRow fila in result.Tables[0].Rows)
+                {
+                    var documento = new DocumentoDetalleMovimiento(fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()),
+                        fila["Usuario"].ToString(), fila["TipoEntrada"].ToString(), fila["Ruta"].ToString());
+
+                    movimientos.Add(documento);
+                }
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
+                    "Se obtuvo el detalle de los movimientos del documento " + nombreDocumento);
+                return movimientos.ToArray();
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvo el detalle de los movimientos del documento " + nombreDocumento);
+            return null;
+
+        }
+
+
+
         public Documento[] ObtenerDocumentosPorMigrar()
         {
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());

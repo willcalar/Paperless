@@ -23,6 +23,7 @@ namespace Paperless.UI
                 new [] { "Paperless.UI.Controllers" }// Parameter defaults
             );
 
+
         }
 
         protected void Application_Start()

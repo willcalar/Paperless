@@ -32,7 +32,7 @@
     
         <tr>
             <td>
-                <%: Html.ActionLink("Ver", "DetallesUsuario", new {  id=item.NombreUsuario }) %>
+                <%: Html.ActionLink("Ver", "DetailsUserResults", new { id = item.NombreUsuario })%>
             </td>
             <td>
                 <%: item.Departamento %>
