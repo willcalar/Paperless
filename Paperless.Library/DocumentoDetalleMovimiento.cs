@@ -11,7 +11,7 @@ namespace Paperless.Library
     {
         #region Atributos
         private string _NombreDocumento;
-        private DateTime _Fecha;
+        private DateTime _Fecha;    
         private string _Usuario;
         private string _TipoAccion;
         private string _Ruta;
@@ -40,9 +40,9 @@ namespace Paperless.Library
             set { _Usuario = value; }
         }
 
+        
 
-
-
+        
 
         [DataMember]
         public string TipoAccion
@@ -57,7 +57,7 @@ namespace Paperless.Library
             get { return _Ruta; }
             set { _Ruta = value; }
         }
-
+        
         #endregion
 
         #region Contructores
@@ -68,7 +68,7 @@ namespace Paperless.Library
         {
         }
 
-
+        
         /// <summary>
         /// Constructor
         /// </summary>
@@ -77,14 +77,14 @@ namespace Paperless.Library
         /// <param name="nombreUsuario">Nombre de usuario</param>
         /// <param name="tipoAccion"></param>
         /// <param name="ruta"></param>
-        public DocumentoDetalleMovimiento(string nombreDocumento, DateTime fecha, string nombreUsuario, string tipoAccion, string ruta)
+        public DocumentoDetalleMovimiento(string nombreDocumento, DateTime fecha,  string nombreUsuario, string tipoAccion, string ruta)
         {
             _NombreDocumento = nombreDocumento;
             _Fecha = fecha;
             _Usuario = nombreUsuario;
             _TipoAccion = tipoAccion;
             _Ruta = ruta;
-
+           
         }
         #endregion
     }
