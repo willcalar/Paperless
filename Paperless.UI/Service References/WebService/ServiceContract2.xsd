@@ -67,9 +67,12 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaHora" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDReferencia" type="xs:int" />
       <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Origen" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoEvento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_Revisado" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Evento" nillable="true" type="tns:Evento" />

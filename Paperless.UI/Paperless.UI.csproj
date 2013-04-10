@@ -176,6 +176,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Views\Shared\EditorTemplates\DateTime.ascx" />
+    <Content Include="Views\WebAdmin\CheckEvent.aspx" />
     <Content Include="Views\WebAdmin\DetailsDocumentResults.aspx" />
     <Content Include="Views\WebAdmin\DetailsUserResults.aspx" />
     <Content Include="Views\WebAdmin\DocumentAudit.aspx" />

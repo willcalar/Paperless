@@ -27,6 +27,9 @@ namespace Paperless.Implementor
                     evento.Descripcion = (String)item["Evento"];
                     evento.FechaHora = (DateTime)item["Fecha"];
                     evento.NombreUsuario = (String)item["Usuario"];
+                    evento.NombreDocumento = (String)item["Documento"];
+                    evento.Origen = "Documento";
+                    evento.IDReferencia = 1;
                     lstEvento.Add(evento);
                 }
                 return lstEvento.ToArray();

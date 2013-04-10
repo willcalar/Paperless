@@ -34,6 +34,9 @@
             <th>
                 Revisado
             </th>
+            <th>
+                Reportar
+            </th>
         </tr>
         
         <% foreach (var item in Model) { %>
@@ -55,7 +58,11 @@
                 <%: item.NombreDocumento %>
             </td>
             <td>
+                
                 <%: "noc" %>
+            </td>
+            <td>
+                <%: Html.ActionLink("Revisar", "CheckEvent", new { origen = item.Origen, id= item.IDReferencia })%>
             </td>
         </tr>
     

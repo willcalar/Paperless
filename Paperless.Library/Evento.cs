@@ -15,7 +15,9 @@ namespace Paperless.Library
         private string _Descripcion;
         private DateTime _FechaHora;
         private string _NombreUsuario;
-        private string _NombreDocumento;        
+        private string _NombreDocumento;
+        
+        
         #endregion
 
         #region Propiedades
@@ -53,7 +55,16 @@ namespace Paperless.Library
             get { return _NombreDocumento; }
             set { _NombreDocumento = value; }
         }
-        #endregion
+
+        [DataMember]
+        public string _Revisado { get; set; }
+
+        [DataMember]
+        public string Origen { get; set; }
+
+        [DataMember]
+        public int IDReferencia { get; set; }
+        #endregion    
 
         #region Constructores
         /// <summary>

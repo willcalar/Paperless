@@ -197,6 +197,16 @@ namespace Paperless.UI.Controllers
             return View(movs);
         }
 
+        public ActionResult CheckEvent(string origen, string id)
+        {
+            Evento eventoRevisar=new Evento();
+            eventoRevisar.Origen = origen;
+            eventoRevisar.IDReferencia = Convert.ToInt32(id);
+            //FUNCION QUE ENVIA CORREO AL ADMIN DEL SISTEMA
+
+            return View(eventoRevisar);
+        }
+
         #endregion
 
         #region Validations
