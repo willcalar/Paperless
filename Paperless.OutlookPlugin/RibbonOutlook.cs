@@ -11,7 +11,6 @@ namespace Paperless.OutlookPlugin
     public partial class RibbonOutlook
     {
         private CustomTaskPane _taskPanel;
-        private CustomTaskPane _taskPanelLogin;
 
         private void RibbonOutlook_Load(object sender, RibbonUIEventArgs e)
         {
@@ -42,9 +41,9 @@ namespace Paperless.OutlookPlugin
                 _taskPanel.Visible = false;
             UserControlRecibirDocumentos _userControl = new UserControlRecibirDocumentos();
             _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
-            _taskPanelLogin.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
-            _taskPanelLogin.Width = 205;
-            _taskPanelLogin.Visible = true;
+            _taskPanel.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
+            _taskPanel.Width = 205;
+            _taskPanel.Visible = true;
             
         }
         
