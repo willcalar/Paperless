@@ -24,10 +24,7 @@ namespace Paperless.Orchestrator
         public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción)
         {
             return DocumentosImplementor.Instance.ObtenerDocumentosAuditoria(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
-        }
-
-
-        
+        }  
 
         /// <summary>
         /// Obtiene documentos para auditoria
@@ -67,15 +64,19 @@ namespace Paperless.Orchestrator
             throw new NotImplementedException();
         }
 
-
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
         /// </summary>
         /// <param name="nombreUsuario">Nombre de usuario</param>
         /// <returns>Lista de documentos del usuario</returns>
-        public Documento[] ObtenerDocumentosUsuario(string nombreUsuario)
+        public Documento[] ObtenerDocumentosDeUsuario(string nombreUsuario)
         {
-            throw new NotImplementedException();
+            return DocumentosImplementor.Instance.ObtenerDocumentosDeUsuario(nombreUsuario);
+        }
+
+        public Documento ObtenerDocumento(int idDocumento)
+        {
+            return DocumentosImplementor.Instance.ObtenerDocumento(idDocumento);
         }
         #endregion
 

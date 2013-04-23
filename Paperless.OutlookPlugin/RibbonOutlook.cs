@@ -10,11 +10,12 @@ namespace Paperless.OutlookPlugin
 {
     public partial class RibbonOutlook
     {
-        private CustomTaskPane _taskPanelRecibirDocumentos;
+        private CustomTaskPane _taskPanel;
         private CustomTaskPane _taskPanelLogin;
 
         private void RibbonOutlook_Load(object sender, RibbonUIEventArgs e)
         {
+            
         }
 
         private void buttonRecibir_Click(object sender, RibbonControlEventArgs e)
@@ -25,35 +26,28 @@ namespace Paperless.OutlookPlugin
 
         private void mostrarUserControlRecibirDocumentos()
         {
-            _taskPanelRecibirDocumentos.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
-            _taskPanelRecibirDocumentos.Width = 705;
-            _taskPanelRecibirDocumentos.Visible = true;
+            if (_taskPanel != null)
+                _taskPanel.Visible = false;
+            UserControlRecibirDocumentos _userControl = new UserControlRecibirDocumentos();
+            _taskPanel= Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
+            _taskPanel.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
+            _taskPanel.Width = 705;
+            _taskPanel.Visible = true;
             
         }
 
         private void mostrarUserControlLogin()
         {
+            if (_taskPanel != null)
+                _taskPanel.Visible = false;
+            UserControlRecibirDocumentos _userControl = new UserControlRecibirDocumentos();
+            _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
             _taskPanelLogin.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
-            _taskPanelLogin.Width = 105;
+            _taskPanelLogin.Width = 205;
             _taskPanelLogin.Visible = true;
             
         }
-
-
-        private void llenarTaskPanels()
-        {
-            UserControlLogin _userControl = new UserControlLogin();
-            _taskPanelLogin = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
-
-
-            UserControlRecibirDocumentos _userControlD = new UserControlRecibirDocumentos();
-            _userControlD.dataGridView1.Rows.Clear();
-            _userControlD.dataGridView1.Rows.Add(DateTime.Now.ToString(), "Nuevo Plan", "María Estrada", false, "Firmar", "Ver", "Descargar");
-            _userControlD.dataGridView1.Rows.Add(DateTime.Now.ToString(), "Nuevo Curso", "Jaime Solano", true, "Firmar", "Ver", "Descargar");
-            _taskPanelRecibirDocumentos = Globals.ThisAddIn.CustomTaskPanes.Add(_userControlD, "Paperless");
-        }
-
-
         
+                
     }
 }

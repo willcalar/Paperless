@@ -133,6 +133,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -218,6 +220,7 @@
     <EmbeddedResource Include="UserControlRecibirDocumentos.resx">
       <DependentUpon>UserControlRecibirDocumentos.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Paperless.OutlookPlugin_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,10 +242,17 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessOutlookPlugin.csproj">
+      <Project>{B7CF855A-360A-4258-B75B-16797D90AB65}</Project>
+      <Name>Paperless.DataAccessOutlookPlugin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
       <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>
       <Name>Paperless.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

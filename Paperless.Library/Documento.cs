@@ -11,16 +11,16 @@ namespace Paperless.Library
     public class Documento
     {
         #region Atributos
+        private int _IdDocumento;
         private string _NombreDocumento;
         private DateTime _Fecha;        
         private string _TipoDocumento;
         private string _NombreUsuarioEmisor;
         private string _NombreUsuarioReceptor;
-        /*
-        private string _TipoEvento;
-        private string _TipoAccion;
-        private string _Ruta;
-        */
+        private byte[] _Archivo;
+        private bool _Firmado;
+        private string[] _ListaFirmas;
+        private string _Formato;
         #endregion
 
         #region Propiedades
@@ -59,14 +59,22 @@ namespace Paperless.Library
             set { _NombreUsuarioReceptor = value; }
         }
 
-        /*
+        
         [DataMember]
-        public string TipoEvento
+        public bool Firmado
         {
-            get { return _TipoEvento; }
-            set { _TipoEvento = value; }
+            get { return _Firmado; }
+            set { _Firmado = value; }
         }
 
+
+        [DataMember]
+        public int IdDocumento
+        {
+            get { return _IdDocumento; }
+            set { _IdDocumento = value; }
+        }
+        /*
         [DataMember]
         public string TipoAccion
         {
@@ -107,11 +115,30 @@ namespace Paperless.Library
             _TipoDocumento = tipoDocumento;
             _NombreUsuarioEmisor = nombreUsuarioEmisor;
             _NombreUsuarioReceptor = nombreUsuarioReceptor;
-            /*
-            _TipoEvento = tipoEvento;
-            _TipoAccion = tipoAccion;
-            _Ruta = ruta;
-            */
+           
+        }
+
+
+        /// <summary>
+        /// Constructor del objeto
+        /// </summary>
+        /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
+        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, bool firmado, String[] listaFirmas)
+        {
+            _IdDocumento = idDocumento;
+            _NombreDocumento = nombreDocumento;
+            _Fecha = fecha;
+            _NombreUsuarioEmisor = usuario;
+            _Firmado = firmado;
+            _ListaFirmas = listaFirmas;
+        }
+
+
+        public Documento(string nombreDocumento, String formatoArchivo, Byte[] archivo)
+        {
+            _NombreDocumento = nombreDocumento;
+            _Formato = formatoArchivo;
+            _Archivo = archivo;
         }
         #endregion
     }

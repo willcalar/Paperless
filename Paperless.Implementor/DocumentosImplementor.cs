@@ -75,8 +75,6 @@ namespace Paperless.Implementor
             return null;
         }
 
-
-
         public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
         {
 
@@ -104,8 +102,6 @@ namespace Paperless.Implementor
 
         }
 
-
-
         public Documento[] ObtenerDocumentosPorMigrar()
         {
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
@@ -126,6 +122,52 @@ namespace Paperless.Implementor
             return null;
         }
 
+        public Documento[] ObtenerDocumentosDeUsuario(string usuario)
+        {
+
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosDeUsuario", new List<SqlParameter>()
+            {
+                new SqlParameter("usuario", usuario)
+            });
+
+            if (result != null)
+            {
+                var documentos = new List<Documento>();
+                foreach (DataRow fila in result.Tables[0].Rows)
+                {
+                    var documento = new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(),
+                        DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), false, new string[] {} );
+
+                    documentos.Add(documento);
+                }
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
+                    "Se realizó la recepción de documentos documentos para el usuario: " + usuario);
+                return documentos.ToArray();
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvieron documentos para el usuario:" + usuario);
+            return null;
+        }
+
+        public Documento ObtenerDocumento(int idDocumento)
+        {
+
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumento", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento)
+            });
+
+            if (result != null)
+            {
+                var documentos = new List<Documento>();
+                DataRow fila = result.Tables[0].Rows[0];
+                var documento = new Documento(fila["Documento"].ToString(), fila["Formato"].ToString(), (byte[]) fila["Archivo"]);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
+                    "Se realizó la descarga del documento con id: " + idDocumento);
+                return documento;
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se pudo obtener el contenido del documento con id:" + idDocumento);
+            return null;
+        }
         #endregion
 
         #region Singleton

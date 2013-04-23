@@ -31,7 +31,10 @@ namespace Paperless.WCF.Contract
         Historial[] ObtenerHistorialDocumento(int idDocumento);
 
         [OperationContract]
-        Documento[] ObtenerDocumentosUsuario(string nombreUsuario);
+        Documento[] ObtenerDocumentosDeUsuario(string nombreUsuario);
+
+        [OperationContract]
+        Documento ObtenerDocumento(int idDocumento);
         #endregion
 
         #region Metodos Usuario
