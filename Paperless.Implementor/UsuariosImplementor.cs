@@ -35,7 +35,8 @@ namespace Paperless.Implementor
                     {
                         NombreUsuario = item["Nombre"].ToString(),
                         PrimerApellido = item["Apellido1"].ToString(),
-                        SegundoApellido = item["Apellido2"].ToString()
+                        SegundoApellido = item["Apellido2"].ToString(),
+                        Username = item["Username"].ToString()
                     });                    
                 }
                 return lstUsuario.ToArray();
@@ -82,7 +83,7 @@ namespace Paperless.Implementor
         public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario)
         {
 
-            var result = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerDetalleDocumentoAuditoria", new List<SqlParameter>()
+            var result = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerDetalleUsuarioAuditoria", new List<SqlParameter>()
             {
                 new SqlParameter("nombreUsuario", nombreUsuario)
             });

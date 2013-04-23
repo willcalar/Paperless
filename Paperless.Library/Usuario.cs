@@ -14,7 +14,8 @@ namespace Paperless.Library
         private string _NombreUsuario;
         private string _PrimerApellido;
         private string _SegundoApellido;
-        private string _Departamento;        
+        private string _Departamento;
+        private string _Username;
         #endregion
 
         #region Propiedades
@@ -44,6 +45,13 @@ namespace Paperless.Library
         {
             get { return _Departamento; }
             set { _Departamento = value; }
+        }
+
+        [DataMember]
+        public string Username
+        {
+            get { return _Username; }
+            set { _Username = value; }
         }
         #endregion
 

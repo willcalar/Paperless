@@ -182,7 +182,7 @@ namespace Paperless.UI.Controllers
             return View(lstUsuarios.ToList());
         }
 
-        public ActionResult DetailsDUserResults(string id)
+        public ActionResult DetailsUserResults(string id)
         {
             DocumentoDetalleMovimiento[] movs = null;
             try

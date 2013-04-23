@@ -281,6 +281,9 @@ namespace Paperless.UI.WebService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SegundoApellidoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -339,6 +342,19 @@ namespace Paperless.UI.WebService {
                 if ((object.ReferenceEquals(this.SegundoApellidoField, value) != true)) {
                     this.SegundoApellidoField = value;
                     this.RaisePropertyChanged("SegundoApellido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
