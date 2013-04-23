@@ -47,6 +47,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{0BB06BA7-9B0E-4922-AC96-BFCF88C3FEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paperless.OutlookPlugin", "Paperless.OutlookPlugin\Paperless.OutlookPlugin.csproj", "{6D687F92-E3EE-490F-99AE-0EEDEFF10312}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = PaperlessBackend.vsmdi
@@ -144,6 +148,12 @@ Global
 		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F61DCD2-1420-4313-A403-5E2243307206}.Release|x86.ActiveCfg = Release|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +173,8 @@ Global
 		{E0558E57-055C-4D01-99E8-D4CA535D830A} = {3F8AFFAA-5F9B-449D-A3A8-48814CEEEB7E}
 		{84AF57F7-14E2-4624-B77C-DCAF24F45235} = {3F8AFFAA-5F9B-449D-A3A8-48814CEEEB7E}
 		{1E816EB1-A63C-4A23-8D6E-427AD3B160A2} = {3F8AFFAA-5F9B-449D-A3A8-48814CEEEB7E}
+		{388867FD-791F-4239-9566-19251F37FD7B} = {0BB06BA7-9B0E-4922-AC96-BFCF88C3FEE1}
+		{6D687F92-E3EE-490F-99AE-0EEDEFF10312} = {0BB06BA7-9B0E-4922-AC96-BFCF88C3FEE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35
