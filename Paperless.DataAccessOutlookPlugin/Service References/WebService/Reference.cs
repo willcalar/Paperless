@@ -32,6 +32,9 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         private bool FirmadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FormatoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdDocumentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -91,6 +94,19 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
                 if ((this.FirmadoField.Equals(value) != true)) {
                     this.FirmadoField = value;
                     this.RaisePropertyChanged("Firmado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Formato {
+            get {
+                return this.FormatoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FormatoField, value) != true)) {
+                    this.FormatoField = value;
+                    this.RaisePropertyChanged("Formato");
                 }
             }
         }
