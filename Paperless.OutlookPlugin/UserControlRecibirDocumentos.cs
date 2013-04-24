@@ -22,7 +22,7 @@ namespace Paperless.OutlookPlugin
 
         public void LlenarDataGrid()
         {
-            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario("jalvarez");
+            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
             foreach (Documento doc in docs)
             {
                 dataGridView1.Rows.Add(doc.IdDocumento, doc.Fecha, doc.NombreDocumento, doc.NombreUsuarioEmisor, doc.Firmado, "Firmar", "Ver", "Descargar");
