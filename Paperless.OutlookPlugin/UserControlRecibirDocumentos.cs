@@ -30,20 +30,25 @@ namespace Paperless.OutlookPlugin
             }
         }
 
+
+        private void DescargarArchivo(Documento documento)
+        {
+            saveFileDialogDescargar.FileName = documento.NombreDocumento;
+            saveFileDialogDescargar.AddExtension = true;
+            saveFileDialogDescargar.DefaultExt = documento.Formato;
+            saveFileDialogDescargar.ShowDialog();
+            Stream file = saveFileDialogDescargar.OpenFile();
+            file.Write(documento.Archivo, 0, documento.Archivo.Length);
+            file.Close();
+            MessageBox.Show("El archivo se ha descargado de manera exitosa.", "Descarga Finalizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void dataGridViewDocumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 7)
             {
                 Documento doc = DataAccess.Instance.ObtenerDocumento((int)dataGridViewDocumentos.Rows[0].Cells[0].Value);
-                saveFileDialogDescargar.FileName = doc.NombreDocumento;
-                saveFileDialogDescargar.AddExtension = true;
-                saveFileDialogDescargar.DefaultExt = doc.Formato;
-                saveFileDialogDescargar.ShowDialog();
-
-                Stream file = saveFileDialogDescargar.OpenFile();
-                file.Write(doc.Archivo, 0, doc.Archivo.Length);
-                file.Close();
-                
+                DescargarArchivo(doc);
             }
         }
     }
