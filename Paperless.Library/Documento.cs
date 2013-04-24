@@ -59,6 +59,12 @@ namespace Paperless.Library
             set { _NombreUsuarioReceptor = value; }
         }
 
+        [DataMember]
+        public string Formato
+        {
+            get { return _Formato; }
+            set { _Formato = value; }
+        }
         
         [DataMember]
         public bool Firmado
@@ -73,6 +79,14 @@ namespace Paperless.Library
         {
             get { return _IdDocumento; }
             set { _IdDocumento = value; }
+        }
+
+
+        [DataMember]
+        public byte[] Archivo
+        {
+            get { return _Archivo; }
+            set { _Archivo = value; }
         }
         /*
         [DataMember]

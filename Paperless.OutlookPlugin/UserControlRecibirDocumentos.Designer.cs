@@ -37,6 +37,7 @@
             this.FirmarC = new System.Windows.Forms.DataGridViewLinkColumn();
             this.VerOtrasFirmasC = new System.Windows.Forms.DataGridViewLinkColumn();
             this.DescargarC = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.saveFileDialogDescargar = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocumentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,7 @@
             this.dataGridViewDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDocumentos.Size = new System.Drawing.Size(712, 507);
             this.dataGridViewDocumentos.TabIndex = 0;
+            this.dataGridViewDocumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDocumentos_CellContentClick);
             // 
             // IdDocumentoC
             // 
@@ -133,5 +135,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn FirmarC;
         private System.Windows.Forms.DataGridViewLinkColumn VerOtrasFirmasC;
         private System.Windows.Forms.DataGridViewLinkColumn DescargarC;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogDescargar;
     }
 }

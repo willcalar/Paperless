@@ -23,10 +23,16 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ArchivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FechaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool FirmadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FormatoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdDocumentoField;
@@ -54,6 +60,19 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Archivo {
+            get {
+                return this.ArchivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArchivoField, value) != true)) {
+                    this.ArchivoField = value;
+                    this.RaisePropertyChanged("Archivo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Fecha {
             get {
                 return this.FechaField;
@@ -75,6 +94,19 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
                 if ((this.FirmadoField.Equals(value) != true)) {
                     this.FirmadoField = value;
                     this.RaisePropertyChanged("Firmado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Formato {
+            get {
+                return this.FormatoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FormatoField, value) != true)) {
+                    this.FormatoField = value;
+                    this.RaisePropertyChanged("Formato");
                 }
             }
         }
