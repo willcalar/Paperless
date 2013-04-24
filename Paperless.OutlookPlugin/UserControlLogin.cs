@@ -25,16 +25,23 @@ namespace Paperless.OutlookPlugin
         {
             if (validarDatosUsuario())
             {
-                Login.Instance.LoginUsuario(NombreUsuario);
-                switch(_parent._accion){
-                    case 1:
-                        _parent.mostrarUserControlRecibirDocumentos();
-                        return;
-                    default:
-                        return;
+                String usuario = DataAccess.Instance.LogIn(NombreUsuario, Password);
+                if (usuario != null)
+                {
+                    if (!usuario.Equals(String.Empty))
+                    {
+                        Login.Instance.LoginUsuario(NombreUsuario);
+                        MessageBox.Show(usuario + Environment.NewLine + "Bienvenido a Paperless", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _parent.reintentarOperacion(true);
+                    }
+                    else
+                        MessageBox.Show("El nombre de usuario o la contraseña es incorrecta. Reintente la operación.", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                    MessageBox.Show("Se ha perdido comunicación con el sistema. Reintente la operación.", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private bool validarDatosUsuario()
         {

@@ -39,7 +39,7 @@ namespace Paperless.WCF.Contract
 
         #region Metodos Usuario
         [OperationContract]
-        bool LogOn(string nombreUsuario, string contrasena);
+        String LogIn(string nombreUsuario, string contrasena);
 
         [OperationContract]
         Usuario[] ObtenerUsuario(String nombreUsuario);

@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonCerrar = new System.Windows.Forms.Button();
+            this.dataGridViewDocumentos = new System.Windows.Forms.DataGridView();
             this.IdDocumentoC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocumentoC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,19 +37,19 @@
             this.FirmarC = new System.Windows.Forms.DataGridViewLinkColumn();
             this.VerOtrasFirmasC = new System.Windows.Forms.DataGridViewLinkColumn();
             this.DescargarC = new System.Windows.Forms.DataGridViewLinkColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocumentos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewDocumentos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewDocumentos.AllowUserToAddRows = false;
+            this.dataGridViewDocumentos.AllowUserToDeleteRows = false;
+            this.dataGridViewDocumentos.AllowUserToOrderColumns = true;
+            this.dataGridViewDocumentos.AllowUserToResizeColumns = false;
+            this.dataGridViewDocumentos.AllowUserToResizeRows = false;
+            this.dataGridViewDocumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDocumentoC,
             this.FechaC,
             this.DocumentoC,
@@ -59,23 +58,14 @@
             this.FirmarC,
             this.VerOtrasFirmasC,
             this.DescargarC});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(712, 329);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // buttonCerrar
-            // 
-            this.buttonCerrar.Location = new System.Drawing.Point(616, 339);
-            this.buttonCerrar.Name = "buttonCerrar";
-            this.buttonCerrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCerrar.TabIndex = 1;
-            this.buttonCerrar.Text = "Cerrar";
-            this.buttonCerrar.UseVisualStyleBackColor = true;
+            this.dataGridViewDocumentos.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewDocumentos.Name = "dataGridViewDocumentos";
+            this.dataGridViewDocumentos.RowHeadersVisible = false;
+            this.dataGridViewDocumentos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewDocumentos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridViewDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewDocumentos.Size = new System.Drawing.Size(712, 507);
+            this.dataGridViewDocumentos.TabIndex = 0;
             // 
             // IdDocumentoC
             // 
@@ -124,19 +114,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonCerrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewDocumentos);
             this.Name = "UserControlRecibirDocumentos";
-            this.Size = new System.Drawing.Size(718, 369);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(718, 513);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocumentos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCerrar;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridViewDocumentos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDocumentoC;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaC;
         private System.Windows.Forms.DataGridViewTextBoxColumn DocumentoC;

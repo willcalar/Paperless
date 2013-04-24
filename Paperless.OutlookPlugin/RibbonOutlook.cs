@@ -12,7 +12,7 @@ namespace Paperless.OutlookPlugin
     public partial class RibbonOutlook
     {
         private CustomTaskPane _taskPanel;
-        public int _accion;
+        private int _accion;
 
         private void RibbonOutlook_Load(object sender, RibbonUIEventArgs e)
         {
@@ -31,7 +31,7 @@ namespace Paperless.OutlookPlugin
         }
 
 
-        public void mostrarUserControlRecibirDocumentos()
+        private void mostrarUserControlRecibirDocumentos()
         {
             if (_taskPanel != null)
                 _taskPanel.Visible = false;
@@ -57,6 +57,46 @@ namespace Paperless.OutlookPlugin
             _taskPanel.Width = width;
             _taskPanel.Visible = true;
         }
+
+        private void ocultarTaskPanel()
+        {
+            _taskPanel.Visible = false;
+        }
+
+        public void reintentarOperacion(bool loguear)
+        {
+            if (loguear)
+            {
+                buttonCerrarSesion.Visible = true;
+                buttonIniciarSesion.Visible = false;
+            }
+            switch (_accion)
+            {
+                case 0:
+                    ocultarTaskPanel();
+                    return;
+                case 1:
+                    mostrarUserControlRecibirDocumentos();
+                    return;
+            }
+            _accion = 0;
+        }
+
+        private void buttonIniciarSesion_Click(object sender, RibbonControlEventArgs e)
+        {
+            mostrarUserControlLogin();
+        }
+
+        private void buttonCerrarSesion_Click(object sender, RibbonControlEventArgs e)
+        {
+            buttonCerrarSesion.Visible = false;
+            buttonIniciarSesion.Visible = true;
+            Login.Instance.LogoutUsuario();
+            ocultarTaskPanel();
+        }
+
+
+
         
                 
     }

@@ -313,6 +313,9 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SegundoApellidoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -371,6 +374,19 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
                 if ((object.ReferenceEquals(this.SegundoApellidoField, value) != true)) {
                     this.SegundoApellidoField = value;
                     this.RaisePropertyChanged("SegundoApellido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
@@ -567,8 +583,8 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumento", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentoResponse")]
         Paperless.DataAccessOutlookPlugin.WebService.Documento ObtenerDocumento(int idDocumento);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/LogOn", ReplyAction="http://tempuri.org/IServiceContract/LogOnResponse")]
-        bool LogOn(string nombreUsuario, string contrasena);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/LogIn", ReplyAction="http://tempuri.org/IServiceContract/LogInResponse")]
+        string LogIn(string nombreUsuario, string contrasena);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerUsuario", ReplyAction="http://tempuri.org/IServiceContract/ObtenerUsuarioResponse")]
         Paperless.DataAccessOutlookPlugin.WebService.Usuario[] ObtenerUsuario(string nombreUsuario);
@@ -647,8 +663,8 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
             return base.Channel.ObtenerDocumento(idDocumento);
         }
         
-        public bool LogOn(string nombreUsuario, string contrasena) {
-            return base.Channel.LogOn(nombreUsuario, contrasena);
+        public string LogIn(string nombreUsuario, string contrasena) {
+            return base.Channel.LogIn(nombreUsuario, contrasena);
         }
         
         public Paperless.DataAccessOutlookPlugin.WebService.Usuario[] ObtenerUsuario(string nombreUsuario) {

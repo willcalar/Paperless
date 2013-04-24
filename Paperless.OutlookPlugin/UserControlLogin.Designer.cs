@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,13 +41,6 @@
             this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
             this.textBoxNombreUsuario.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombreUsuario.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(-15, -15);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
             // 
             // textBoxPassword
             // 
@@ -95,7 +87,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBoxNombreUsuario);
             this.Name = "UserControlLogin";
             this.Size = new System.Drawing.Size(224, 131);
@@ -107,7 +98,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxNombreUsuario;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

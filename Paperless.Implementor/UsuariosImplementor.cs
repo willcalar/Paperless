@@ -14,10 +14,26 @@ namespace Paperless.Implementor
     {
 
         #region Methods
-        public bool LogInUsuario(string pNombreUsuario, string pContraseña)
+        public String LogInUsuario(string pNombreUsuario, string pPassword)
         {
-            //throw new Exception();
-            return true;
+            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_LoginUsuario", new List<SqlParameter>()
+            {
+                new SqlParameter("@nombreUsuario",pNombreUsuario),
+                new SqlParameter("@password",pPassword)
+            });
+            try
+            {
+                if (dsResul.Tables[0].Rows.Count == 1)
+                {
+                    return dsResul.Tables[0].Rows[0]["NombreCompleto"].ToString();
+                }
+                return String.Empty;
+            }
+            catch (Exception)
+            {
+                //Exception logger!
+                return null;
+            }
         }
 
         public Usuario[] ObtenerUsuario(string pNombreUsuario)

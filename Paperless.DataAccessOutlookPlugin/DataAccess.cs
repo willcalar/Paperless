@@ -24,6 +24,12 @@ namespace Paperless.DataAccessOutlookPlugin
         {
             return _AccesoWS.ObtenerDocumento(idDocumento);
         }
+
+
+        public string LogIn(string nombreUsuario, string password)
+        {
+            return _AccesoWS.LogIn(nombreUsuario, password);
+        }
         #endregion
 
         #region Singleton

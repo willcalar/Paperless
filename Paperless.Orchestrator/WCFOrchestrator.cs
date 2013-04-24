@@ -87,7 +87,7 @@ namespace Paperless.Orchestrator
         /// <param name="nombreUsuario">Nombre de usuario</param>
         /// <param name="contrasena">Contraseña del usuario</param>
         /// <returns>True si se logueo correctamente</returns>
-        public bool LogOn(string nombreUsuario, string contrasena)
+        public String LogIn(string nombreUsuario, string contrasena)
         {
             return UsuariosImplementor.Instance.LogInUsuario(nombreUsuario, contrasena);
         }
