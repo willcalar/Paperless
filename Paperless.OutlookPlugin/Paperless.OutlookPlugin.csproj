@@ -181,6 +181,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="UserControlEnviarDocumento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEnviarDocumento.Designer.cs">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     <Compile Include="UserControlRecibirDocumentos.Designer.cs">
       <DependentUpon>UserControlRecibirDocumentos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlEnviarDocumento.resx">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -74,6 +74,13 @@ namespace Paperless.Library
             get { return _IdDocumento; }
             set { _IdDocumento = value; }
         }
+
+        [DataMember]
+        public byte[] Archivo
+        {
+            get { return _Archivo; }
+            set { _Archivo = value; }
+        }
         /*
         [DataMember]
         public string TipoAccion

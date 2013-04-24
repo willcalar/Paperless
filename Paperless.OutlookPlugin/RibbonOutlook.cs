@@ -30,6 +30,17 @@ namespace Paperless.OutlookPlugin
             }
         }
 
+        private void btnEnviarDocumento_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (Login.Instance.EstaLogueado())
+                mostrarUserControlEnviarDocumentos();
+            else
+            {
+                _accion = 1;
+                mostrarUserControlLogin();
+            }
+        }        
+
 
         private void mostrarUserControlRecibirDocumentos()
         {
@@ -38,6 +49,15 @@ namespace Paperless.OutlookPlugin
             UserControlRecibirDocumentos _userControl = new UserControlRecibirDocumentos();
             _taskPanel= Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
             mostrarTaskPanel(705);
+        }
+
+        private void mostrarUserControlEnviarDocumentos()
+        {
+            if (_taskPanel != null)
+                _taskPanel.Visible = false;
+            UserControlEnviarDocumento _userControl = new UserControlEnviarDocumento();
+            _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
+            mostrarTaskPanel(285);
         }
 
         private void mostrarUserControlLogin()
@@ -94,8 +114,6 @@ namespace Paperless.OutlookPlugin
             Login.Instance.LogoutUsuario();
             ocultarTaskPanel();
         }
-
-
 
         
                 

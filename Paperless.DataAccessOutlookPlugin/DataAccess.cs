@@ -25,10 +25,25 @@ namespace Paperless.DataAccessOutlookPlugin
             return _AccesoWS.ObtenerDocumento(idDocumento);
         }
 
+        public Usuario[] ObtenerListaUsuarios()
+        {
+            return _AccesoWS.ObtenerUsuario("jalvarez");
+        }
+
 
         public string LogIn(string nombreUsuario, string password)
         {
             return _AccesoWS.LogIn(nombreUsuario, password);
+        }
+
+        public Usuario[] ObtenerTodosUsuarios()
+        {
+            return _AccesoWS.ObtenerTodosUsuarios();
+        }
+
+        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        {
+            return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
         }
         #endregion
 

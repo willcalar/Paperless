@@ -130,6 +130,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerTodosUsuarios">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerTodosUsuariosResult" nillable="true" type="q9:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerHistorialUsuario">
     <xs:complexType>
       <xs:sequence>
@@ -140,7 +152,7 @@
   <xs:element name="ObtenerHistorialUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerHistorialUsuarioResult" nillable="true" type="q9:ArrayOfHistorial" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerHistorialUsuarioResult" nillable="true" type="q10:ArrayOfHistorial" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -154,7 +166,22 @@
   <xs:element name="ObtenerDetalleUsuarioAuditoriaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleUsuarioAuditoriaResult" nillable="true" type="q10:ArrayOfDocumentoDetalleMovimiento" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleUsuarioAuditoriaResult" nillable="true" type="q11:ArrayOfDocumentoDetalleMovimiento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pLstDestinatarios" nillable="true" type="q12:ArrayOfUsuario" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pDocumento" nillable="true" type="q13:Documento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnviarDocumentoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -166,7 +193,7 @@
   <xs:element name="ObtenerEventosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosResult" nillable="true" type="q11:ArrayOfEvento" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosResult" nillable="true" type="q14:ArrayOfEvento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -178,7 +205,7 @@
   <xs:element name="ObtenerEventosIrregularesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosIrregularesResult" nillable="true" type="q12:ArrayOfEvento" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosIrregularesResult" nillable="true" type="q15:ArrayOfEvento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -190,7 +217,7 @@
   <xs:element name="ObtenerDepartamentosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerDepartamentosResult" nillable="true" type="q13:ArrayOfstring" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerDepartamentosResult" nillable="true" type="q16:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -202,7 +229,7 @@
   <xs:element name="ObtenerTiposDocumentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerTiposDocumentoResult" nillable="true" type="q14:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerTiposDocumentoResult" nillable="true" type="q17:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

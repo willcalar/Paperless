@@ -64,6 +64,31 @@ namespace Paperless.Implementor
             }
         }
 
+        public Usuario[] ObtenerTodosUsuarios()
+        {
+            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuarioAll", new List<SqlParameter>());
+            try
+            {
+                List<Usuario> lstUsuario = new List<Usuario>();
+                foreach (DataRow item in dsResul.Tables[0].Rows)
+                {
+                    lstUsuario.Add(new Usuario()
+                    {
+                        NombreUsuario = item["Nombre"].ToString(),
+                        PrimerApellido = item["Apellido1"].ToString(),
+                        SegundoApellido = item["Apellido2"].ToString(),
+                        Username = item["Username"].ToString()
+                    });
+                }
+                return lstUsuario.ToArray();
+            }
+            catch (Exception)
+            {
+                //Exception logger!
+                return null;
+            }
+        }
+
         public Historial[] ObtenerHistorialUsuario(string pNombreUsuario)
         {
             DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerHistorialEventos", new List<SqlParameter>()

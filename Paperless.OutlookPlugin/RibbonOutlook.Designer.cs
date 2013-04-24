@@ -38,14 +38,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonOutlook));
             this.tabPaperless = this.Factory.CreateRibbonTab();
-            this.groupDocumentos = this.Factory.CreateRibbonGroup();
-            this.buttonRecibir = this.Factory.CreateRibbonButton();
             this.groupUsuario = this.Factory.CreateRibbonGroup();
             this.buttonIniciarSesion = this.Factory.CreateRibbonButton();
             this.buttonCerrarSesion = this.Factory.CreateRibbonButton();
+            this.groupDocumentos = this.Factory.CreateRibbonGroup();
+            this.buttonRecibir = this.Factory.CreateRibbonButton();
+            this.btnEnviarDocumento = this.Factory.CreateRibbonButton();
             this.tabPaperless.SuspendLayout();
-            this.groupDocumentos.SuspendLayout();
             this.groupUsuario.SuspendLayout();
+            this.groupDocumentos.SuspendLayout();
             // 
             // tabPaperless
             // 
@@ -54,20 +55,6 @@
             this.tabPaperless.Groups.Add(this.groupDocumentos);
             this.tabPaperless.Label = "Paperless";
             this.tabPaperless.Name = "tabPaperless";
-            // 
-            // groupDocumentos
-            // 
-            this.groupDocumentos.Items.Add(this.buttonRecibir);
-            this.groupDocumentos.Label = "Documentos";
-            this.groupDocumentos.Name = "groupDocumentos";
-            // 
-            // buttonRecibir
-            // 
-            this.buttonRecibir.Image = ((System.Drawing.Image)(resources.GetObject("buttonRecibir.Image")));
-            this.buttonRecibir.Label = "Recibir Documentos";
-            this.buttonRecibir.Name = "buttonRecibir";
-            this.buttonRecibir.ShowImage = true;
-            this.buttonRecibir.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRecibir_Click);
             // 
             // groupUsuario
             // 
@@ -93,6 +80,29 @@
             this.buttonCerrarSesion.Visible = false;
             this.buttonCerrarSesion.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonCerrarSesion_Click);
             // 
+            // groupDocumentos
+            // 
+            this.groupDocumentos.Items.Add(this.buttonRecibir);
+            this.groupDocumentos.Items.Add(this.btnEnviarDocumento);
+            this.groupDocumentos.Label = "Documentos";
+            this.groupDocumentos.Name = "groupDocumentos";
+            // 
+            // buttonRecibir
+            // 
+            this.buttonRecibir.Image = ((System.Drawing.Image)(resources.GetObject("buttonRecibir.Image")));
+            this.buttonRecibir.Label = "Recibir Documentos";
+            this.buttonRecibir.Name = "buttonRecibir";
+            this.buttonRecibir.ShowImage = true;
+            this.buttonRecibir.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonRecibir_Click);
+            // 
+            // btnEnviarDocumento
+            // 
+            this.btnEnviarDocumento.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviarDocumento.Image")));
+            this.btnEnviarDocumento.Label = "Enviar Documento";
+            this.btnEnviarDocumento.Name = "btnEnviarDocumento";
+            this.btnEnviarDocumento.ShowImage = true;
+            this.btnEnviarDocumento.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnEnviarDocumento_Click);
+            // 
             // RibbonOutlook
             // 
             this.Name = "RibbonOutlook";
@@ -101,10 +111,10 @@
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonOutlook_Load);
             this.tabPaperless.ResumeLayout(false);
             this.tabPaperless.PerformLayout();
-            this.groupDocumentos.ResumeLayout(false);
-            this.groupDocumentos.PerformLayout();
             this.groupUsuario.ResumeLayout(false);
             this.groupUsuario.PerformLayout();
+            this.groupDocumentos.ResumeLayout(false);
+            this.groupDocumentos.PerformLayout();
 
         }
 
@@ -116,6 +126,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupUsuario;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonIniciarSesion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCerrarSesion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnEnviarDocumento;
     }
 
     partial class ThisRibbonCollection
