@@ -21,11 +21,11 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D687F92-E3EE-490F-99AE-0EEDEFF10312}</ProjectGuid>
+    <ProjectGuid>{7114DD72-9BB7-4D0A-ACCB-4FCA588ACBBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>Paperless.OutlookPlugin</RootNamespace>
-    <AssemblyName>Paperless.OutlookPlugin</AssemblyName>
+    <RootNamespace>Paperless.WordPlugin</RootNamespace>
+    <AssemblyName>Paperless.WordPlugin</AssemblyName>
     <LoadBehavior>3</LoadBehavior>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -55,7 +55,7 @@
       OfficeApplication
         Add-in host application
     -->
-    <OfficeApplication>Outlook</OfficeApplication>
+    <OfficeApplication>Word</OfficeApplication>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Debug" configuration is selected.
@@ -120,10 +120,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Paperless.OutlookPlugin_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Paperless.WordPlugin_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FA2B7E9A4F79DB718EA8153FC0AD25968FE4C453</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>605CBECFD160F506C57544EFB1EBFC65CFB29EBF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -133,8 +133,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -147,13 +145,10 @@
     <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Office.Tools.Outlook, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Office.Tools.Outlook.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -162,7 +157,7 @@
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
@@ -181,36 +176,9 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="UserControlEnviarDocumento.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlEnviarDocumento.Designer.cs">
-      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RibbonOutlook.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RibbonOutlook.Designer.cs">
-      <DependentUpon>RibbonOutlook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlLogin.Designer.cs">
-      <DependentUpon>UserControlLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlRecibirDocumentos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlRecibirDocumentos.Designer.cs">
-      <DependentUpon>UserControlRecibirDocumentos.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="UserControlEnviarDocumento.resx">
-      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -219,19 +187,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RibbonOutlook.resx">
-      <DependentUpon>RibbonOutlook.cs</DependentUpon>
+    <EmbeddedResource Include="RibbonWord.resx">
+      <DependentUpon>RibbonWord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlLogin.resx">
-      <DependentUpon>UserControlLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlRecibirDocumentos.resx">
-      <DependentUpon>UserControlRecibirDocumentos.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="Paperless.OutlookPlugin_TemporaryKey.pfx" />
+    <None Include="Paperless.WordPlugin_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -239,6 +199,12 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonWord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RibbonWord.Designer.cs">
+      <DependentUpon>RibbonWord.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -251,25 +217,6 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessPlugins.csproj">
-      <Project>{B7CF855A-360A-4258-B75B-16797D90AB65}</Project>
-      <Name>Paperless.DataAccessPlugins</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
-      <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>
-      <Name>Paperless.Library</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Folder-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Graphics\" />
-  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->
@@ -278,8 +225,8 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Outlook" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Outlook" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{A58A78EB-1C92-4DDD-80CF-E8BD872ABFC4}" />
-        <Host Name="Outlook" GeneratedCodeNamespace="Paperless.OutlookPlugin" IconIndex="0">
+        <ProjectProperties HostName="Word" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="Paperless.WordPlugin" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>

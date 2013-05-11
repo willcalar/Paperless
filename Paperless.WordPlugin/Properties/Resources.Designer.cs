@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Paperless.OutlookPlugin.Properties {
-    using System;
+namespace Paperless.WordPlugin.Properties {
     
     
     /// <summary>
@@ -39,7 +38,7 @@ namespace Paperless.OutlookPlugin.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paperless.OutlookPlugin.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paperless.WordPlugin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,16 +56,6 @@ namespace Paperless.OutlookPlugin.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FolderIcon {
-            get {
-                object obj = ResourceManager.GetObject("FolderIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

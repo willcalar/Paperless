@@ -8,8 +8,8 @@
     <ProjectGuid>{B7CF855A-360A-4258-B75B-16797D90AB65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Paperless.DataAccessOutlookPlugin</RootNamespace>
-    <AssemblyName>Paperless.DataAccessOutlookPlugin</AssemblyName>
+    <RootNamespace>Paperless.DataAccessPlugins</RootNamespace>
+    <AssemblyName>Paperless.DataAccessPlugins</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -55,20 +55,22 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Service References\WebService\Paperless.DataAccessOutlookPlugin.WebService.Documento.datasource">
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Documento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessOutlookPlugin.WebService.DocumentoDetalleMovimiento.datasource">
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.DocumentoDetalleMovimiento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessOutlookPlugin.WebService.Evento.datasource">
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessOutlookPlugin.WebService.Historial.datasource">
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Historial.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessOutlookPlugin.WebService.Usuario.datasource">
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WebService\ServiceContract.xsd">
