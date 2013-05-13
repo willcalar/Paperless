@@ -13,6 +13,7 @@
       <xs:element minOccurs="0" name="Firmado" type="xs:boolean" />
       <xs:element minOccurs="0" name="Formato" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="Leido" type="xs:boolean" />
       <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioEmisor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioReceptor" nillable="true" type="xs:string" />

@@ -37,24 +37,24 @@
             // 
             // textBoxNombreUsuario
             // 
-            this.textBoxNombreUsuario.Location = new System.Drawing.Point(117, 22);
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(15, 23);
             this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
-            this.textBoxNombreUsuario.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNombreUsuario.Size = new System.Drawing.Size(191, 20);
             this.textBoxNombreUsuario.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(117, 54);
+            this.textBoxPassword.Location = new System.Drawing.Point(15, 62);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(191, 20);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 25);
+            this.label1.Location = new System.Drawing.Point(12, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 3;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 57);
+            this.label2.Location = new System.Drawing.Point(12, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 4;
@@ -71,7 +71,7 @@
             // 
             // buttonIniciarSesion
             // 
-            this.buttonIniciarSesion.Location = new System.Drawing.Point(64, 96);
+            this.buttonIniciarSesion.Location = new System.Drawing.Point(62, 101);
             this.buttonIniciarSesion.Name = "buttonIniciarSesion";
             this.buttonIniciarSesion.Size = new System.Drawing.Size(95, 23);
             this.buttonIniciarSesion.TabIndex = 5;
@@ -83,13 +83,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(231)))), ((int)(((byte)(234)))));
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxNombreUsuario);
             this.Controls.Add(this.buttonIniciarSesion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxNombreUsuario);
             this.Name = "UserControlLogin";
-            this.Size = new System.Drawing.Size(224, 131);
+            this.Size = new System.Drawing.Size(220, 163);
             this.ResumeLayout(false);
             this.PerformLayout();
 

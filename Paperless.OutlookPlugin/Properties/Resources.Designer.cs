@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Paperless.OutlookPlugin.Properties {
+    using System;
     
     
     /// <summary>
@@ -56,6 +57,20 @@ namespace Paperless.OutlookPlugin.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flag_green {
+            get {
+                object obj = ResourceManager.GetObject("flag_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap flag_red {
+            get {
+                object obj = ResourceManager.GetObject("flag_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

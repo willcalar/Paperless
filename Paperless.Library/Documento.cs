@@ -19,6 +19,7 @@ namespace Paperless.Library
         private string _NombreUsuarioReceptor;
         private byte[] _Archivo;
         private bool _Firmado;
+        private bool _Leido;
         private string[] _ListaFirmas;
         private string _Formato;
         #endregion
@@ -73,6 +74,12 @@ namespace Paperless.Library
             set { _Firmado = value; }
         }
 
+        [DataMember]
+        public bool Leido
+        {
+            get { return _Firmado; }
+            set { _Firmado = value; }
+        }
 
         [DataMember]
         public int IdDocumento
@@ -105,7 +112,7 @@ namespace Paperless.Library
         */
         #endregion
 
-        #region Contructores
+        #region Constructores
         /// <summary>
         /// Constructor vacio de la clase
         /// </summary>
@@ -137,14 +144,13 @@ namespace Paperless.Library
         /// Constructor del objeto
         /// </summary>
         /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
-        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, bool firmado, String[] listaFirmas)
+        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, bool firmado,bool leido)
         {
             _IdDocumento = idDocumento;
             _NombreDocumento = nombreDocumento;
             _Fecha = fecha;
             _NombreUsuarioEmisor = usuario;
             _Firmado = firmado;
-            _ListaFirmas = listaFirmas;
         }
 
 

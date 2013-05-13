@@ -9,27 +9,21 @@ using System.Windows.Forms;
 using Paperless.DataAccessOutlookPlugin;
 using Paperless.DataAccessOutlookPlugin.WebService;
 using System.IO;
+using Word = Microsoft.Office.Interop.Word;
+using System.Configuration;
 
 namespace Paperless.OutlookPlugin
 {
     public partial class UserControlRecibirDocumentos : UserControl
     {
+        public List<int> _idDocumentos;
+
         public UserControlRecibirDocumentos()
         {
             InitializeComponent();
-            LlenarDataGrid();
+            _idDocumentos = new List<int>();
+            LlenarListView();
         }
-
-
-        public void LlenarDataGrid()
-        {
-            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
-            foreach (Documento doc in docs)
-            {
-                dataGridViewDocumentos.Rows.Add(doc.IdDocumento, doc.Fecha, doc.NombreDocumento, doc.NombreUsuarioEmisor, doc.Firmado, "Firmar", "Ver", "Descargar");
-            }
-        }
-
 
         private void DescargarArchivo(Documento documento)
         {
@@ -43,13 +37,51 @@ namespace Paperless.OutlookPlugin
             MessageBox.Show("El archivo se ha descargado de manera exitosa.", "Descarga Finalizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void dataGridViewDocumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void LlenarListView()
         {
-            if (e.ColumnIndex == 7)
+            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
+            ImageList listaImagenes = new ImageList();
+            listaImagenes.Images.Add("R", Properties.Resources.flag_red);
+            listaImagenes.Images.Add("G", Properties.Resources.flag_green);
+            listView1.SmallImageList = listaImagenes;
+            listView1.StateImageList = listaImagenes;
+            foreach (Documento doc in docs)
             {
-                Documento doc = DataAccess.Instance.ObtenerDocumento((int)dataGridViewDocumentos.Rows[0].Cells[0].Value);
-                DescargarArchivo(doc);
+                int firmado = 0;
+                if (doc.Firmado)
+                    firmado = 1;
+                ListViewItem item = listView1.Items.Add(doc.IdDocumento.ToString(),doc.Fecha.ToShortDateString() + " - " + doc.NombreDocumento, firmado);
+                _idDocumentos.Add(doc.IdDocumento);
+                if (doc.Leido)
+                    item.ForeColor = Color.Gray;
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void abrirArchivoWord(Documento pDocumento)
+        {
+            String nombreArchivo  = ConfigurationSettings.AppSettings["folderDocumentos"]+pDocumento.NombreDocumento + "." + pDocumento.Formato;
+            Stream file = File.Open(nombreArchivo, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
+            file.Write(pDocumento.Archivo, 0, pDocumento.Archivo.Length);
+            file.Close();
+            Word.Application app = new Word.Application();
+            app.Visible = true;
+            app.Documents.Open(nombreArchivo,ReadOnly: false);
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (listView1.SelectedIndices.Count != 0)
+            {
+                int indexSeleccionado = listView1.SelectedIndices[0];
+                Documento doc = DataAccess.Instance.ObtenerDocumento(_idDocumentos[listView1.SelectedIndices[0]]);
+                abrirArchivoWord(doc);
+            }
+        }
+
     }
 }

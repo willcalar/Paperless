@@ -136,7 +136,7 @@ namespace Paperless.Implementor
                 foreach (DataRow fila in result.Tables[0].Rows)
                 {
                     var documento = new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(),
-                        DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), false, new string[] {} );
+                        DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), (bool)fila["Firmado"], (bool)fila["Leido"]);
 
                     documentos.Add(documento);
                 }
@@ -158,7 +158,6 @@ namespace Paperless.Implementor
 
             if (result != null)
             {
-                var documentos = new List<Documento>();
                 DataRow fila = result.Tables[0].Rows[0];
                 var documento = new Documento(fila["Documento"].ToString(), fila["Formato"].ToString(), (byte[]) fila["Archivo"]);
                 LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",

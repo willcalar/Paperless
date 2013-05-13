@@ -38,6 +38,9 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
         private int IdDocumentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LeidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreDocumentoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -120,6 +123,19 @@ namespace Paperless.DataAccessOutlookPlugin.WebService {
                 if ((this.IdDocumentoField.Equals(value) != true)) {
                     this.IdDocumentoField = value;
                     this.RaisePropertyChanged("IdDocumento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Leido {
+            get {
+                return this.LeidoField;
+            }
+            set {
+                if ((this.LeidoField.Equals(value) != true)) {
+                    this.LeidoField = value;
+                    this.RaisePropertyChanged("Leido");
                 }
             }
         }
