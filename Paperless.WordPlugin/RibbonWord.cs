@@ -6,8 +6,6 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using Office = Microsoft.Office.Core;
 using Paperless.DataAccessOutlookPlugin;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using Word = Microsoft.Office.Interop.Word;
 
 namespace Paperless.OutlookPlugin
 {
@@ -50,7 +48,7 @@ namespace Paperless.OutlookPlugin
                 _taskPanel.Visible = false;
             UserControlRecibirDocumentos _userControl = new UserControlRecibirDocumentos();
             _taskPanel= Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
-            mostrarTaskPanel(220);
+            mostrarTaskPanel(705);
         }
 
         private void mostrarUserControlEnviarDocumentos()
@@ -59,7 +57,7 @@ namespace Paperless.OutlookPlugin
                 _taskPanel.Visible = false;
             UserControlEnviarDocumento _userControl = new UserControlEnviarDocumento();
             _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
-            mostrarTaskPanel(240);
+            mostrarTaskPanel(285);
         }
 
         private void mostrarUserControlLogin()
@@ -68,7 +66,7 @@ namespace Paperless.OutlookPlugin
                 _taskPanel.Visible = false;
             UserControlLogin _userControl = new UserControlLogin(this);
             _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
-            mostrarTaskPanel(220);
+            mostrarTaskPanel(205);
             
         }
 

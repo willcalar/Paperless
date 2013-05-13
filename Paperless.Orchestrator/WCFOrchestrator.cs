@@ -103,6 +103,15 @@ namespace Paperless.Orchestrator
         }
 
         /// <summary>
+        /// Obtiene todos los usuarios activo
+        /// </summary>
+        /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
+        public Usuario[] ObtenerTodosUsuarios()
+        {
+            return UsuariosImplementor.Instance.ObtenerTodosUsuarios();
+        }
+
+        /// <summary>
         /// Obtiene el historial de un usuario específico
         /// </summary>
         /// <param name="nombreUsuario">Nombre de usuario</param>
@@ -121,6 +130,16 @@ namespace Paperless.Orchestrator
         public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario)
         {
             return UsuariosImplementor.Instance.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
+        }
+        /// <summary>
+        /// Envía un documento a los destinatarios correspondientes
+        /// </summary>
+        /// <param name="pLstDestinatarios">Lista de destinatarios</param>
+        /// <param name="pDocumento">Documento a enviar</param>
+        /// <returns></returns>
+        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        {
+            return DocumentosImplementor.Instance.EnviarDocumento(pLstDestinatarios, pDocumento);
         }
         #endregion
 

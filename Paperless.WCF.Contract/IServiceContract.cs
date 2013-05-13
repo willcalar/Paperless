@@ -45,10 +45,16 @@ namespace Paperless.WCF.Contract
         Usuario[] ObtenerUsuario(String nombreUsuario);
 
         [OperationContract]
+        Usuario[] ObtenerTodosUsuarios();
+
+        [OperationContract]
         Historial[] ObtenerHistorialUsuario(string nombreUsuario);
 
         [OperationContract]
         DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
+
+        [OperationContract]
+        bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
         #endregion
 
         #region Metodos Eventos

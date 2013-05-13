@@ -167,6 +167,56 @@ namespace Paperless.Implementor
             LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se pudo obtener el contenido del documento con id:" + idDocumento);
             return null;
         }
+
+        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        {
+            DataSet result = _AccesoDB.ExecuteQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){
+                new SqlParameter("@nombre", pDocumento.NombreDocumento),
+                new SqlParameter("@archivo", pDocumento.Archivo),
+                new SqlParameter("@fechaingreso", pDocumento.Fecha),
+                new SqlParameter("@estadoDocumento", 1),
+                new SqlParameter("@tipoDocumento", 1),
+                new SqlParameter("@formatoDocumento", 1),
+                new SqlParameter("@activo", true),
+            });
+            bool resul;
+            if(result != null){
+                int idDocumento = Convert.ToInt32(result.Tables[0].Rows[0][0].ToString());
+                resul = _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
+                    {
+                        new SqlParameter("@fecha", DateTime.Now),
+                        new SqlParameter("@descripcion", "Envío de documento"),
+                        new SqlParameter("@usuario", pDocumento.NombreUsuarioEmisor),
+                        new SqlParameter("@documento", idDocumento),
+                        new SqlParameter("@tipoEntrada", 1),
+                        new SqlParameter("@referenceID1", "0"),
+                        new SqlParameter("@referenceID2", "0")
+                    });
+                foreach (Usuario item in pLstDestinatarios)
+                {
+                    resul = _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
+                    {
+                        new SqlParameter("@fecha", DateTime.Now),
+                        new SqlParameter("@descripcion", "Recepción de documento"),
+                        new SqlParameter("@usuario", item.Username),
+                        new SqlParameter("@documento", idDocumento),
+                        new SqlParameter("@tipoEntrada", 2),
+                        new SqlParameter("@referenceID1", "0"),
+                        new SqlParameter("@referenceID2", "0")
+                    });
+                    if (!resul)
+                        return false;
+                }
+                return true;
+            }else
+	        {
+                return false;
+	        }
+        }
+
+        private bool RegistrarEventoBitacora(){
+            return true;
+        }
         #endregion
 
         #region Singleton
