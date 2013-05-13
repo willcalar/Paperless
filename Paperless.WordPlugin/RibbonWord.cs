@@ -5,9 +5,10 @@ using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using Office = Microsoft.Office.Core;
-using Paperless.DataAccessOutlookPlugin;
+using Paperless.DataAccessPlugins;
+using Paperless.OutlookPlugin;
 
-namespace Paperless.OutlookPlugin
+namespace Paperless.WordPlugin
 {
     public partial class RibbonOutlook
     {
@@ -41,7 +42,7 @@ namespace Paperless.OutlookPlugin
             }
         }        
 
-
+        /*
         private void mostrarUserControlRecibirDocumentos()
         {
             if (_taskPanel != null)
@@ -69,6 +70,7 @@ namespace Paperless.OutlookPlugin
             mostrarTaskPanel(205);
             
         }
+         * */
 
 
         private void mostrarTaskPanel(int width)

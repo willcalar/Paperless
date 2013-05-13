@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Tools;
 using Office = Microsoft.Office.Core;
-using Paperless.DataAccessOutlookPlugin;
+using Paperless.DataAccessPlugins;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -55,11 +55,13 @@ namespace Paperless.OutlookPlugin
 
         private void mostrarUserControlEnviarDocumentos()
         {
+            /*
             if (_taskPanel != null)
                 _taskPanel.Visible = false;
             UserControlEnviarDocumento _userControl = new UserControlEnviarDocumento();
             _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
             mostrarTaskPanel(240);
+             * */
         }
 
         private void mostrarUserControlLogin()

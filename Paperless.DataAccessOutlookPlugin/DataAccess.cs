@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Paperless.DataAccessOutlookPlugin.WebService;
+using Paperless.DataAccessPlugins;
+using Paperless.DataAccessPlugins.WebService;
 
-namespace Paperless.DataAccessOutlookPlugin
+namespace Paperless.DataAccessPlugins
 {
 
     public class DataAccess

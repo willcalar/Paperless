@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Paperless.DataAccessOutlookPlugin;
+using Paperless.DataAccessPlugins;
 
 namespace Paperless.OutlookPlugin
 {

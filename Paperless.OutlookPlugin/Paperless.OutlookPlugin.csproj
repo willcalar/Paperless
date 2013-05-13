@@ -250,9 +250,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessOutlookPlugin.csproj">
+    <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessPlugins.csproj">
       <Project>{B7CF855A-360A-4258-B75B-16797D90AB65}</Project>
-      <Name>Paperless.DataAccessOutlookPlugin</Name>
+      <Name>Paperless.DataAccessPlugins</Name>
     </ProjectReference>
     <ProjectReference Include="..\Paperless.Library\Paperless.Library.csproj">
       <Project>{FDFAEE72-0C7B-4CCD-A7C9-9851D99087EB}</Project>

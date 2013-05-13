@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Paperless.DataAccessOutlookPlugin;
-using Paperless.DataAccessOutlookPlugin.WebService;
+using Paperless.DataAccessPlugins;
+using Paperless.DataAccessPlugins.WebService;
 using System.IO;
 using Word = Microsoft.Office.Interop.Word;
 using System.Configuration;
@@ -64,7 +64,7 @@ namespace Paperless.OutlookPlugin
 
         private void abrirArchivoWord(Documento pDocumento)
         {
-            String nombreArchivo  = ConfigurationSettings.AppSettings["folderDocumentos"]+pDocumento.NombreDocumento + "." + pDocumento.Formato;
+            String nombreArchivo  = ConfigurationManager.AppSettings["folderDocumentos"]+pDocumento.NombreDocumento + "." + pDocumento.Formato;
             Stream file = File.Open(nombreArchivo, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
             file.Write(pDocumento.Archivo, 0, pDocumento.Archivo.Length);
             file.Close();

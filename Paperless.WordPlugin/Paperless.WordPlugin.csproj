@@ -200,9 +200,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RibbonWord.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RibbonWord.cs" />
     <Compile Include="RibbonWord.Designer.cs">
       <DependentUpon>RibbonWord.cs</DependentUpon>
     </Compile>
@@ -216,6 +214,12 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessPlugins.csproj">
+      <Project>{B7CF855A-360A-4258-B75B-16797D90AB65}</Project>
+      <Name>Paperless.DataAccessPlugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Paperless.DataAccessOutlookPlugin
+namespace Paperless.DataAccessPlugins
 {
     public class Login
     {
