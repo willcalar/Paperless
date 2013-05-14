@@ -26,6 +26,9 @@ namespace Paperless.DataAccessPlugins.WebService {
         private byte[] ArchivoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EstadoFirmasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FechaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -71,6 +74,19 @@ namespace Paperless.DataAccessPlugins.WebService {
                 if ((object.ReferenceEquals(this.ArchivoField, value) != true)) {
                     this.ArchivoField = value;
                     this.RaisePropertyChanged("Archivo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EstadoFirmas {
+            get {
+                return this.EstadoFirmasField;
+            }
+            set {
+                if ((this.EstadoFirmasField.Equals(value) != true)) {
+                    this.EstadoFirmasField = value;
+                    this.RaisePropertyChanged("EstadoFirmas");
                 }
             }
         }
@@ -327,6 +343,115 @@ namespace Paperless.DataAccessPlugins.WebService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentoDetalleRecibo", Namespace="http://schemas.datacontract.org/2004/07/Paperless.Library")]
+    [System.SerializableAttribute()]
+    public partial class DocumentoDetalleRecibo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmisorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EstadoFirmasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreDocumentoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceptorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Emisor {
+            get {
+                return this.EmisorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmisorField, value) != true)) {
+                    this.EmisorField = value;
+                    this.RaisePropertyChanged("Emisor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EstadoFirmas {
+            get {
+                return this.EstadoFirmasField;
+            }
+            set {
+                if ((this.EstadoFirmasField.Equals(value) != true)) {
+                    this.EstadoFirmasField = value;
+                    this.RaisePropertyChanged("EstadoFirmas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreDocumento {
+            get {
+                return this.NombreDocumentoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreDocumentoField, value) != true)) {
+                    this.NombreDocumentoField = value;
+                    this.RaisePropertyChanged("NombreDocumento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Receptor {
+            get {
+                return this.ReceptorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceptorField, value) != true)) {
+                    this.ReceptorField = value;
+                    this.RaisePropertyChanged("Receptor");
+                }
             }
         }
         
@@ -631,6 +756,9 @@ namespace Paperless.DataAccessPlugins.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDocumento", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDocumentoResponse")]
         Paperless.DataAccessPlugins.WebService.Documento ObtenerDocumento(int idDocumento);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumento", ReplyAction="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoResponse")]
+        Paperless.DataAccessPlugins.WebService.DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/LogIn", ReplyAction="http://tempuri.org/IServiceContract/LogInResponse")]
         string LogIn(string nombreUsuario, string contrasena);
         
@@ -715,6 +843,10 @@ namespace Paperless.DataAccessPlugins.WebService {
         
         public Paperless.DataAccessPlugins.WebService.Documento ObtenerDocumento(int idDocumento) {
             return base.Channel.ObtenerDocumento(idDocumento);
+        }
+        
+        public Paperless.DataAccessPlugins.WebService.DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento) {
+            return base.Channel.ObtenerDetalleDocumento(idDocumento);
         }
         
         public string LogIn(string nombreUsuario, string contrasena) {

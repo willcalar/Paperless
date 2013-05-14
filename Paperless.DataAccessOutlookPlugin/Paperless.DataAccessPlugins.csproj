@@ -64,6 +64,9 @@
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.DocumentoDetalleMovimiento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.DocumentoDetalleRecibo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

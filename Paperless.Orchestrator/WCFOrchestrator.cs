@@ -11,16 +11,17 @@ namespace Paperless.Orchestrator
     public class WCFOrchestrator:IServiceContract
     {
         #region Metodos Documento
+
         /// <summary>
-        /// Obtiene documentos filtrado por alguno(s) de los siguientes paramentros
+        /// Obtiene los documentos para la pantalla de Auditoía de Documentos
         /// </summary>
-        /// <param name="usuarioEmisor">Usuario emisor</param>
-        /// <param name="usuarioReceptor">Usuario receptor</param>
-        /// <param name="departamento">Departamento</param>
-        /// <param name="tipoDocumento">Tipo de documento</param>
-        /// <param name="fechaEmision">Fecha de emisión</param>
-        /// <param name="fechaRecepción">Fecha de recepción</param>
-        /// <returns>Lista de documentos que cumple con los filtros</returns>
+        /// <param name="usuarioEmisor">Parámetro de búsqueda</param>
+        /// <param name="usuarioReceptor">Parámetro de búsqueda</param>
+        /// <param name="departamento">Parámetro de búsqueda</param>
+        /// <param name="tipoDocumento">Parámetro de búsqueda</param>
+        /// <param name="fechaEmision">Parámetro de búsqueda</param>
+        /// <param name="fechaRecepcion">Parámetro de búsqueda</param>
+        /// <returns>Arreglo de Documentos que cumple con los parametros de la búsqueda</returns>
         public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción)
         {
             return DocumentosImplementor.Instance.ObtenerDocumentosAuditoria(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
@@ -52,17 +53,7 @@ namespace Paperless.Orchestrator
         public Documento[] ObtenerDocumentosPorMigrar()
         {
             return DocumentosImplementor.Instance.ObtenerDocumentosPorMigrar();
-        }
-
-        /// <summary>
-        /// Obtiene el historial de un documento específico
-        /// </summary>
-        /// <param name="idDocumento">Id único del documento</param>
-        /// <returns>Historial del documento</returns>
-        public Historial[] ObtenerHistorialDocumento(int idDocumento)
-        {
-            throw new NotImplementedException();
-        }
+        }      
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
@@ -74,9 +65,24 @@ namespace Paperless.Orchestrator
             return DocumentosImplementor.Instance.ObtenerDocumentosDeUsuario(nombreUsuario);
         }
 
+        /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
         public Documento ObtenerDocumento(int idDocumento)
         {
             return DocumentosImplementor.Instance.ObtenerDocumento(idDocumento);
+        }
+
+        /// <summary>
+        /// Obtiene el detalle del estado del documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Lista de estados del documento para los diferentes receptores del mismo</returns>
+        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento)
+        {
+            return DocumentosImplementor.Instance.ObtenerDetalleDocumento(idDocumento);
         }
         #endregion
 
@@ -86,7 +92,7 @@ namespace Paperless.Orchestrator
         /// </summary>
         /// <param name="nombreUsuario">Nombre de usuario</param>
         /// <param name="contrasena">Contraseña del usuario</param>
-        /// <returns>True si se logueo correctamente</returns>
+        /// <returns>Nombre del funcionario</returns>
         public String LogIn(string nombreUsuario, string contrasena)
         {
             return UsuariosImplementor.Instance.LogInUsuario(nombreUsuario, contrasena);
@@ -111,16 +117,6 @@ namespace Paperless.Orchestrator
             return UsuariosImplementor.Instance.ObtenerTodosUsuarios();
         }
 
-        /// <summary>
-        /// Obtiene el historial de un usuario específico
-        /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
-        /// <returns>Historial del usuario</returns>
-        public Historial[] ObtenerHistorialUsuario(string nombreUsuario)
-        {
-            return UsuariosImplementor.Instance.ObtenerHistorialUsuario(nombreUsuario);
-        }
-
 
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un usuario
@@ -131,6 +127,7 @@ namespace Paperless.Orchestrator
         {
             return UsuariosImplementor.Instance.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
         }
+
         /// <summary>
         /// Envía un documento a los destinatarios correspondientes
         /// </summary>
@@ -144,14 +141,6 @@ namespace Paperless.Orchestrator
         #endregion
 
         #region Metodos Evento
-        /// <summary>
-        /// Obtiene la lista de eventos del sistema
-        /// </summary>
-        /// <returns>Lista de eventos en el sistema sin revisar</returns>
-        public Evento[] ObtenerEventos()
-        {
-            return EventosImplementor.Instance.ObtenerEventos();
-        }
 
         /// <summary>
         /// Obtiene la lista de eventos irregulares del sistema

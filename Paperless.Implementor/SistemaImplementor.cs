@@ -11,21 +11,19 @@ namespace Paperless.Implementor
     {
         #region Methods
 
+        /// <summary>
+        /// Obtiene los tipos de documentos registrados en el sistema
+        /// </summary>
+        /// <returns>Lista de tipos de documentos registrados en el sistema</returns>
         public String[] ObtenerTiposDocumento()
         {
-
             var tiposDocumento = new List<String>();
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerTiposDocumento", new List<SqlParameter>());
-
             if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
             {
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var tipoDocumento = fila["Nombre"].ToString();
-                    tiposDocumento.Add(tipoDocumento);
-                }
+                    tiposDocumento.Add(fila["Nombre"].ToString());
             }
-
             return tiposDocumento.ToArray();
         }
         #endregion

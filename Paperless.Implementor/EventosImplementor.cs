@@ -14,6 +14,10 @@ namespace Paperless.Implementor
         
         #region Methods
 
+        /// <summary>
+        /// Obtiene la lista de eventos irregulares presentados en el sistema
+        /// </summary>
+        /// <returns>Lista de eventos irregulares presentados en el sistema</returns>
         public Evento[] ObtenerEventosIrregulares()
         {
             DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerEventosIrregulares", new List<SqlParameter>());
@@ -22,12 +26,7 @@ namespace Paperless.Implementor
                 List<Evento> lstEvento = new List<Evento>();
                 foreach (DataRow item in dsResul.Tables[0].Rows)
                 {
-                    Evento evento = new Evento();
-                    evento.TipoEvento = (String)item["TipoEvento"];
-                    evento.Descripcion = (String)item["Evento"];
-                    evento.FechaHora = (DateTime)item["Fecha"];
-                    evento.NombreUsuario = (String)item["Usuario"];
-                    evento.NombreDocumento = (String)item["Documento"];
+                    Evento evento = new Evento((String)item["TipoEvento"], (String)item["Evento"], (DateTime)item["Fecha"], (String)item["Usuario"], (String)item["Documento"]);
                     evento.Origen = "Documento";
                     evento.IDReferencia = 1;
                     lstEvento.Add(evento);
@@ -35,40 +34,8 @@ namespace Paperless.Implementor
                 return lstEvento.ToArray();
             }
             return null;
-            
         }
 
-
-
-        public Evento[] ObtenerEventos()
-        {
-            DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerBitacoraDocumentos", new List<SqlParameter>()
-            {
-                new SqlParameter("@criterioBusqueda",""),
-                new SqlParameter("@fechaInicio", new DateTime(1999,1,1)),
-                new SqlParameter("@fechaFin", DateTime.Now)
-            });
-            try
-            {
-                List<Evento> lstEvento = new List<Evento>();
-                foreach (DataRow item in dsResul.Tables[0].Rows)
-                {
-                    lstEvento.Add(new Evento()
-                    {
-                        TipoEvento = item["TipoEntrada"].ToString(),
-                        Descripcion = item["Entrada"].ToString(),
-                        NombreDocumento = item["Documento"].ToString(),
-                        NombreUsuario = item["Usuario"].ToString()
-                    });                    
-                }
-                return lstEvento.ToArray();
-            }
-            catch (Exception)
-            {
-                //Exception logger!
-                return null;
-            }
-        }
         #endregion
 
         #region Singleton

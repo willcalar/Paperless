@@ -73,5 +73,12 @@ namespace Paperless.OutlookPlugin.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap flag_yellow {
+            get {
+                object obj = ResourceManager.GetObject("flag_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

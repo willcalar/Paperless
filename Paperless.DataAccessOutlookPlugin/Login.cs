@@ -58,7 +58,6 @@ namespace Paperless.DataAccessPlugins
         private String _NombreUsuario;
         #endregion
 
-
         #region Properties
         public String NombreUsuario
         {

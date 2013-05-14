@@ -120,10 +120,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TipoLog.cs" />
     <Compile Include="EmailTraceListener.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="LogTraceListener.cs" />
     <Compile Include="Mailer.cs" />
+    <Compile Include="MensajesLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Paperless\Paperless.DataAccess\Paperless.DataAccess.csproj">

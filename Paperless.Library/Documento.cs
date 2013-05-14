@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 
 namespace Paperless.Library
 {
@@ -18,9 +14,8 @@ namespace Paperless.Library
         private string _NombreUsuarioEmisor;
         private string _NombreUsuarioReceptor;
         private byte[] _Archivo;
-        private bool _Firmado;
+        private int _EstadoFirmas;
         private bool _Leido;
-        private string[] _ListaFirmas;
         private string _Formato;
         #endregion
 
@@ -66,19 +61,19 @@ namespace Paperless.Library
             get { return _Formato; }
             set { _Formato = value; }
         }
-        
-        [DataMember]
-        public bool Firmado
-        {
-            get { return _Firmado; }
-            set { _Firmado = value; }
-        }
 
         [DataMember]
         public bool Leido
         {
-            get { return _Firmado; }
-            set { _Firmado = value; }
+            get { return _Leido; }
+            set { _Leido = value; }
+        }
+
+        [DataMember]
+        public int EstadoFirmas
+        {
+            get { return _EstadoFirmas; }
+            set { _EstadoFirmas = value; }
         }
 
         [DataMember]
@@ -95,21 +90,6 @@ namespace Paperless.Library
             get { return _Archivo; }
             set { _Archivo = value; }
         }
-        /*
-        [DataMember]
-        public string TipoAccion
-        {
-            get { return _TipoAccion; }
-            set { _TipoAccion = value; }
-        }
-
-        [DataMember]
-        public string Ruta
-        {
-            get { return _Ruta; }
-            set { _Ruta = value; }
-        }
-        */
         #endregion
 
         #region Constructores
@@ -144,13 +124,13 @@ namespace Paperless.Library
         /// Constructor del objeto
         /// </summary>
         /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
-        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, bool firmado,bool leido)
+        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, int estadoFirmas, bool leido)
         {
             _IdDocumento = idDocumento;
             _NombreDocumento = nombreDocumento;
             _Fecha = fecha;
             _NombreUsuarioEmisor = usuario;
-            _Firmado = firmado;
+            _EstadoFirmas = estadoFirmas;
         }
 
 

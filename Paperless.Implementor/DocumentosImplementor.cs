@@ -15,6 +15,16 @@ namespace Paperless.Implementor
 
         #region Methods
 
+        /// <summary>
+        /// Obtiene los documentos para la pantalla de Auditoía de Documentos
+        /// </summary>
+        /// <param name="usuarioEmisor">Parámetro de búsqueda</param>
+        /// <param name="usuarioReceptor">Parámetro de búsqueda</param>
+        /// <param name="departamento">Parámetro de búsqueda</param>
+        /// <param name="tipoDocumento">Parámetro de búsqueda</param>
+        /// <param name="fechaEmision">Parámetro de búsqueda</param>
+        /// <param name="fechaRecepcion">Parámetro de búsqueda</param>
+        /// <returns>Arreglo de Documentos que cumple con los parametros de la búsqueda</returns>
         public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepcion)
         {
             if (usuarioEmisor == null) usuarioEmisor = "null";
@@ -38,22 +48,20 @@ namespace Paperless.Implementor
             {
                 var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
-                        fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
+                    documentos.Add(new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()), fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), ""));
 
-                    documentos.Add(documento);
-                }
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos", 
-                    "Se obtuvo documentos para auditoría del usuario emisor:"+usuarioEmisor+
-                    ", usuario receptor: "+ usuarioReceptor);    
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_AUDITORIA);   
                 return documentos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvieron documentos para auditoría");
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_AUDITORIA);
             return null;
 
         }
 
+        /// <summary>
+        /// Obtiene documentos para auditoria
+        /// </summary>
+        /// <returns>Lista de todos los documentos ingresados en el sistema</returns>
         public Documento[] ObtenerDocumentosAuditoria()
         {
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerTodosDocumentosAuditoria", new List<SqlParameter>());
@@ -61,23 +69,22 @@ namespace Paperless.Implementor
             {
                 var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
-                        fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
+                    documentos.Add(new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()), fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), ""));
 
-                    documentos.Add(documento);
-                }
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos Auditoría",
-                    "Se obtuvo todos los documentos para auditoría");  
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_AUDITORIA_2);  
                 return documentos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos Auditoría", "No se obtuvieron documentos para auditoría");
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_AUDITORIA);
             return null;
         }
 
+        /// <summary>
+        /// Obtiene la lista de movimientos asociados a un documento
+        /// </summary>
+        /// <param name="nombreDocumento">nombre del documento a consultar</param>
+        /// <returns>Lista de movimientos asociados al documento solicitado</returns>
         public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
         {
-
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDetalleDocumentoAuditoria", new List<SqlParameter>()
             {
                 new SqlParameter("nombreDocumento", nombreDocumento)
@@ -87,21 +94,20 @@ namespace Paperless.Implementor
             {
                 var movimientos = new List<DocumentoDetalleMovimiento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var documento = new DocumentoDetalleMovimiento(fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()),
-                        fila["Usuario"].ToString(), fila["TipoEntrada"].ToString(), fila["Ruta"].ToString());
+                    movimientos.Add(new DocumentoDetalleMovimiento(fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), fila["TipoEntrada"].ToString(), fila["Ruta"].ToString()));
 
-                    movimientos.Add(documento);
-                }
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
-                    "Se obtuvo el detalle de los movimientos del documento " + nombreDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_MOVIMIENTOS_DOCUMENTO, nombreDocumento);
                 return movimientos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvo el detalle de los movimientos del documento " + nombreDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_MOVIMIENTOS_DOCUMENTO, nombreDocumento);
             return null;
 
         }
 
+        /// <summary>
+        /// Obtiene documentos por migrar del sistema
+        /// </summary>
+        /// <returns>Lista de documentos que deberían migrarse</returns>
         public Documento[] ObtenerDocumentosPorMigrar()
         {
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
@@ -109,22 +115,22 @@ namespace Paperless.Implementor
             {
                 var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var documento = new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()),
-                        fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), "");
-                    documentos.Add(documento);
-                }
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos Auditoría",
-                    "Se obtuvo todos los documentos para auditoría");  
+                    documentos.Add(new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()), fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), ""));
+
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_POR_MIGRAR);  
                 return documentos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos Auditoría", "No se obtuvieron documentos para auditoría");
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_POR_MIGRAR);
             return null;
         }
 
+        /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
         public Documento[] ObtenerDocumentosDeUsuario(string usuario)
         {
-
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosDeUsuario", new List<SqlParameter>()
             {
                 new SqlParameter("usuario", usuario)
@@ -134,23 +140,47 @@ namespace Paperless.Implementor
             {
                 var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                {
-                    var documento = new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(),
-                        DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), (bool)fila["Firmado"], (bool)fila["Leido"]);
+                    documentos.Add(new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), (int)fila["EstadoFirmas"], (bool)fila["Leido"]));
 
-                    documentos.Add(documento);
-                }
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
-                    "Se realizó la recepción de documentos documentos para el usuario: " + usuario);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_DE_USUARIO, usuario);
                 return documentos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se obtuvieron documentos para el usuario:" + usuario);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_DE_USUARIO, usuario);
             return null;
         }
 
+        /// <summary>
+        /// Obtiene el detalle del estado del documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Lista de estados del documento para los diferentes receptores del mismo</returns>
+        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento)
+        {
+            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDetalleDocumento", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento)
+            });
+
+            if (result != null)
+            {
+                var detalles= new List<DocumentoDetalleRecibo>();
+                foreach (DataRow fila in result.Tables[0].Rows)
+                    detalles.Add(new DocumentoDetalleRecibo(DateTime.Parse(fila["Fecha"].ToString()), fila["Documento"].ToString(), fila["Emisor"].ToString(), fila["Receptor"].ToString(), (int)fila["EstadoFirmas"]));
+
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DETALLE_DOCUMENTO, idDocumento);
+                return detalles.ToArray();
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DETALLE_DOCUMENTO, idDocumento);
+            return null;
+        }
+
+        /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
         public Documento ObtenerDocumento(int idDocumento)
         {
-
             var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumento", new List<SqlParameter>()
             {
                 new SqlParameter("idDocumento", idDocumento)
@@ -160,11 +190,10 @@ namespace Paperless.Implementor
             {
                 DataRow fila = result.Tables[0].Rows[0];
                 var documento = new Documento(fila["Documento"].ToString(), fila["Formato"].ToString(), (byte[]) fila["Archivo"]);
-                LogManager.Implementor.LogManager.LogActivity(0, 1, "Documentos",
-                    "Se realizó la descarga del documento con id: " + idDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTO, idDocumento);
                 return documento;
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, "Documentos", "No se pudo obtener el contenido del documento con id:" + idDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTO, idDocumento);
             return null;
         }
 

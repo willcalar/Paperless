@@ -12,6 +12,10 @@ namespace Paperless.Implementor
 
         #region Methods
 
+        /// <summary>
+        /// Obtiene la lista de departamentos de la organización que utiliza del sistema
+        /// </summary>
+        /// <returns>Lista de departamentos existentes en la organización</returns>
         public String[] ObtenerDepartamentos()
         {
 
