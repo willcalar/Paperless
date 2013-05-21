@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Paperless.DataAccessPlugins;
 using Paperless.DataAccessPlugins.WebService;
+using Paperless.Caching;
 
 namespace Paperless.DataAccessPlugins
 {
@@ -69,6 +69,17 @@ namespace Paperless.DataAccessPlugins
             return _AccesoWS.ObtenerTodosUsuarios();
         }
 
+        public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
+        {
+            List<Usuario> lstUsuario = (List<Usuario>)_CacheManager.GetItem(_CACHE_PREFIX+pDepartamento);
+            if (lstUsuario == null)
+            {
+                lstUsuario = _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
+                _CacheManager.AddItems(_CACHE_PREFIX + pDepartamento,lstUsuario,new TimeSpan(24,0,0));
+            }
+            return lstUsuario;
+        }
+
         /// <summary>
         /// Envía un documento a los destinatarios correspondientes
         /// </summary>
@@ -78,6 +89,14 @@ namespace Paperless.DataAccessPlugins
         public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public String[] ObtenerDepartamentos()
+        {
+            return _AccesoWS.ObtenerDepartamentos();
         }
         #endregion
 
@@ -96,6 +115,7 @@ namespace Paperless.DataAccessPlugins
                     {
                         instance = new DataAccess();
                         instance._AccesoWS = new ServiceContractClient();
+                        instance._CacheManager = new CacheManager();
                     }
                 }
                 }
@@ -110,6 +130,11 @@ namespace Paperless.DataAccessPlugins
         private static volatile DataAccess instance;
         private static object syncRoot = new Object();
         private ServiceContractClient _AccesoWS;
+        private CacheManager _CacheManager;
+        #endregion
+
+        #region Constants
+        private string _CACHE_PREFIX = "Cache";
         #endregion
 
     }

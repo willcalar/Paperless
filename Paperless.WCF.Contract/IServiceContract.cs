@@ -47,6 +47,9 @@ namespace Paperless.WCF.Contract
         Usuario[] ObtenerTodosUsuarios();
 
         [OperationContract]
+        Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento);
+
+        [OperationContract]
         DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
 
         [OperationContract]

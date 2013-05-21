@@ -108,6 +108,38 @@ namespace Paperless.Implementor
 
 
         /// <summary>
+        /// Obtiene todos los usuarios registrados en el sistema
+        /// </summary>
+        /// <returns>Lista de todos los usuarios registrados en el sistema</returns>
+        public Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento)
+        {
+            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuariosDepartamento", new List<SqlParameter>(){
+                new SqlParameter("@Departamento", pDepartamento)
+            });
+            try
+            {
+                List<Usuario> lstUsuario = new List<Usuario>();
+                foreach (DataRow item in dsResul.Tables[0].Rows)
+                {
+                    lstUsuario.Add(new Usuario()
+                    {
+                        NombreUsuario = item["Nombre"].ToString(),
+                        PrimerApellido = item["Apellido1"].ToString(),
+                        SegundoApellido = item["Apellido2"].ToString(),
+                        Username = item["Username"].ToString()
+                    });
+                }
+                return lstUsuario.ToArray();
+            }
+            catch (Exception)
+            {
+                //Exception logger!
+                return null;
+            }
+        }
+
+
+        /// <summary>
         /// Obtiene el detalle de los movimientos realizados el usuario asociado al nombre de usuario indicado
         /// </summary>
         /// <param name="nombreUsuario">Nombre de Usuario</param>

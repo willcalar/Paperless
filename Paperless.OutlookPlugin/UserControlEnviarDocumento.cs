@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Paperless.DataAccessOutlookPlugin;
-using Paperless.DataAccessOutlookPlugin.WebService;
+using Paperless.DataAccessPlugins;
+using Paperless.DataAccessPlugins.WebService;
 using System.IO;
 
 
@@ -19,6 +19,16 @@ namespace Paperless.OutlookPlugin
         {
             InitializeComponent();
             LlenarListaDestinatarios();
+            LlenarListaDepartamentos();
+        }
+
+        private void LlenarListaDepartamentos()
+        {
+            String[] arrDepartamentos = DataAccess.Instance.ObtenerDepartamentos();
+            foreach (String m in arrDepartamentos)
+            {
+                lstDepartamentos.Items.Add(m);
+            }
         }
 
         private void LlenarListaDestinatarios()

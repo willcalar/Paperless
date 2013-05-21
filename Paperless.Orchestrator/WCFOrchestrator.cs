@@ -117,6 +117,15 @@ namespace Paperless.Orchestrator
             return UsuariosImplementor.Instance.ObtenerTodosUsuarios();
         }
 
+        /// <summary>
+        /// Obtiene todos los usuarios activo
+        /// </summary>
+        /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
+        public Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento)
+        {
+            return UsuariosImplementor.Instance.ObtenerUsuariosXDepartamento(pDepartamento);
+        }
+
 
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un usuario
@@ -138,6 +147,8 @@ namespace Paperless.Orchestrator
         {
             return DocumentosImplementor.Instance.EnviarDocumento(pLstDestinatarios, pDocumento);
         }
+
+
         #endregion
 
         #region Metodos Evento

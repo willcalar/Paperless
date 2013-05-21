@@ -134,6 +134,26 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Tools.Word.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -201,6 +221,12 @@
     <Compile Include="RibbonOutlook.Designer.cs">
       <DependentUpon>RibbonOutlook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEnviarDocumento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEnviarDocumento.Designer.cs">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +254,9 @@
     </Compile>
     <EmbeddedResource Include="RibbonOutlook.resx">
       <DependentUpon>RibbonOutlook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEnviarDocumento.resx">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlLogin.resx">
       <DependentUpon>UserControlLogin.cs</DependentUpon>
@@ -279,6 +308,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Folder-32.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

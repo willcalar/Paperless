@@ -70,9 +70,6 @@
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Historial.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -107,6 +104,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paperless.Caching\Paperless.Caching.csproj">
+      <Project>{02F92C14-1DB0-4917-A676-DBD27AF5E341}</Project>
+      <Name>Paperless.Caching</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

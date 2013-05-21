@@ -11,7 +11,6 @@
       <xs:element minOccurs="0" name="Archivo" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="EstadoFirmas" type="xs:int" />
       <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Firmado" type="xs:boolean" />
       <xs:element minOccurs="0" name="Formato" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdDocumento" type="xs:int" />
       <xs:element minOccurs="0" name="Leido" type="xs:boolean" />
@@ -38,16 +37,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DocumentoDetalleMovimiento" nillable="true" type="tns:DocumentoDetalleMovimiento" />
-  <xs:complexType name="ArrayOfHistorial">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Historial" nillable="true" type="tns:Historial" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfHistorial" nillable="true" type="tns:ArrayOfHistorial" />
-  <xs:complexType name="Historial">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:element name="Historial" nillable="true" type="tns:Historial" />
   <xs:complexType name="ArrayOfDocumentoDetalleRecibo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentoDetalleRecibo" nillable="true" type="tns:DocumentoDetalleRecibo" />
