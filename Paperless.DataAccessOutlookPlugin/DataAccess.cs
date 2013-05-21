@@ -34,6 +34,16 @@ namespace Paperless.DataAccessPlugins
         }
 
         /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
+        public void MarcarLeido(int idDocumento)
+        {
+             _AccesoWS.MarcarLeido(idDocumento, Login.Instance.NombreUsuario);
+        }
+
+        /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
         /// <param name="idDocumento">Id de documento a consultar</param>
@@ -97,6 +107,17 @@ namespace Paperless.DataAccessPlugins
         public String[] ObtenerDepartamentos()
         {
             return _AccesoWS.ObtenerDepartamentos();
+        }
+
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string password)
+        {
+            return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
         }
         #endregion
 

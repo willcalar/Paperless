@@ -35,6 +35,7 @@
             this.ColumnEmisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnReceptor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonFirmar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +95,23 @@
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
             // 
+            // buttonFirmar
+            // 
+            this.buttonFirmar.Enabled = false;
+            this.buttonFirmar.Location = new System.Drawing.Point(22, 354);
+            this.buttonFirmar.Name = "buttonFirmar";
+            this.buttonFirmar.Size = new System.Drawing.Size(94, 23);
+            this.buttonFirmar.TabIndex = 4;
+            this.buttonFirmar.Text = "Firmar";
+            this.buttonFirmar.UseVisualStyleBackColor = true;
+            this.buttonFirmar.Click += new System.EventHandler(this.buttonFirmar_Click);
+            // 
             // FormDetalleDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 385);
+            this.Controls.Add(this.buttonFirmar);
             this.Controls.Add(this.buttonVerDocumento);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -106,7 +119,8 @@
             this.MinimizeBox = false;
             this.Name = "FormDetalleDocumento";
             this.ShowIcon = false;
-            this.Text = "FormDetalleDocumento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalle de Documento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDetalleDocumento_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -122,5 +136,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmisor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnReceptor;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEstado;
+        private System.Windows.Forms.Button buttonFirmar;
     }
 }

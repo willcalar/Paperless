@@ -34,6 +34,12 @@ namespace Paperless.WCF.Contract
 
         [OperationContract]
         DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento);
+
+        [OperationContract]
+        void MarcarLeido(int idDocumento, string nombreUsuario);
+
+        [OperationContract]
+        bool FirmarDocumento(int idDocumento, string nombreUsuario, string password);
         #endregion
 
         #region Metodos Usuario

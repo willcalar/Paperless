@@ -50,6 +50,18 @@
   <wsdl:message name="IServiceContract_ObtenerDetalleDocumento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDetalleDocumentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_MarcarLeido_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarLeido" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_MarcarLeido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarLeidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_FirmarDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:FirmarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_FirmarDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FirmarDocumentoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_LogIn_InputMessage">
     <wsdl:part name="parameters" element="tns:LogIn" />
   </wsdl:message>
@@ -67,12 +79,6 @@
   </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerTodosUsuarios_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerTodosUsuariosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceContract_ObtenerUsuariosXDepartamento_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerUsuariosXDepartamento" />
-  </wsdl:message>
-  <wsdl:message name="IServiceContract_ObtenerUsuariosXDepartamento_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerUsuariosXDepartamentoResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDetalleUsuarioAuditoria" />
@@ -133,6 +139,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumento" message="tns:IServiceContract_ObtenerDetalleDocumento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoResponse" message="tns:IServiceContract_ObtenerDetalleDocumento_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MarcarLeido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/MarcarLeido" message="tns:IServiceContract_MarcarLeido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/MarcarLeidoResponse" message="tns:IServiceContract_MarcarLeido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FirmarDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/FirmarDocumento" message="tns:IServiceContract_FirmarDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/FirmarDocumentoResponse" message="tns:IServiceContract_FirmarDocumento_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/LogIn" message="tns:IServiceContract_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/LogInResponse" message="tns:IServiceContract_LogIn_OutputMessage" />
@@ -144,10 +158,6 @@
     <wsdl:operation name="ObtenerTodosUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosUsuarios" message="tns:IServiceContract_ObtenerTodosUsuarios_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosUsuariosResponse" message="tns:IServiceContract_ObtenerTodosUsuarios_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerUsuariosXDepartamento">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamento" message="tns:IServiceContract_ObtenerUsuariosXDepartamento_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamentoResponse" message="tns:IServiceContract_ObtenerUsuariosXDepartamento_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerDetalleUsuarioAuditoria">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoria" message="tns:IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage" />
@@ -235,6 +245,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MarcarLeido">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/MarcarLeido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmarDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/FirmarDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/LogIn" style="document" />
       <wsdl:input>
@@ -255,15 +283,6 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerTodosUsuarios">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerTodosUsuarios" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerUsuariosXDepartamento">
-      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

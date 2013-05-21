@@ -19,10 +19,10 @@ namespace Paperless.OutlookPlugin
     {
         private int _IdDocumento;
         private Documento _Documento;
-        private UserControlRecibirDocumentos _UserControlOwner;
+        public UserControlRecibirDocumentos _UserControlOwner;
 
 
-        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner)
+        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado)
         {
             InitializeComponent();
             _IdDocumento = pIdDocumento;
@@ -30,10 +30,15 @@ namespace Paperless.OutlookPlugin
             Text = _Documento.NombreDocumento;
             _UserControlOwner = pUserControlOwner;
             LlenarDataGrid();
+            if (pEstado == 1)
+            {
+                buttonFirmar.Enabled = true;
+            }
         }
 
         public void LlenarDataGrid()
         {
+            dataGridView1.Rows.Clear();
             DocumentoDetalleRecibo[] detalles = DataAccess.Instance.ObtenerDetalleDocumento(_IdDocumento);
             ImageList listaImagenes = new ImageList();
             listaImagenes.Images.Add("R", Properties.Resources.flag_red);
@@ -44,6 +49,11 @@ namespace Paperless.OutlookPlugin
                 dataGridView1.Rows.Add(detalle.Fecha.ToString(),string.Empty, detalle.Emisor, detalle.Receptor, listaImagenes.Images[detalle.EstadoFirmas - 1]);
             }
             dataGridView1.Rows[0].Cells[1].Value = detalles[0].NombreDocumento;
+        }
+
+        public bool FirmarDocumento()
+        {
+            return true;
         }
 
         private void abrirArchivoWord(Documento pDocumento)
@@ -59,12 +69,26 @@ namespace Paperless.OutlookPlugin
 
         private void buttonVerDocumento_Click_1(object sender, EventArgs e)
         {
+            if (!_Documento.Leido)
+                MarcarDocumentoLeido();
             abrirArchivoWord(_Documento);
         }
 
         private void FormDetalleDocumento_FormClosed(object sender, FormClosedEventArgs e)
         {
             _UserControlOwner.Enabled = true;
+        }
+
+        private void buttonFirmar_Click(object sender, EventArgs e)
+        {
+            new FormFirmarDocumento(_IdDocumento).Show(this);
+            this.Visible = false;
+        }
+
+        private void MarcarDocumentoLeido()
+        {
+            DataAccess.Instance.MarcarLeido(_IdDocumento);
+            _UserControlOwner.LlenarListView();
         }
     }
 }

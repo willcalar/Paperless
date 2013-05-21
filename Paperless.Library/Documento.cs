@@ -131,6 +131,7 @@ namespace Paperless.Library
             _Fecha = fecha;
             _NombreUsuarioEmisor = usuario;
             _EstadoFirmas = estadoFirmas;
+            _Leido = leido;
         }
 
 
