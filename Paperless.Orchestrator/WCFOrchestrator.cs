@@ -84,6 +84,17 @@ namespace Paperless.Orchestrator
         {
             return DocumentosImplementor.Instance.ObtenerDetalleDocumento(idDocumento);
         }
+
+        /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
+        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        {
+            DocumentosImplementor.Instance.MarcarLeido(idDocumento, nombreUsuario);
+        }
+
         #endregion
 
         #region Metodos Usuario

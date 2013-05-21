@@ -14,11 +14,13 @@ namespace Paperless.OutlookPlugin
     public partial class UserControlRecibirDocumentos : UserControl
     {
         public List<int> _idDocumentos;
+        public List<Documento> _Documentos;
 
         public UserControlRecibirDocumentos()
         {
             InitializeComponent();
             _idDocumentos = new List<int>();
+            _Documentos = new List<Documento>();
             LlenarListView();
         }
 
@@ -37,10 +39,11 @@ namespace Paperless.OutlookPlugin
             {
                 ListViewItem item = listView1.Items.Add(doc.IdDocumento.ToString(),doc.Fecha.ToShortDateString() + " - " + doc.NombreDocumento, doc.EstadoFirmas-1);
                 _idDocumentos.Add(doc.IdDocumento);
+                _Documentos.Add(doc);
                 if (doc.Leido)
                     item.ForeColor = Color.LightGray;
                 else
-                    item.ForeColor = Color.DarkGray;
+                    item.ForeColor = Color.Black;
             }
         }
 
@@ -51,10 +54,21 @@ namespace Paperless.OutlookPlugin
             if (listView1.SelectedIndices.Count != 0)
             {
                 int indexSeleccionado = listView1.SelectedIndices[0];
-                FormDetalleDocumento pantallaDetalle = new FormDetalleDocumento(_idDocumentos[indexSeleccionado], this);
+                if (!_Documentos[indexSeleccionado].Leido)
+                {
+                    MarcarDocumentoLeido(indexSeleccionado);
+                }
+                FormDetalleDocumento pantallaDetalle = new FormDetalleDocumento(_idDocumentos[indexSeleccionado], this, _Documentos[indexSeleccionado].EstadoFirmas);
                 pantallaDetalle.Show();
                 this.Enabled = false;
             }
+        }
+
+
+        private void MarcarDocumentoLeido(int index)
+        {
+            DataAccess.Instance.MarcarLeido(_idDocumentos[index]);
+            listView1.Items[listView1.SelectedIndices[0]].ForeColor = Color.LightGray;
         }
 
     }

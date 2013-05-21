@@ -22,7 +22,7 @@ namespace Paperless.OutlookPlugin
         private UserControlRecibirDocumentos _UserControlOwner;
 
 
-        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner)
+        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado)
         {
             InitializeComponent();
             _IdDocumento = pIdDocumento;
@@ -30,6 +30,10 @@ namespace Paperless.OutlookPlugin
             Text = _Documento.NombreDocumento;
             _UserControlOwner = pUserControlOwner;
             LlenarDataGrid();
+            if (pEstado == 1)
+            {
+                buttonFirmar.Enabled = true;
+            }
         }
 
         public void LlenarDataGrid()
@@ -44,6 +48,11 @@ namespace Paperless.OutlookPlugin
                 dataGridView1.Rows.Add(detalle.Fecha.ToString(),string.Empty, detalle.Emisor, detalle.Receptor, listaImagenes.Images[detalle.EstadoFirmas - 1]);
             }
             dataGridView1.Rows[0].Cells[1].Value = detalles[0].NombreDocumento;
+        }
+
+        public bool FirmarDocumento()
+        {
+            return true;
         }
 
         private void abrirArchivoWord(Documento pDocumento)

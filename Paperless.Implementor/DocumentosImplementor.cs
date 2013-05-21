@@ -197,6 +197,21 @@ namespace Paperless.Implementor
             return null;
         }
 
+        /// <summary>
+        /// Marca como leido por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="idUsuario">id del usuario</param>
+        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        {
+            var result = _AccesoDB.ExecuteQuery("PLSSP_MarcarLeido", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento),
+                new SqlParameter("nombreUsuario", nombreUsuario)
+
+            });
+        }
+
         public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             DataSet result = _AccesoDB.ExecuteQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){

@@ -34,6 +34,16 @@ namespace Paperless.DataAccessPlugins
         }
 
         /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
+        public void MarcarLeido(int idDocumento)
+        {
+             _AccesoWS.MarcarLeido(idDocumento, Login.Instance.NombreUsuario);
+        }
+
+        /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
         /// <param name="idDocumento">Id de documento a consultar</param>
