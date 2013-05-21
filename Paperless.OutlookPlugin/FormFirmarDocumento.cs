@@ -45,6 +45,7 @@ namespace Paperless.OutlookPlugin
                     "Firma del documento", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ((FormDetalleDocumento)this.Owner).LlenarDataGrid();
             ((FormDetalleDocumento)this.Owner)._UserControlOwner.LlenarListView();
+            ((FormDetalleDocumento)this.Owner)._UserControlOwner.Enabled = true;
             this.Owner.Visible = true;
             this.Close();
         }

@@ -118,6 +118,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxFirmaDigital);
             this.Name = "FormFirmarDocumento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firmar Documento";
             this.ResumeLayout(false);
             this.PerformLayout();

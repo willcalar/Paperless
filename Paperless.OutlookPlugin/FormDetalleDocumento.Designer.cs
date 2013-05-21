@@ -119,7 +119,8 @@
             this.MinimizeBox = false;
             this.Name = "FormDetalleDocumento";
             this.ShowIcon = false;
-            this.Text = "FormDetalleDocumento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalle de Documento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDetalleDocumento_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
