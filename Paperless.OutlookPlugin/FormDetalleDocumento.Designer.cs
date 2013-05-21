@@ -104,6 +104,7 @@
             this.buttonFirmar.TabIndex = 4;
             this.buttonFirmar.Text = "Firmar";
             this.buttonFirmar.UseVisualStyleBackColor = true;
+            this.buttonFirmar.Click += new System.EventHandler(this.buttonFirmar_Click);
             // 
             // FormDetalleDocumento
             // 

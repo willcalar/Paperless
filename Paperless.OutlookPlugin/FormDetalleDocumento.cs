@@ -19,7 +19,7 @@ namespace Paperless.OutlookPlugin
     {
         private int _IdDocumento;
         private Documento _Documento;
-        private UserControlRecibirDocumentos _UserControlOwner;
+        public UserControlRecibirDocumentos _UserControlOwner;
 
 
         public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado)
@@ -38,6 +38,7 @@ namespace Paperless.OutlookPlugin
 
         public void LlenarDataGrid()
         {
+            dataGridView1.Rows.Clear();
             DocumentoDetalleRecibo[] detalles = DataAccess.Instance.ObtenerDetalleDocumento(_IdDocumento);
             ImageList listaImagenes = new ImageList();
             listaImagenes.Images.Add("R", Properties.Resources.flag_red);
@@ -68,12 +69,26 @@ namespace Paperless.OutlookPlugin
 
         private void buttonVerDocumento_Click_1(object sender, EventArgs e)
         {
+            if (!_Documento.Leido)
+                MarcarDocumentoLeido();
             abrirArchivoWord(_Documento);
         }
 
         private void FormDetalleDocumento_FormClosed(object sender, FormClosedEventArgs e)
         {
             _UserControlOwner.Enabled = true;
+        }
+
+        private void buttonFirmar_Click(object sender, EventArgs e)
+        {
+            new FormFirmarDocumento(_IdDocumento).Show(this);
+            this.Visible = false;
+        }
+
+        private void MarcarDocumentoLeido()
+        {
+            DataAccess.Instance.MarcarLeido(_IdDocumento);
+            _UserControlOwner.LlenarListView();
         }
     }
 }

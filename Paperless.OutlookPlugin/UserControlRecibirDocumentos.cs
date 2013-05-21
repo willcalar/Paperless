@@ -28,6 +28,7 @@ namespace Paperless.OutlookPlugin
 
         public void LlenarListView()
         {
+            listView1.Items.Clear();
             Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
             ImageList listaImagenes = new ImageList();
             listaImagenes.Images.Add("R", Properties.Resources.flag_red);
@@ -54,10 +55,6 @@ namespace Paperless.OutlookPlugin
             if (listView1.SelectedIndices.Count != 0)
             {
                 int indexSeleccionado = listView1.SelectedIndices[0];
-                if (!_Documentos[indexSeleccionado].Leido)
-                {
-                    MarcarDocumentoLeido(indexSeleccionado);
-                }
                 FormDetalleDocumento pantallaDetalle = new FormDetalleDocumento(_idDocumentos[indexSeleccionado], this, _Documentos[indexSeleccionado].EstadoFirmas);
                 pantallaDetalle.Show();
                 this.Enabled = false;
@@ -65,11 +62,7 @@ namespace Paperless.OutlookPlugin
         }
 
 
-        private void MarcarDocumentoLeido(int index)
-        {
-            DataAccess.Instance.MarcarLeido(_idDocumentos[index]);
-            listView1.Items[listView1.SelectedIndices[0]].ForeColor = Color.LightGray;
-        }
+        
 
     }
 }

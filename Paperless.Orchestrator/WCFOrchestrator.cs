@@ -95,6 +95,17 @@ namespace Paperless.Orchestrator
             DocumentosImplementor.Instance.MarcarLeido(idDocumento, nombreUsuario);
         }
 
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password)
+        {
+            return DocumentosImplementor.Instance.FirmarDocumento(idDocumento, nombreUsuario, password);
+        }
+
         #endregion
 
         #region Metodos Usuario

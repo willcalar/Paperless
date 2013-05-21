@@ -714,6 +714,9 @@ namespace Paperless.DataAccessPlugins.WebService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/MarcarLeido", ReplyAction="http://tempuri.org/IServiceContract/MarcarLeidoResponse")]
         void MarcarLeido(int idDocumento, string nombreUsuario);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/FirmarDocumento", ReplyAction="http://tempuri.org/IServiceContract/FirmarDocumentoResponse")]
+        bool FirmarDocumento(int idDocumento, string nombreUsuario, string password);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/LogIn", ReplyAction="http://tempuri.org/IServiceContract/LogInResponse")]
         string LogIn(string nombreUsuario, string contrasena);
         
@@ -796,6 +799,10 @@ namespace Paperless.DataAccessPlugins.WebService {
         
         public void MarcarLeido(int idDocumento, string nombreUsuario) {
             base.Channel.MarcarLeido(idDocumento, nombreUsuario);
+        }
+        
+        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password) {
+            return base.Channel.FirmarDocumento(idDocumento, nombreUsuario, password);
         }
         
         public string LogIn(string nombreUsuario, string contrasena) {

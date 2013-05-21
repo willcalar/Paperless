@@ -21,6 +21,8 @@ namespace LogManager.Implementor
         public const string ERROR_OBTENER_DETALLE_DOCUMENTO = "Error al obtener el detalle del documento: {0}";
         public const string OBTENER_DOCUMENTO = "Se realizó la obtención del documento con id: {0}";
         public const string ERROR_OBTENER_DOCUMENTO = "Error al obtener el documento con id: {0}";
+        public const string FIRMAR_DOCUMENTO = "Se realizó la firma del documento con id: {0}";
+        public const string ERROR_FIRMAR_DOCUMENTO = "Error al firma el documento con id: {0}";
         #endregion
 
         #region Usuarios

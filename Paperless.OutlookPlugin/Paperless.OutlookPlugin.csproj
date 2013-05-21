@@ -210,6 +210,12 @@
     <Compile Include="FormDetalleDocumento.Designer.cs">
       <DependentUpon>FormDetalleDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFirmarDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFirmarDocumento.Designer.cs">
+      <DependentUpon>FormFirmarDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </Compile>
     <EmbeddedResource Include="FormDetalleDocumento.resx">
       <DependentUpon>FormDetalleDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFirmarDocumento.resx">
+      <DependentUpon>FormFirmarDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

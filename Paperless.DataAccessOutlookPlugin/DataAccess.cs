@@ -89,6 +89,17 @@ namespace Paperless.DataAccessPlugins
         {
             return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
         }
+
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string password)
+        {
+            return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
+        }
         #endregion
 
         #region Singleton
