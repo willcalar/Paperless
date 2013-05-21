@@ -241,7 +241,7 @@ namespace Paperless.Implementor
             return false;
         }
 
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             DataSet result = _AccesoDB.ExecuteQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){
                 new SqlParameter("@nombre", pDocumento.NombreDocumento),
@@ -278,12 +278,12 @@ namespace Paperless.Implementor
                         new SqlParameter("@referenceID2", "0")
                     });
                     if (!resul)
-                        return false;
+                        return -1;
                 }
-                return true;
+                return idDocumento;
             }else
 	        {
-                return false;
+                return -1;
 	        }
         }
 

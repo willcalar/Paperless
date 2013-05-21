@@ -165,7 +165,7 @@ namespace Paperless.Orchestrator
         /// <param name="pLstDestinatarios">Lista de destinatarios</param>
         /// <param name="pDocumento">Documento a enviar</param>
         /// <returns></returns>
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             return DocumentosImplementor.Instance.EnviarDocumento(pLstDestinatarios, pDocumento);
         }

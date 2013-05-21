@@ -18,8 +18,6 @@ namespace Paperless.WordPlugin
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
-            return Globals.Factory.GetRibbonFactory().CreateRibbonManager(
-                new Microsoft.Office.Tools.Ribbon.IRibbonExtension[] { new RibbonWord() });
         }
 
         #region VSTO generated code

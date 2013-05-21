@@ -79,7 +79,7 @@ namespace Paperless.DataAccessPlugins
             return _AccesoWS.ObtenerTodosUsuarios();
         }
 
-        public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
+        /*public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
         {
             List<Usuario> lstUsuario = (List<Usuario>)_CacheManager.GetItem(_CACHE_PREFIX+pDepartamento);
             if (lstUsuario == null)
@@ -88,6 +88,11 @@ namespace Paperless.DataAccessPlugins
                 _CacheManager.AddItems(_CACHE_PREFIX + pDepartamento,lstUsuario,new TimeSpan(24,0,0));
             }
             return lstUsuario;
+        }*/
+
+        public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
+        {
+            return _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
         }
 
         /// <summary>
@@ -96,7 +101,7 @@ namespace Paperless.DataAccessPlugins
         /// <param name="pLstDestinatarios">Lista de destinatarios</param>
         /// <param name="pDocumento">Documento a enviar</param>
         /// <returns></returns>
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
         }
@@ -136,7 +141,7 @@ namespace Paperless.DataAccessPlugins
                     {
                         instance = new DataAccess();
                         instance._AccesoWS = new ServiceContractClient();
-                        instance._CacheManager = new CacheManager();
+                        //instance._CacheManager = new CacheManager();
                     }
                 }
                 }

@@ -73,7 +73,19 @@ namespace Paperless.OutlookPlugin
                         lstDestinatarios.Add(new Usuario { Username = str });
                     }
                 }
-                DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
+                int idDocumento = DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
+                if (idDocumento!=-1)
+                {
+                    if (chkFirmado.Checked)
+                    {
+                        new FormFirmarDocumento(idDocumento).Show(this);
+                        this.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error enviando documento");
+                }
             }
             else
             {

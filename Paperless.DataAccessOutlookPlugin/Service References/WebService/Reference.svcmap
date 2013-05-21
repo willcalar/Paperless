@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:54274/ServiceContract.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:5953/ServiceContract.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceContract.xsd" MetadataType="Schema" ID="984bf42f-c3de-4d7b-95da-3d781236bd17" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?xsd=xsd1" />
-    <MetadataFile FileName="ServiceContract2.xsd" MetadataType="Schema" ID="51607b3b-8980-4672-a748-3fbca9709522" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?xsd=xsd2" />
-    <MetadataFile FileName="ServiceContract3.xsd" MetadataType="Schema" ID="510aa4a0-1316-406a-a58e-ef93f64a201e" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?xsd=xsd3" />
-    <MetadataFile FileName="WCFOrchestrator.wsdl" MetadataType="Wsdl" ID="c601866f-397a-4c7c-b2a9-7af9fda0e1ad" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?wsdl" />
-    <MetadataFile FileName="ServiceContract.disco" MetadataType="Disco" ID="0dc86060-56c8-4c2c-936c-10effa8e9dd2" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?disco" />
-    <MetadataFile FileName="ServiceContract1.xsd" MetadataType="Schema" ID="f942ab5f-f806-47d7-bd4a-219f931c9050" SourceId="1" SourceUrl="http://localhost:54274/ServiceContract.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceContract4.xsd" MetadataType="Schema" ID="ccd43f69-1059-4dda-81ec-a4a24c514281" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceContract41.xsd" MetadataType="Schema" ID="82bd3965-2670-4162-8de6-efaa33b5c62b" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceContract42.xsd" MetadataType="Schema" ID="9ba4342b-091a-4fe1-987a-46b7a6b617c0" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceContract43.xsd" MetadataType="Schema" ID="fb733b2d-d00d-42a5-b519-2bbf0c8c7527" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFOrchestrator1.wsdl" MetadataType="Wsdl" ID="98284d78-0de8-4a3b-ae54-9ddb5b0d545d" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?wsdl" />
+    <MetadataFile FileName="ServiceContract1.disco" MetadataType="Disco" ID="09684e91-56de-4c60-9a9d-c8df315c26d9" SourceId="1" SourceUrl="http://localhost:5953/ServiceContract.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -59,7 +59,7 @@ namespace Paperless.WCF.Contract
         DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
 
         [OperationContract]
-        bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
+        int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
         #endregion
 
         #region Metodos Eventos

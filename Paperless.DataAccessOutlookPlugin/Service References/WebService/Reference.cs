@@ -733,7 +733,7 @@ namespace Paperless.DataAccessPlugins.WebService {
         Paperless.DataAccessPlugins.WebService.DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/EnviarDocumento", ReplyAction="http://tempuri.org/IServiceContract/EnviarDocumentoResponse")]
-        bool EnviarDocumento(Paperless.DataAccessPlugins.WebService.Usuario[] pLstDestinatarios, Paperless.DataAccessPlugins.WebService.Documento pDocumento);
+        int EnviarDocumento(Paperless.DataAccessPlugins.WebService.Usuario[] pLstDestinatarios, Paperless.DataAccessPlugins.WebService.Documento pDocumento);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceContract/ObtenerEventosIrregulares", ReplyAction="http://tempuri.org/IServiceContract/ObtenerEventosIrregularesResponse")]
         Paperless.DataAccessPlugins.WebService.Evento[] ObtenerEventosIrregulares();
@@ -828,7 +828,7 @@ namespace Paperless.DataAccessPlugins.WebService {
             return base.Channel.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
         }
         
-        public bool EnviarDocumento(Paperless.DataAccessPlugins.WebService.Usuario[] pLstDestinatarios, Paperless.DataAccessPlugins.WebService.Documento pDocumento) {
+        public int EnviarDocumento(Paperless.DataAccessPlugins.WebService.Usuario[] pLstDestinatarios, Paperless.DataAccessPlugins.WebService.Documento pDocumento) {
             return base.Channel.EnviarDocumento(pLstDestinatarios, pDocumento);
         }
         
