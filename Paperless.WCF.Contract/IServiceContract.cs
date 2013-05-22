@@ -27,6 +27,9 @@ namespace Paperless.WCF.Contract
         Documento[] ObtenerDocumentosPorMigrar();
 
         [OperationContract]
+        bool ActualizarEstadoDocumento(int idDocumento);
+
+        [OperationContract]
         Documento[] ObtenerDocumentosDeUsuario(string nombreUsuario);
 
         [OperationContract]

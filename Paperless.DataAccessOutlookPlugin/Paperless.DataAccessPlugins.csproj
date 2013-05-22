@@ -70,9 +70,6 @@
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Historial.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
