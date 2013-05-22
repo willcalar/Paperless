@@ -62,9 +62,11 @@
             this.ColumnEmisor,
             this.ColumnReceptor,
             this.ColumnEstado});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(503, 341);
@@ -74,26 +76,31 @@
             // 
             this.ColumnFecha.HeaderText = "Fecha";
             this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
             // 
             // ColumnDocumento
             // 
             this.ColumnDocumento.HeaderText = "Documento";
             this.ColumnDocumento.Name = "ColumnDocumento";
+            this.ColumnDocumento.ReadOnly = true;
             // 
             // ColumnEmisor
             // 
             this.ColumnEmisor.HeaderText = "Emisor";
             this.ColumnEmisor.Name = "ColumnEmisor";
+            this.ColumnEmisor.ReadOnly = true;
             // 
             // ColumnReceptor
             // 
             this.ColumnReceptor.HeaderText = "Receptor";
             this.ColumnReceptor.Name = "ColumnReceptor";
+            this.ColumnReceptor.ReadOnly = true;
             // 
             // ColumnEstado
             // 
             this.ColumnEstado.HeaderText = "Estado";
             this.ColumnEstado.Name = "ColumnEstado";
+            this.ColumnEstado.ReadOnly = true;
             // 
             // buttonFirmar
             // 
@@ -136,6 +143,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmisor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnReceptor;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEstado;
-        private System.Windows.Forms.Button buttonFirmar;
+        public System.Windows.Forms.Button buttonFirmar;
     }
 }

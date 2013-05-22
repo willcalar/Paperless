@@ -46,6 +46,8 @@ namespace Paperless.OutlookPlugin
             ((FormDetalleDocumento)this.Owner).LlenarDataGrid();
             ((FormDetalleDocumento)this.Owner)._UserControlOwner.LlenarListView();
             ((FormDetalleDocumento)this.Owner)._UserControlOwner.Enabled = true;
+            ((FormDetalleDocumento)this.Owner).buttonFirmar.Enabled = false;
+            ((FormDetalleDocumento)this.Owner)._Estado = 2;
             this.Owner.Visible = true;
             this.Close();
         }
@@ -53,6 +55,13 @@ namespace Paperless.OutlookPlugin
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Cerrar();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            string nombreArchivo = openFileDialog1.FileName;
+
+            textBoxFirmaDigital.Text =  openFileDialog1.FileName;
         }
     }
 }

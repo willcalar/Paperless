@@ -40,26 +40,29 @@
             // 
             // openFileDialog1
             // 
+            this.openFileDialog1.DefaultExt = "frm";
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "\"Firma Digital|*.frm|All filles|*.*\"";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // textBoxFirmaDigital
             // 
-            this.textBoxFirmaDigital.Location = new System.Drawing.Point(13, 36);
+            this.textBoxFirmaDigital.Location = new System.Drawing.Point(12, 36);
             this.textBoxFirmaDigital.Name = "textBoxFirmaDigital";
-            this.textBoxFirmaDigital.Size = new System.Drawing.Size(248, 20);
+            this.textBoxFirmaDigital.Size = new System.Drawing.Size(249, 20);
             this.textBoxFirmaDigital.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(13, 79);
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 92);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(248, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(249, 20);
             this.textBoxPassword.TabIndex = 1;
             // 
             // buttonFirmar
             // 
-            this.buttonFirmar.Location = new System.Drawing.Point(65, 118);
+            this.buttonFirmar.Location = new System.Drawing.Point(64, 125);
             this.buttonFirmar.Name = "buttonFirmar";
             this.buttonFirmar.Size = new System.Drawing.Size(75, 23);
             this.buttonFirmar.TabIndex = 2;
@@ -69,7 +72,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(165, 118);
+            this.buttonCancelar.Location = new System.Drawing.Point(164, 125);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 3;
@@ -99,7 +102,7 @@
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(10, 63);
+            this.labelPassword.Location = new System.Drawing.Point(13, 67);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(61, 13);
             this.labelPassword.TabIndex = 6;
@@ -127,7 +130,6 @@
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBoxFirmaDigital;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonFirmar;
@@ -135,5 +137,6 @@
         private System.Windows.Forms.Button buttonAbrirFirma;
         private System.Windows.Forms.Label labelFirmaDigital;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

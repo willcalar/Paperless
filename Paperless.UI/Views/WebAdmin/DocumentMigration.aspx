@@ -7,6 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <form id="formBut" runat="server">
 
+<asp:Button ID="bla" runat=server Text="Hola"/> 
 
 <script>
     $(document).ready(function () {

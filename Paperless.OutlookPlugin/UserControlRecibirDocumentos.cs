@@ -19,8 +19,6 @@ namespace Paperless.OutlookPlugin
         public UserControlRecibirDocumentos()
         {
             InitializeComponent();
-            _idDocumentos = new List<int>();
-            _Documentos = new List<Documento>();
             LlenarListView();
         }
 
@@ -28,6 +26,8 @@ namespace Paperless.OutlookPlugin
 
         public void LlenarListView()
         {
+            _idDocumentos = new List<int>();
+            _Documentos = new List<Documento>();
             listView1.Items.Clear();
             Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
             ImageList listaImagenes = new ImageList();
@@ -42,9 +42,13 @@ namespace Paperless.OutlookPlugin
                 _idDocumentos.Add(doc.IdDocumento);
                 _Documentos.Add(doc);
                 if (doc.Leido)
+                {
                     item.ForeColor = Color.LightGray;
+                }
                 else
+                {
                     item.ForeColor = Color.Black;
+                }
             }
         }
 
