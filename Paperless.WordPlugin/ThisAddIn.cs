@@ -5,7 +5,6 @@ using System.Text;
 using System.Xml.Linq;
 using Word = Microsoft.Office.Interop.Word;
 using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Word;
 
 namespace Paperless.WordPlugin
 {
@@ -18,6 +17,13 @@ namespace Paperless.WordPlugin
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+        }
+
+        protected override Microsoft.Office.Core.IRibbonExtensibility CreateRibbonExtensibilityObject()
+        {
+            return Globals.Factory.GetRibbonFactory().CreateRibbonManager(
+                new Microsoft.Office.Tools.Ribbon.IRibbonExtension[] { new RibbonWord() });
+
         }
 
         #region VSTO generated code

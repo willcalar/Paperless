@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lstUsuarios = new System.Windows.Forms.CheckedListBox();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +39,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lstDepartamentos = new System.Windows.Forms.CheckedListBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.lstUsuarios = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,20 +66,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 155);
+            this.label2.Location = new System.Drawing.Point(3, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Enviar a:";
-            // 
-            // lstUsuarios
-            // 
-            this.lstUsuarios.FormattingEnabled = true;
-            this.lstUsuarios.Location = new System.Drawing.Point(4, 171);
-            this.lstUsuarios.Name = "lstUsuarios";
-            this.lstUsuarios.Size = new System.Drawing.Size(207, 109);
-            this.lstUsuarios.TabIndex = 3;
-            this.lstUsuarios.ThreeDCheckBoxes = true;
             // 
             // btnAbrir
             // 
@@ -121,13 +113,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lstUsuarios);
+            this.groupBox1.Controls.Add(this.txtFiltro);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lstDepartamentos);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lstUsuarios);
             this.groupBox1.Location = new System.Drawing.Point(20, 143);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(217, 286);
+            this.groupBox1.Size = new System.Drawing.Size(217, 295);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Destinatarios";
@@ -144,10 +137,28 @@
             // lstDepartamentos
             // 
             this.lstDepartamentos.FormattingEnabled = true;
-            this.lstDepartamentos.Location = new System.Drawing.Point(4, 32);
+            this.lstDepartamentos.Location = new System.Drawing.Point(4, 39);
             this.lstDepartamentos.Name = "lstDepartamentos";
-            this.lstDepartamentos.Size = new System.Drawing.Size(207, 109);
+            this.lstDepartamentos.Size = new System.Drawing.Size(207, 79);
             this.lstDepartamentos.TabIndex = 5;
+            this.lstDepartamentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lstDepartamentos_ItemCheck);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(58, 137);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(114, 20);
+            this.txtFiltro.TabIndex = 7;
+            this.txtFiltro.Tag = "Filtro";
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
+            // lstUsuarios
+            // 
+            this.lstUsuarios.FormattingEnabled = true;
+            this.lstUsuarios.Location = new System.Drawing.Point(4, 165);
+            this.lstUsuarios.Name = "lstUsuarios";
+            this.lstUsuarios.Size = new System.Drawing.Size(203, 124);
+            this.lstUsuarios.TabIndex = 8;
             // 
             // UserControlEnviarDocumento
             // 
@@ -174,7 +185,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckedListBox lstUsuarios;
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label label3;
@@ -182,5 +192,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox lstDepartamentos;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.CheckedListBox lstUsuarios;
     }
 }

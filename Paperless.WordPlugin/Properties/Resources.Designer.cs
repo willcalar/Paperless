@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Paperless.WordPlugin.Properties {
+    using System;
     
     
     /// <summary>
@@ -56,6 +57,36 @@ namespace Paperless.WordPlugin.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flag_green {
+            get {
+                object obj = ResourceManager.GetObject("flag_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flag_red {
+            get {
+                object obj = ResourceManager.GetObject("flag_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flag_yellow {
+            get {
+                object obj = ResourceManager.GetObject("flag_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -18,7 +18,7 @@ namespace Paperless.OutlookPlugin
         public UserControlEnviarDocumento()
         {
             InitializeComponent();
-            LlenarListaDestinatarios();
+            //LlenarListaDestinatarios();
             LlenarListaDepartamentos();
         }
 
@@ -31,13 +31,20 @@ namespace Paperless.OutlookPlugin
             }
         }
 
-        private void LlenarListaDestinatarios()
+        private void LlenarListaDestinatarios(List<Usuario> arrUsuarios)
         {
-            Usuario[] arrUsuarios = DataAccess.Instance.ObtenerTodosUsuarios();
+            //Usuario[] arrUsuarios = DataAccess.Instance.ObtenerTodosUsuarios();
+            //int i = 15;
             foreach (Usuario m in arrUsuarios)
             {
-                //lstUsuarios.Items.Add(m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido);
-                lstUsuarios.Items.Add(m.Username);
+                /*CheckBox newCheckBox = new CheckBox();
+                newCheckBox.ThreeState = true;
+                newCheckBox.Text = m.NombreUsuario + " " + m.PrimerApellido;
+                newCheckBox.Name = m.Username;
+                newCheckBox.Location = new System.Drawing.Point(grpUsuarios.Location.X * i, grpUsuarios.Location.Y+5);
+                grpUsuarios.Controls.Add(newCheckBox);*/
+                lstUsuarios.Items.Add(m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido);
+                _UsuariosDestinatarios.Add(m);
             }
         }
 
@@ -70,7 +77,9 @@ namespace Paperless.OutlookPlugin
                     if (lstUsuarios.GetItemChecked(i))
                     {
                         string str = (string)lstUsuarios.Items[i];
-                        lstDestinatarios.Add(new Usuario { Username = str });
+
+                        lstDestinatarios.Add(new Usuario { Username = BuscarUsername(str),  });
+
                     }
                 }
                 int idDocumento = DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
@@ -91,8 +100,31 @@ namespace Paperless.OutlookPlugin
             {
                 MessageBox.Show("El archivo seleccionado no existe o no ha seleccionado un destinatario");
             }
-            
         }
 
+        private string BuscarUsername(string pNombreCompleto)
+        {
+            string []nombreTokens = pNombreCompleto.Split(' ');
+            return (from users in _UsuariosDestinatarios
+                    where users.NombreUsuario == nombreTokens[0]
+                    && users.PrimerApellido == nombreTokens[1]
+                    && users.SegundoApellido == nombreTokens[2]
+                    select users).First().Username;
+        }
+
+        private void lstDepartamentos_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            LlenarListaDestinatarios(DataAccess.Instance.ObtenerUsuarioPorDepartamento(lstDepartamentos.Items[e.Index].ToString()));
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #region Variables
+        List<Usuario> _UsuariosDestinatarios = new List<Usuario>();
+        #endregion
     }
 }

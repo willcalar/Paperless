@@ -117,28 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAbrir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAQASURBVEhL7dNrUJRVHAbwzZn60BebacbScUkRozDEiTGV
-        nC5Q1oeascSmskYcwsWQlMsYZhNNzdgdUsOi8TJWDKU0KiVyE5CrCQksgsstBCVhl3fZXfbysvue8/Ts
-        pckvNeNI05fOzG/Ouzvn/T97zv+s7v/x34+JMv0ad2/2qDryhVkd2Rs0nE959Bk/55ndpowrlopFsaFX
-        bmwolfpUYf8Z0IYAbx+ZqBuYNlI7nzsgJkuglC96OvTKjQ2lQm8Q9nIWuwSoLKqyqKeNfgHcjZwbIZQi
-        TJSFJY6Wzr39n1w8GnVbqOxfQ6lYYBC2MhbqYMHzgKuFWNhZR9XAVDmk4wTUoXcd6mDOuDqww6wOZJvV
-        /kzaTm+Y1d6tnNPMLuNLTcqZ+5eESgdHIGCylMXPkb94PQvXsHAlnQIcJwF7CR2lImDyCB0ArF8Byj5g
-        Ip8+ASy74bucdcVeF7cqVDo4lIpwg1B+5K+sgtr/Njy92ZRFGbQNHlM6pcFzaQsZ4OlJoWR4ujdREr1K
-        G+C5+DJcnc85ncakk66etAPOLkOhs+uV5GDARDG8I/mYHtoJTTlEh6FZv4GwFrHBPwSaLCaPQ9hK6RT8
-        PRP2KjoD4aileogp9srZzDnE0QC3KbM1GDB2EOrALgjLHkhuX04ehrR9B2n/nkoCPZBTvGlOXgZ/X1zs
-        j79P/iP1tNKFYA/VLvLfQBOku4M7zjoSCNCu7oFq2sZz/BjS/BGkJY/2Qk7sh1S+hrQeom8ZXMzgY3Sc
-        /WCg4zT7VMXQWmpgaDND/bfvAjRbjXQbN+cEAnx92zHdswkYfRPyag7k6C7I33Mhr70POfYhfcrgz6mA
-        wYUMZqDCQGsxm30MsJ0gXgh7RXC2HIRvMH3K1Ra/lgGRBm9rHLxdayGHXoP8bTPn1yEvp0MOZ0CO7KC3
-        GPwOg9+jDxjOwGs8zvEvGcojtTBwbF9wbf96yJ7V8HY+NmyveXBFIEBtWQGv8VkI0/OQphcge1+E7NvA
-        xRshB5IpFXJwK4MzGcxdDnOHfkPZwTXdCZDt0RDtSyA6YiDJ0/pI21hVdLhOqY40eJpXwtf+OETno+Sf
-        4yGMT9CT9FTIGkpgAa5pXwnxawxEayTE+QhazOf7QiIh26L4f334J2tV+GzuYLHB3RQHrSUSWtPCv7EA
-        WvM9nP3CrvPnd9cLgzgXBdvZ5XmAbpbOUc2AhlXQzuqh1d1982rnwNf4AJz1MSmBf3JtgT7V27AUWuWd
-        dMdNE5WzudtlaCi8d3UgYOfGuSk+Bsi6CMjaGXA2AuOno72JCXOiAwHLo+YtS3pmfn7qOn3BTNiSOH//
-        uvh5ux9aetfCQEBurm5WbGzsrTONpW8JBPy7Q6f7AxpDrB2ONKNvAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="saveFileDialogDescargar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
