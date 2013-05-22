@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Paperless.DataAccessPlugins;
 using Paperless.DataAccessPlugins.WebService;
+using Paperless.Caching;
 
 namespace Paperless.DataAccessPlugins
 {
@@ -31,6 +31,16 @@ namespace Paperless.DataAccessPlugins
         public Documento ObtenerDocumento(int idDocumento)
         {
             return _AccesoWS.ObtenerDocumento(idDocumento);
+        }
+
+        /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
+        public void MarcarLeido(int idDocumento)
+        {
+             _AccesoWS.MarcarLeido(idDocumento, Login.Instance.NombreUsuario);
         }
 
         /// <summary>
@@ -69,15 +79,50 @@ namespace Paperless.DataAccessPlugins
             return _AccesoWS.ObtenerTodosUsuarios();
         }
 
+        /*public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
+        {
+            List<Usuario> lstUsuario = (List<Usuario>)_CacheManager.GetItem(_CACHE_PREFIX+pDepartamento);
+            if (lstUsuario == null)
+            {
+                lstUsuario = _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
+                _CacheManager.AddItems(_CACHE_PREFIX + pDepartamento,lstUsuario,new TimeSpan(24,0,0));
+            }
+            return lstUsuario;
+        }*/
+
+        public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
+        {
+            return _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
+        }
+
         /// <summary>
         /// Envía un documento a los destinatarios correspondientes
         /// </summary>
         /// <param name="pLstDestinatarios">Lista de destinatarios</param>
         /// <param name="pDocumento">Documento a enviar</param>
         /// <returns></returns>
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public String[] ObtenerDepartamentos()
+        {
+            return _AccesoWS.ObtenerDepartamentos();
+        }
+
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string password)
+        {
+            return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
         }
         #endregion
 
@@ -96,6 +141,7 @@ namespace Paperless.DataAccessPlugins
                     {
                         instance = new DataAccess();
                         instance._AccesoWS = new ServiceContractClient();
+                        //instance._CacheManager = new CacheManager();
                     }
                 }
                 }
@@ -110,6 +156,11 @@ namespace Paperless.DataAccessPlugins
         private static volatile DataAccess instance;
         private static object syncRoot = new Object();
         private ServiceContractClient _AccesoWS;
+        private CacheManager _CacheManager;
+        #endregion
+
+        #region Constants
+        private string _CACHE_PREFIX = "Cache";
         #endregion
 
     }

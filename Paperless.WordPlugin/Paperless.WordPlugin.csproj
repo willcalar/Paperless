@@ -188,9 +188,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RibbonWord.resx">
-      <DependentUpon>RibbonWord.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Paperless.WordPlugin_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -199,10 +196,6 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="RibbonWord.cs" />
-    <Compile Include="RibbonWord.Designer.cs">
-      <DependentUpon>RibbonWord.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>

@@ -7,7 +7,7 @@ namespace Paperless.DataAccessPlugins
 {
     public class Login
     {
-        #region Methods      
+        #region Methods
 
         public void LoginUsuario(string usuario)
         {

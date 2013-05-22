@@ -26,12 +26,25 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>Paperless.OutlookPlugin</RootNamespace>
     <AssemblyName>Paperless.OutlookPlugin</AssemblyName>
-    <LoadBehavior>3</LoadBehavior>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <DefineConstants>VSTO40</DefineConstants>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <ProductName>Paperless.OutlookPlugin</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>Paperless.OutlookPlugin</FriendlyName>
+    <OfficeApplicationDescription />
+    <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -39,9 +52,14 @@
       <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
-      <Visible>false</Visible>
-      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
@@ -134,6 +152,26 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Tools.Word.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Enterprise Library 5.0\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -192,6 +230,12 @@
     <Compile Include="FormDetalleDocumento.Designer.cs">
       <DependentUpon>FormDetalleDocumento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFirmarDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFirmarDocumento.Designer.cs">
+      <DependentUpon>FormFirmarDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -200,6 +244,12 @@
     </Compile>
     <Compile Include="RibbonOutlook.Designer.cs">
       <DependentUpon>RibbonOutlook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEnviarDocumento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEnviarDocumento.Designer.cs">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlLogin.cs">
       <SubType>UserControl</SubType>
@@ -216,6 +266,9 @@
     <EmbeddedResource Include="FormDetalleDocumento.resx">
       <DependentUpon>FormDetalleDocumento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFirmarDocumento.resx">
+      <DependentUpon>FormFirmarDocumento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -228,6 +281,9 @@
     </Compile>
     <EmbeddedResource Include="RibbonOutlook.resx">
       <DependentUpon>RibbonOutlook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEnviarDocumento.resx">
+      <DependentUpon>UserControlEnviarDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlLogin.resx">
       <DependentUpon>UserControlLogin.cs</DependentUpon>
@@ -259,6 +315,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Exceptions\Paperless.Exceptions.csproj">
+      <Project>{7357E663-9450-4A15-B01F-825C5F4F2D49}</Project>
+      <Name>Paperless.Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Paperless.DataAccessOutlookPlugin\Paperless.DataAccessPlugins.csproj">
       <Project>{B7CF855A-360A-4258-B75B-16797D90AB65}</Project>
       <Name>Paperless.DataAccessPlugins</Name>
@@ -279,6 +339,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Folder-32.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

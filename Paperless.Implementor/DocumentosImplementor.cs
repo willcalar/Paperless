@@ -218,7 +218,51 @@ namespace Paperless.Implementor
             return null;
         }
 
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        /// <summary>
+        /// Marca como leido por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        {
+            var result = _AccesoDB.ExecuteQuery("PLSSP_MarcarLeido", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento),
+                new SqlParameter("nombreUsuario", nombreUsuario)
+
+            });
+        }
+
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password)
+        {
+            var result = _AccesoDB.ExecuteQuery("PLSSP_FirmarDocumento", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento),
+                new SqlParameter("nombreUsuario", nombreUsuario),
+                new SqlParameter("password", password)
+
+            });
+            if (result != null)
+            {
+                DataRow fila = result.Tables[0].Rows[0];
+                var resultado = int.Parse(fila["Resultado"].ToString());
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.FIRMAR_DOCUMENTO, idDocumento);
+                if (resultado == 1)
+                    return true;
+                else
+                    return false;
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_FIRMAR_DOCUMENTO, idDocumento);
+            return false;
+        }
+
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             DataSet result = _AccesoDB.ExecuteQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){
                 new SqlParameter("@nombre", pDocumento.NombreDocumento),
@@ -255,12 +299,12 @@ namespace Paperless.Implementor
                         new SqlParameter("@referenceID2", "0")
                     });
                     if (!resul)
-                        return false;
+                        return -1;
                 }
-                return true;
+                return idDocumento;
             }else
 	        {
-                return false;
+                return -1;
 	        }
         }
 

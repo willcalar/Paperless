@@ -94,6 +94,28 @@ namespace Paperless.Orchestrator
         {
             return DocumentosImplementor.Instance.ObtenerDetalleDocumento(idDocumento);
         }
+
+        /// <summary>
+        /// Obtiene el documento asociado al id indicado
+        /// </summary>
+        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <returns>Documento asociado al id indicado</returns>
+        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        {
+            DocumentosImplementor.Instance.MarcarLeido(idDocumento, nombreUsuario);
+        }
+
+        /// <summary>
+        /// Marca como firmado por un usuario un documento
+        /// </summary>
+        /// <param name="idDocumento">id del documento</param>
+        /// <param name="nombreUsuario">username del usuario</param>
+        /// <param name="password">password del usuario</param>
+        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password)
+        {
+            return DocumentosImplementor.Instance.FirmarDocumento(idDocumento, nombreUsuario, password);
+        }
+
         #endregion
 
         #region Metodos Usuario
@@ -127,6 +149,15 @@ namespace Paperless.Orchestrator
             return UsuariosImplementor.Instance.ObtenerTodosUsuarios();
         }
 
+        /// <summary>
+        /// Obtiene todos los usuarios activo
+        /// </summary>
+        /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
+        public Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento)
+        {
+            return UsuariosImplementor.Instance.ObtenerUsuariosXDepartamento(pDepartamento);
+        }
+
 
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un usuario
@@ -144,10 +175,12 @@ namespace Paperless.Orchestrator
         /// <param name="pLstDestinatarios">Lista de destinatarios</param>
         /// <param name="pDocumento">Documento a enviar</param>
         /// <returns></returns>
-        public bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
             return DocumentosImplementor.Instance.EnviarDocumento(pLstDestinatarios, pDocumento);
         }
+
+
         #endregion
 
         #region Metodos Evento

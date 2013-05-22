@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFOrchestrator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFOrchestrator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Paperless.Library" />
-      <xsd:import schemaLocation="http://localhost:54274/ServiceContract.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:5953/ServiceContract.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5953/ServiceContract.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5953/ServiceContract.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Paperless.Library" />
+      <xsd:import schemaLocation="http://localhost:5953/ServiceContract.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceContract_ObtenerDocumentosAuditoria_InputMessage">
@@ -50,6 +50,18 @@
   <wsdl:message name="IServiceContract_ObtenerDetalleDocumento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDetalleDocumentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_MarcarLeido_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarLeido" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_MarcarLeido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarcarLeidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_FirmarDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:FirmarDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_FirmarDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FirmarDocumentoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_LogIn_InputMessage">
     <wsdl:part name="parameters" element="tns:LogIn" />
   </wsdl:message>
@@ -67,6 +79,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerTodosUsuarios_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerTodosUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerUsuariosXDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosXDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerUsuariosXDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosXDepartamentoResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDetalleUsuarioAuditoria" />
@@ -127,6 +145,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumento" message="tns:IServiceContract_ObtenerDetalleDocumento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleDocumentoResponse" message="tns:IServiceContract_ObtenerDetalleDocumento_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="MarcarLeido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/MarcarLeido" message="tns:IServiceContract_MarcarLeido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/MarcarLeidoResponse" message="tns:IServiceContract_MarcarLeido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FirmarDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/FirmarDocumento" message="tns:IServiceContract_FirmarDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/FirmarDocumentoResponse" message="tns:IServiceContract_FirmarDocumento_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/LogIn" message="tns:IServiceContract_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/LogInResponse" message="tns:IServiceContract_LogIn_OutputMessage" />
@@ -138,6 +164,10 @@
     <wsdl:operation name="ObtenerTodosUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosUsuarios" message="tns:IServiceContract_ObtenerTodosUsuarios_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerTodosUsuariosResponse" message="tns:IServiceContract_ObtenerTodosUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosXDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamento" message="tns:IServiceContract_ObtenerUsuariosXDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamentoResponse" message="tns:IServiceContract_ObtenerUsuariosXDepartamento_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerDetalleUsuarioAuditoria">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDetalleUsuarioAuditoria" message="tns:IServiceContract_ObtenerDetalleUsuarioAuditoria_InputMessage" />
@@ -225,6 +255,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MarcarLeido">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/MarcarLeido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FirmarDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/FirmarDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="LogIn">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/LogIn" style="document" />
       <wsdl:input>
@@ -245,6 +293,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerTodosUsuarios">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerTodosUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuariosXDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerUsuariosXDepartamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -300,7 +357,7 @@
   </wsdl:binding>
   <wsdl:service name="WCFOrchestrator">
     <wsdl:port name="BasicHttpBinding_IServiceContract" binding="tns:BasicHttpBinding_IServiceContract">
-      <soap:address location="http://localhost:54274/ServiceContract.svc" />
+      <soap:address location="http://localhost:5953/ServiceContract.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

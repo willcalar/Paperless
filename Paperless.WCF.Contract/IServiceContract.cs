@@ -37,6 +37,12 @@ namespace Paperless.WCF.Contract
 
         [OperationContract]
         DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento);
+
+        [OperationContract]
+        void MarcarLeido(int idDocumento, string nombreUsuario);
+
+        [OperationContract]
+        bool FirmarDocumento(int idDocumento, string nombreUsuario, string password);
         #endregion
 
         #region Metodos Usuario
@@ -50,10 +56,13 @@ namespace Paperless.WCF.Contract
         Usuario[] ObtenerTodosUsuarios();
 
         [OperationContract]
+        Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento);
+
+        [OperationContract]
         DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
 
         [OperationContract]
-        bool EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
+        int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
         #endregion
 
         #region Metodos Eventos

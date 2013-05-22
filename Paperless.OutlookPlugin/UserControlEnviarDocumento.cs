@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Paperless.DataAccessOutlookPlugin;
-using Paperless.DataAccessOutlookPlugin.WebService;
+using Paperless.DataAccessPlugins;
+using Paperless.DataAccessPlugins.WebService;
 using System.IO;
 
 
@@ -19,6 +19,16 @@ namespace Paperless.OutlookPlugin
         {
             InitializeComponent();
             LlenarListaDestinatarios();
+            LlenarListaDepartamentos();
+        }
+
+        private void LlenarListaDepartamentos()
+        {
+            String[] arrDepartamentos = DataAccess.Instance.ObtenerDepartamentos();
+            foreach (String m in arrDepartamentos)
+            {
+                lstDepartamentos.Items.Add(m);
+            }
         }
 
         private void LlenarListaDestinatarios()
@@ -63,7 +73,19 @@ namespace Paperless.OutlookPlugin
                         lstDestinatarios.Add(new Usuario { Username = str });
                     }
                 }
-                DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
+                int idDocumento = DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
+                if (idDocumento!=-1)
+                {
+                    if (chkFirmado.Checked)
+                    {
+                        new FormFirmarDocumento(idDocumento).Show(this);
+                        this.Visible = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error enviando documento");
+                }
             }
             else
             {

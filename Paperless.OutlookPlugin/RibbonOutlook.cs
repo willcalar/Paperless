@@ -54,14 +54,12 @@ namespace Paperless.OutlookPlugin
         }
 
         private void mostrarUserControlEnviarDocumentos()
-        {
-            /*
+        {   
             if (_taskPanel != null)
                 _taskPanel.Visible = false;
             UserControlEnviarDocumento _userControl = new UserControlEnviarDocumento();
             _taskPanel = Globals.ThisAddIn.CustomTaskPanes.Add(_userControl, "Paperless");
             mostrarTaskPanel(240);
-             * */
         }
 
         private void mostrarUserControlLogin()

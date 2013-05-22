@@ -73,25 +73,22 @@
     <None Include="Service References\WebService\Paperless.DataAccessPlugins.WebService.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\ServiceContract.xsd">
+    <None Include="Service References\WebService\ServiceContract4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WebService\ServiceContract1.xsd">
+    <None Include="Service References\WebService\ServiceContract41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WebService\ServiceContract2.xsd">
+    <None Include="Service References\WebService\ServiceContract42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WebService\ServiceContract3.xsd">
+    <None Include="Service References\WebService\ServiceContract43.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WebService\WCFOrchestrator.wsdl" />
+    <None Include="Service References\WebService\WCFOrchestrator1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WebService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WebService\ServiceContract.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\WebService\configuration91.svcinfo" />
@@ -104,6 +101,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paperless.Caching\Paperless.Caching.csproj">
+      <Project>{02F92C14-1DB0-4917-A676-DBD27AF5E341}</Project>
+      <Name>Paperless.Caching</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WebService\ServiceContract1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
