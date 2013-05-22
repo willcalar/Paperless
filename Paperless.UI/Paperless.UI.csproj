@@ -159,10 +159,10 @@
     <None Include="Service References\WebService\Paperless.UI.WebService.DocumentoDetalleMovimiento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.UI.WebService.Evento.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.DocumentoDetalleRecibo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WebService\Paperless.UI.WebService.Historial.datasource">
+    <None Include="Service References\WebService\Paperless.UI.WebService.Evento.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WebService\Paperless.UI.WebService.Usuario.datasource">

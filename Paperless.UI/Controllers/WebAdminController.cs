@@ -5,12 +5,21 @@ using System.Web.Mvc;
 using Paperless.UI.WebService;
 using Paperless.UI.Models;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
+using Word = Microsoft.Office.Interop.Word;
+using System.Configuration;
+using System.Text;
 using Exceptions;
 
 namespace Paperless.UI.Controllers
 {
     public class WebAdminController : Controller
     {
+
         #region Attributes
         ServiceContractClient clienteWCF = new ServiceContractClient();
         #endregion
@@ -32,21 +41,47 @@ namespace Paperless.UI.Controllers
         /// <returns>View</returns>
         public ActionResult DocumentMigration()
         {
-            Documento[] docs = null;
+             Documento[] docs = null;
+             try
+             {
+                docs = clienteWCF.ObtenerDocumentosPorMigrar();
+             }
+             catch (Exception ex)
+             {
+                ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
+                    (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
+             }
+             docs = IsEmptyResult(docs);
+             return View(docs);
+        }
+
+        /// <summary>
+        /// URL: /WebAdmin/DocumentMigration/
+        /// </summary>
+        /// <returns>View Actualizada</returns>
+        public ActionResult MigrateDocument(int id)
+        {
             try
             {
-                docs = clienteWCF.ObtenerDocumentosPorMigrar();
+                Documento Documento = new Documento();
+                Documento = clienteWCF.ObtenerDocumento(id);
+           
+                clienteWCF.ActualizarEstadoDocumento(id);
             }
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, Policy.WORKFLOW, ex.GetType(),
                     (int)ErrorCode.ERROR_OPENING_CONNECTION_WS, ExceptionMessages.Instance[ErrorCode.ERROR_OPENING_CONNECTION_WS], false);
             }
-            docs = IsEmptyResult(docs); 
-            return View(docs);
-        }
+
+            return RedirectToAction("DocumentMigration");
+         }
 
 
+        /// <summary>
+        /// URL: /WebAdmin/IrregularEvents/
+        /// </summary>
+        /// <returns>View</returns>
         public ActionResult IrregularEvents()
         {
             Evento[] events = null;

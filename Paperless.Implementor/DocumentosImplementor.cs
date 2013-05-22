@@ -115,13 +115,34 @@ namespace Paperless.Implementor
             {
                 var documentos = new List<Documento>();
                 foreach (DataRow fila in result.Tables[0].Rows)
-                    documentos.Add(new Documento(fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()), fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), ""));
+                    documentos.Add(new Documento((int)fila["ID"], fila["Documento"].ToString(), DateTime.Parse(fila["FechaIngreso"].ToString()), fila["TipoDocumento"].ToString(), fila["Usuario"].ToString(), ""));
 
                 LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_POR_MIGRAR);  
                 return documentos.ToArray();
             }
             LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_POR_MIGRAR);
             return null;
+        }
+
+        /// <summary>
+        /// Actualiza el estado de un documento que fue migrado en el sistema
+        /// </summary>
+        /// <param name="nombreDocumento">id del documento</param>
+        /// <returns>Verdadero si actulizo con exito o Falso de lo contrario</returns>
+        public bool ActualizarEstadoDocumento(int idDocumento)
+        {
+            var result = _AccesoDB.ExecuteNonQuery("PLSSP_ActualizarEstadoDocumento", new List<SqlParameter>()
+            {
+                new SqlParameter("idDocumento", idDocumento)
+            });
+
+            if (result != null)
+            {
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.ACTUALIZAR_ESTADO_DOCUMENTO, idDocumento);
+                return true;
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_ACTUALIZAR_ESTADO_DOCUMENTO, idDocumento);
+            return false;
         }
 
         /// <summary>

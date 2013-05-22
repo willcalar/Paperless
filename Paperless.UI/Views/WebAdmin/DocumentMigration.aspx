@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<form id="formBut" runat="server">
+<form id="formBut" action="MigrateDocument" runat="server" method="post">
 
 <asp:Button ID="bla" runat=server Text="Hola"/> 
 
@@ -19,6 +19,9 @@
 
     <table class="tablesorter" >
         <tr>
+            <th style="display:none;">
+                ID
+            </th>
             <th>
                 Nombre
             </th>
@@ -42,6 +45,9 @@
         <% foreach (var item in Model) { %>
     
         <tr>
+            <td style="display:none;">
+                <%: item.IdDocumento%>
+            </td>
             <td>
                 <%: item.NombreDocumento%>
             </td>
@@ -55,11 +61,10 @@
                 <%: item.NombreUsuarioEmisor %>
             </td>
             <td>
-                
                 <%: item.NombreUsuarioReceptor %>
             </td>
             <td>
-                <asp:CheckBox ID="Check" runat="server"/>
+                <%: Html.ActionLink("Imprimir", "MigrateDocument", new { id = item.IdDocumento })%>   
             </td>
         </tr>
     
@@ -108,13 +113,12 @@
 			    <option selected="selected"  value="10">10</option>
 			    <option value="20">20</option>
 			    <option value="30">30</option>
-                <option  value="40">40</option>
+                <option value="40">40</option>
 		    </select>
 	    </form>
     </div>
 
-    
-        <asp:Button ID="ButtonMigrar" runat="server" Text="Migrar documentos" CssClass="boton"/>
+        <!-- <asp:Button ID="ButtonMigrar" runat="server" Text="Migrar documentos" CssClass="boton"/> --> 
     </form>
     
 

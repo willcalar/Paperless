@@ -8,6 +8,8 @@ namespace LogManager.Implementor
     public class MensajesLog
     {
         #region Documentos
+        public const string ACTUALIZAR_ESTADO_DOCUMENTO = "Se actualizo el estado del documento";
+        public const string ERROR_ACTUALIZAR_ESTADO_DOCUMENTO = "No se pudo actualizar el estado del documento";
         public const string OBTENER_DOCUMENTOS_AUDITORIA = "Se obtuvo documentos para auditoría siguiendo los parámetros de búsqueda";
         public const string ERROR_OBTENER_DOCUMENTOS_AUDITORIA = "No se obtuvieron documentos para auditoría";
         public const string OBTENER_DOCUMENTOS_AUDITORIA_2 = "Se obtuvo todos los documentos para auditoría";

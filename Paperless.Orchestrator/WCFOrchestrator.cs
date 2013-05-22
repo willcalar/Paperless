@@ -53,7 +53,17 @@ namespace Paperless.Orchestrator
         public Documento[] ObtenerDocumentosPorMigrar()
         {
             return DocumentosImplementor.Instance.ObtenerDocumentosPorMigrar();
-        }      
+        }
+      
+        /// <summary>
+        /// Actualiza el estado de un documento que fue migrado en el sistema
+        /// </summary>
+        /// <param name="nombreDocumento">id del documento</param>
+        /// <returns>Verdadero si actulizo con exito o Falso de lo contrario</returns>
+        public bool ActualizarEstadoDocumento(int idDocumento)
+        {
+            return DocumentosImplementor.Instance.ActualizarEstadoDocumento(idDocumento);
+        }  
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor

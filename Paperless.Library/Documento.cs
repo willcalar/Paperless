@@ -119,6 +119,25 @@ namespace Paperless.Library
            
         }
 
+        /// <summary>
+        /// Constructor del objeto
+        /// </summary>
+        /// <param name="nombreUsuarioEmisor">Nombre de usuario del emisor</param>
+        /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
+        /// <param name="departamento">Nombre del departamento</param>
+        /// <param name="tipoDocumento">Tipo de documento</param>
+        /// <param name="fechaEmision">Fecha de emisión del documento</param>
+        /// <param name="fechaRecepcion">Fecha de recepción del documento</param>
+        public Documento(int idDocumento, string nombreDocumento, DateTime fecha, string tipoDocumento, string nombreUsuarioEmisor, string nombreUsuarioReceptor)
+        {
+            _IdDocumento = idDocumento;
+            _NombreDocumento = nombreDocumento;
+            _Fecha = fecha;
+            _TipoDocumento = tipoDocumento;
+            _NombreUsuarioEmisor = nombreUsuarioEmisor;
+            _NombreUsuarioReceptor = nombreUsuarioReceptor;
+        }
+
 
         /// <summary>
         /// Constructor del objeto

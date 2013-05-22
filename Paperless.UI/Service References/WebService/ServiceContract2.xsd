@@ -8,7 +8,12 @@
   <xs:element name="ArrayOfDocumento" nillable="true" type="tns:ArrayOfDocumento" />
   <xs:complexType name="Documento">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Archivo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="EstadoFirmas" type="xs:int" />
       <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Formato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDocumento" type="xs:int" />
+      <xs:element minOccurs="0" name="Leido" type="xs:boolean" />
       <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioEmisor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioReceptor" nillable="true" type="xs:string" />
@@ -32,16 +37,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DocumentoDetalleMovimiento" nillable="true" type="tns:DocumentoDetalleMovimiento" />
-  <xs:complexType name="ArrayOfHistorial">
+  <xs:complexType name="ArrayOfDocumentoDetalleRecibo">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Historial" nillable="true" type="tns:Historial" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentoDetalleRecibo" nillable="true" type="tns:DocumentoDetalleRecibo" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHistorial" nillable="true" type="tns:ArrayOfHistorial" />
-  <xs:complexType name="Historial">
-    <xs:sequence />
+  <xs:element name="ArrayOfDocumentoDetalleRecibo" nillable="true" type="tns:ArrayOfDocumentoDetalleRecibo" />
+  <xs:complexType name="DocumentoDetalleRecibo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Emisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoFirmas" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NombreDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receptor" nillable="true" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
-  <xs:element name="Historial" nillable="true" type="tns:Historial" />
+  <xs:element name="DocumentoDetalleRecibo" nillable="true" type="tns:DocumentoDetalleRecibo" />
   <xs:complexType name="ArrayOfUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />
