@@ -10,7 +10,6 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using Word = Microsoft.Office.Interop.Word;
 using System.Configuration;
 using System.Text;
 using Exceptions;

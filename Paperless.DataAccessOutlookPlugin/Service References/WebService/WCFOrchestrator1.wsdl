@@ -32,6 +32,12 @@
   <wsdl:message name="IServiceContract_ObtenerDocumentosPorMigrar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumentosPorMigrarResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_ActualizarEstadoDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ActualizarEstadoDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoDocumentoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerDocumentosDeUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumentosDeUsuario" />
   </wsdl:message>
@@ -133,6 +139,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrar" message="tns:IServiceContract_ObtenerDocumentosPorMigrar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrarResponse" message="tns:IServiceContract_ObtenerDocumentosPorMigrar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ActualizarEstadoDocumento" message="tns:IServiceContract_ActualizarEstadoDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ActualizarEstadoDocumentoResponse" message="tns:IServiceContract_ActualizarEstadoDocumento_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ObtenerDocumentosDeUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuario" message="tns:IServiceContract_ObtenerDocumentosDeUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuarioResponse" message="tns:IServiceContract_ObtenerDocumentosDeUsuario_OutputMessage" />
@@ -221,6 +231,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerDocumentosPorMigrar">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentosPorMigrar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoDocumento">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ActualizarEstadoDocumento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

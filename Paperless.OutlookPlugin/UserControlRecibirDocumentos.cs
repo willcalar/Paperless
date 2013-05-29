@@ -13,17 +13,23 @@ namespace Paperless.OutlookPlugin
 {
     public partial class UserControlRecibirDocumentos : UserControl
     {
+        #region Atributos
         public List<int> _idDocumentos;
         public List<Documento> _Documentos;
+        #endregion
 
+        #region Propiedades
+        #endregion 
+
+        #region Construtor
         public UserControlRecibirDocumentos()
         {
             InitializeComponent();
             LlenarListView();
         }
+        #endregion
 
-  
-
+        #region Métodos
         public void LlenarListView()
         {
             _idDocumentos = new List<int>();
@@ -38,7 +44,7 @@ namespace Paperless.OutlookPlugin
             listView1.StateImageList = listaImagenes;
             foreach (Documento doc in docs)
             {
-                ListViewItem item = listView1.Items.Add(doc.IdDocumento.ToString(),doc.Fecha.ToShortDateString() + " - " + doc.NombreDocumento, doc.EstadoFirmas-1);
+                ListViewItem item = listView1.Items.Add(doc.IdDocumento.ToString(), doc.Fecha.ToShortDateString() + " - " + doc.NombreDocumento, doc.EstadoFirmas - 1);
                 _idDocumentos.Add(doc.IdDocumento);
                 _Documentos.Add(doc);
                 if (doc.Leido)
@@ -51,19 +57,30 @@ namespace Paperless.OutlookPlugin
                 }
             }
         }
+        #endregion
 
-        
-
+        #region Eventos
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (listView1.SelectedIndices.Count != 0)
             {
                 int indexSeleccionado = listView1.SelectedIndices[0];
-                FormDetalleDocumento pantallaDetalle = new FormDetalleDocumento(_idDocumentos[indexSeleccionado], this, _Documentos[indexSeleccionado].EstadoFirmas);
+                FormDetalleDocumento pantallaDetalle = new FormDetalleDocumento(_idDocumentos[indexSeleccionado], this, _Documentos[indexSeleccionado].EstadoFirmas, _Documentos[indexSeleccionado].Leido);
                 pantallaDetalle.Show();
                 this.Enabled = false;
             }
         }
+        #endregion
+
+        
+
+  
+
+        
+
+        
+
+        
 
 
         

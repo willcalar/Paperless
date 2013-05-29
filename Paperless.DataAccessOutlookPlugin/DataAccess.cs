@@ -122,7 +122,14 @@ namespace Paperless.DataAccessPlugins
         /// <param name="password">password del usuario</param>
         public bool FirmarDocumento(int idDocumento, string password)
         {
-            return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
+            if (Certificado.ChequearCertificado())
+            {
+                return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion
 

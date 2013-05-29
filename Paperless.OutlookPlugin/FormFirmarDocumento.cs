@@ -12,14 +12,22 @@ namespace Paperless.OutlookPlugin
 {
     public partial class FormFirmarDocumento : Form
     {
+        #region Atributos
         private int _IdDocumento;
+        #endregion
 
+        #region Propiedades
+        #endregion 
+
+        #region Constructor
         public FormFirmarDocumento(int idDocumento)
         {
             InitializeComponent();
             _IdDocumento = idDocumento;
         }
+        #endregion
 
+        #region Eventos
         private void buttonFirmar_Click(object sender, EventArgs e)
         {
             bool resultado = DataAccess.Instance.FirmarDocumento(_IdDocumento, textBoxPassword.Text);
@@ -39,18 +47,6 @@ namespace Paperless.OutlookPlugin
             openFileDialog1.ShowDialog();
         }
 
-        private void Cerrar()
-        {
-            MessageBox.Show("El proceso de firma del documento se ha realizado con éxito.",
-                    "Firma del documento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ((FormDetalleDocumento)this.Owner).LlenarDataGrid();
-            ((FormDetalleDocumento)this.Owner)._UserControlOwner.LlenarListView();
-            ((FormDetalleDocumento)this.Owner)._UserControlOwner.Enabled = true;
-            ((FormDetalleDocumento)this.Owner).buttonFirmar.Enabled = false;
-            ((FormDetalleDocumento)this.Owner)._Estado = 2;
-            this.Owner.Visible = true;
-            this.Close();
-        }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
@@ -61,7 +57,24 @@ namespace Paperless.OutlookPlugin
         {
             string nombreArchivo = openFileDialog1.FileName;
 
-            textBoxFirmaDigital.Text =  openFileDialog1.FileName;
+            textBoxFirmaDigital.Text = openFileDialog1.FileName;
         }
+        #endregion
+
+        #region Métodos
+        private void Cerrar()
+        {
+            MessageBox.Show("El proceso de firma del documento se ha realizado con éxito.",
+                    "Firma del documento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ((FormDetalleDocumento)this.Owner).LlenarDataGrid();
+            ((FormDetalleDocumento)this.Owner)._UserControlOwner.LlenarListView();
+            ((FormDetalleDocumento)this.Owner)._UserControlOwner.Enabled = true;
+            ((FormDetalleDocumento)this.Owner).buttonFirmar.Enabled = false;
+            ((FormDetalleDocumento)this.Owner)._Estado = 2;
+            ((FormDetalleDocumento)this.Owner).Visible = true;
+            this.Close();
+        }
+        #endregion
+
     }
 }

@@ -18,17 +18,27 @@ namespace Paperless.OutlookPlugin
 {
     public partial class FormDetalleDocumento : Form
     {
+        #region Atributos
         private int _IdDocumento;
         private Documento _Documento;
         public UserControlRecibirDocumentos _UserControlOwner;
         public int _Estado;
+        #endregion
 
+        #region Propiedades
+        public DataGridViewRowCollection Filas
+        {
+            get { return dataGridView1.Rows; }
+        }
+        #endregion 
 
-        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado)
+        #region Construtor
+        public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado, bool pLeido)
         {
             InitializeComponent();
             _IdDocumento = pIdDocumento;
             _Documento = DataAccess.Instance.ObtenerDocumento(_IdDocumento);
+            _Documento.Leido = pLeido;
             Text = _Documento.NombreDocumento;
             _UserControlOwner = pUserControlOwner;
             LlenarDataGrid();
@@ -38,12 +48,12 @@ namespace Paperless.OutlookPlugin
                 buttonFirmar.Enabled = true;
             }
         }
+        #endregion
 
-
-
+        #region Métodos
         public void LlenarDataGrid()
         {
-            dataGridView1.Rows.Clear();
+            Filas.Clear();
             DocumentoDetalleRecibo[] detalles = DataAccess.Instance.ObtenerDetalleDocumento(_IdDocumento);
             ImageList listaImagenes = new ImageList();
             listaImagenes.Images.Add("R", Properties.Resources.flag_red);
@@ -51,16 +61,16 @@ namespace Paperless.OutlookPlugin
             listaImagenes.Images.Add("G", Properties.Resources.flag_green);
             foreach (DocumentoDetalleRecibo detalle in detalles)
             {
-                dataGridView1.Rows.Add(detalle.Fecha.ToString(),string.Empty, detalle.Emisor, detalle.Receptor, listaImagenes.Images[detalle.EstadoFirmas - 1]);
-                if ((dataGridView1.Rows.Count - 1) % 2 == 0)
+                Filas.Add(detalle.Fecha.ToString(),string.Empty, detalle.Emisor, detalle.Receptor, listaImagenes.Images[detalle.EstadoFirmas - 1]);
+                if ((Filas.Count - 1) % 2 == 0)
                 {
                     DataGridViewCellStyle style = new DataGridViewCellStyle();
                     style.BackColor= Color.AliceBlue;
-                    dataGridView1.Rows[dataGridView1.Rows.Count - 1].DefaultCellStyle = style;
+                    Filas[Filas.Count - 1].DefaultCellStyle = style;
                         
                 }
             }
-            dataGridView1.Rows[0].Cells[1].Value = detalles[0].NombreDocumento;
+            Filas[0].Cells[1].Value = detalles[0].NombreDocumento;
         }
 
         public bool FirmarDocumento()
@@ -85,14 +95,23 @@ namespace Paperless.OutlookPlugin
 
         }
 
+
+        private void MarcarDocumentoLeido()
+        {
+            DataAccess.Instance.MarcarLeido(_IdDocumento);
+            _UserControlOwner.LlenarListView();
+        }
+        #endregion
+
+        #region Eventos
         private void buttonVerDocumento_Click_1(object sender, EventArgs e)
         {
+            abrirArchivo(_Documento);
             if (!_Documento.Leido)
             {
                 MarcarDocumentoLeido();
                 _Documento.Leido = true;
             }
-            abrirArchivo(_Documento);
             if (_Estado == 1)
             {
                 buttonFirmar.Enabled = true;
@@ -109,11 +128,7 @@ namespace Paperless.OutlookPlugin
             new FormFirmarDocumento(_IdDocumento).Show(this);
             this.Visible = false;
         }
+        #endregion
 
-        private void MarcarDocumentoLeido()
-        {
-            DataAccess.Instance.MarcarLeido(_IdDocumento);
-            _UserControlOwner.LlenarListView();
-        }
     }
 }

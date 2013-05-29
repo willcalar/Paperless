@@ -59,6 +59,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarEstadoDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarEstadoDocumentoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerDocumentosDeUsuario">
     <xs:complexType>
       <xs:sequence>
