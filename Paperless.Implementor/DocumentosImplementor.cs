@@ -276,30 +276,16 @@ namespace Paperless.Implementor
             bool resul;
             if(result != null){
                 int idDocumento = Convert.ToInt32(result.Tables[0].Rows[0][0].ToString());
-                resul = _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
-                    {
-                        new SqlParameter("@fecha", DateTime.Now),
-                        new SqlParameter("@descripcion", "Envío de documento"),
-                        new SqlParameter("@usuario", pDocumento.NombreUsuarioEmisor),
-                        new SqlParameter("@documento", idDocumento),
-                        new SqlParameter("@tipoEntrada", 1),
-                        new SqlParameter("@referenceID1", "0"),
-                        new SqlParameter("@referenceID2", "0")
-                    });
+                resul = InsertarEventoBitacora(pDocumento.NombreUsuarioEmisor, "Envío de documento", idDocumento, 1);
                 foreach (Usuario item in pLstDestinatarios)
                 {
-                    resul = _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
-                    {
-                        new SqlParameter("@fecha", DateTime.Now),
-                        new SqlParameter("@descripcion", "Recepción de documento"),
-                        new SqlParameter("@usuario", item.Username),
-                        new SqlParameter("@documento", idDocumento),
-                        new SqlParameter("@tipoEntrada", 2),
-                        new SqlParameter("@referenceID1", "0"),
-                        new SqlParameter("@referenceID2", "0")
-                    });
+                    resul = InsertarEventoBitacora(item.Username, "Recepción de Documento", idDocumento, _VALUE_RECEPCION_DOCUMENTO);
                     if (!resul)
                         return -1;
+                    resul = InsertarEventoBitacora(item.Username,
+                        item.TipoEnvio == Usuario.TipoEnvioEnum.Lectura ? "Lectura de documento requerida" : "Firma de documento requerida", 
+                        idDocumento, 
+                        (item.TipoEnvio==Usuario.TipoEnvioEnum.Lectura? _VALUE_LECTURA_DOCUMENTO:_VALUE_FIRMA_DOCUMENTO));
                 }
                 return idDocumento;
             }else
@@ -308,8 +294,29 @@ namespace Paperless.Implementor
 	        }
         }
 
+        /// <summary>
+        /// Inserta eventos en la Bitácora
+        /// </summary>
+        /// <param name="pUsername"></param>
+        /// <param name="pIdDocumento"></param>
+        /// <param name="TipoEntradaBitacora"></param>
+        /// <returns></returns>
+        private bool InsertarEventoBitacora(string pUsername, string pDescripcion ,int pIdDocumento, int pTipoEntradaBitacora)
+        {
+           return _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
+                    {
+                        new SqlParameter("@fecha", DateTime.Now),
+                        new SqlParameter("@descripcion", pDescripcion),
+                        new SqlParameter("@usuario", pUsername),
+                        new SqlParameter("@documento", pIdDocumento),
+                        new SqlParameter("@tipoEntrada", pTipoEntradaBitacora),
+                        new SqlParameter("@referenceID1", "0"),
+                        new SqlParameter("@referenceID2", "0")
+                    });
+        }
+
         private bool RegistrarEventoBitacora(){
-            return true;
+            return false;
         }
         #endregion
 
@@ -346,6 +353,9 @@ namespace Paperless.Implementor
 
         #region Constants
         public const string CUALQUIERA = "Cualquiera";
+        private const int _VALUE_RECEPCION_DOCUMENTO = 2;
+        private const int _VALUE_FIRMA_DOCUMENTO = 9;
+        private const int _VALUE_LECTURA_DOCUMENTO = 8;
         #endregion
     }
 }

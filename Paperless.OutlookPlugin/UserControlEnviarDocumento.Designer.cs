@@ -37,11 +37,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chkFirmado = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lstDepartamentos = new System.Windows.Forms.CheckedListBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.lstUsuarios = new System.Windows.Forms.CheckedListBox();
+            this.grdViewUsuarios = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsLectura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IsFirma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,7 +118,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lstUsuarios);
+            this.groupBox1.Controls.Add(this.grdViewUsuarios);
             this.groupBox1.Controls.Add(this.txtFiltro);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lstDepartamentos);
@@ -124,6 +129,15 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Destinatarios";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(58, 137);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(114, 20);
+            this.txtFiltro.TabIndex = 7;
+            this.txtFiltro.Tag = "Filtro";
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // label4
             // 
@@ -143,22 +157,47 @@
             this.lstDepartamentos.TabIndex = 5;
             this.lstDepartamentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lstDepartamentos_ItemCheck);
             // 
-            // txtFiltro
+            // grdViewUsuarios
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(58, 137);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(114, 20);
-            this.txtFiltro.TabIndex = 7;
-            this.txtFiltro.Tag = "Filtro";
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            this.grdViewUsuarios.AllowUserToAddRows = false;
+            this.grdViewUsuarios.AllowUserToDeleteRows = false;
+            this.grdViewUsuarios.AllowUserToResizeColumns = false;
+            this.grdViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Username,
+            this.IsLectura,
+            this.IsFirma});
+            this.grdViewUsuarios.Location = new System.Drawing.Point(0, 163);
+            this.grdViewUsuarios.Name = "grdViewUsuarios";
+            this.grdViewUsuarios.RowHeadersVisible = false;
+            this.grdViewUsuarios.Size = new System.Drawing.Size(216, 109);
+            this.grdViewUsuarios.TabIndex = 8;
             // 
-            // lstUsuarios
+            // Nombre
             // 
-            this.lstUsuarios.FormattingEnabled = true;
-            this.lstUsuarios.Location = new System.Drawing.Point(4, 165);
-            this.lstUsuarios.Name = "lstUsuarios";
-            this.lstUsuarios.Size = new System.Drawing.Size(203, 124);
-            this.lstUsuarios.TabIndex = 8;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 120;
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.Visible = false;
+            // 
+            // IsLectura
+            // 
+            this.IsLectura.HeaderText = "Lectura";
+            this.IsLectura.Name = "IsLectura";
+            this.IsLectura.Width = 45;
+            // 
+            // IsFirma
+            // 
+            this.IsFirma.HeaderText = "Firma";
+            this.IsFirma.Name = "IsFirma";
+            this.IsFirma.Width = 45;
             // 
             // UserControlEnviarDocumento
             // 
@@ -175,6 +214,7 @@
             this.Size = new System.Drawing.Size(240, 499);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +233,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox lstDepartamentos;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.CheckedListBox lstUsuarios;
+        private System.Windows.Forms.DataGridView grdViewUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLectura;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsFirma;
     }
 }

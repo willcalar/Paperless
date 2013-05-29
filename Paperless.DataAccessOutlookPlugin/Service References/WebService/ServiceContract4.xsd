@@ -65,10 +65,18 @@
       <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoEnvio" type="tns:Usuario.TipoEnvioEnum" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+  <xs:simpleType name="Usuario.TipoEnvioEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lectura" />
+      <xs:enumeration value="Firma" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Usuario.TipoEnvioEnum" nillable="true" type="tns:Usuario.TipoEnvioEnum" />
   <xs:complexType name="ArrayOfEvento">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Evento" nillable="true" type="tns:Evento" />

@@ -121,7 +121,7 @@
   <data name="btnAbrir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAQASURBVEhL7dNrUJRVHAbwzZn60BebacbScUkRozDEiTGV
+        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAQASURBVEhL7dNrUJRVHAbwzZn60BebacbScUkRozDEiTGV
         nC5Q1oeascSmskYcwsWQlMsYZhNNzdgdUsOi8TJWDKU0KiVyE5CrCQksgsstBCVhl3fZXfbysvue8/Ts
         pckvNeNI05fOzG/Ouzvn/T97zv+s7v/x34+JMv0ad2/2qDryhVkd2Rs0nE959Bk/55ndpowrlopFsaFX
         bmwolfpUYf8Z0IYAbx+ZqBuYNlI7nzsgJkuglC96OvTKjQ2lQm8Q9nIWuwSoLKqyqKeNfgHcjZwbIZQi
@@ -141,4 +141,16 @@
         uvh5ux9aetfCQEBurm5WbGzsrTONpW8JBPy7Q6f7AxpDrB2ONKNvAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Username.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IsLectura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="IsFirma.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

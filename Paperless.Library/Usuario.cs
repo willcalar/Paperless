@@ -16,6 +16,7 @@ namespace Paperless.Library
         private string _SegundoApellido;
         private string _Departamento;
         private string _Username;
+        private TipoEnvioEnum _TipoEnvio;
         #endregion
 
         #region Propiedades
@@ -25,6 +26,7 @@ namespace Paperless.Library
             get { return _NombreUsuario; }
             set { _NombreUsuario = value; }
         }
+
 
         [DataMember]
         public string PrimerApellido
@@ -53,6 +55,13 @@ namespace Paperless.Library
             get { return _Username; }
             set { _Username = value; }
         }
+
+        [DataMember]
+        public TipoEnvioEnum TipoEnvio
+        {
+            get { return _TipoEnvio; }
+            set { _TipoEnvio = value; }
+        }
         #endregion
 
         #region Constructores
@@ -78,6 +87,9 @@ namespace Paperless.Library
             _Departamento = departamento;
         }
         #endregion
+
+
+        public enum TipoEnvioEnum { Lectura, Firma }
 
     }
 }

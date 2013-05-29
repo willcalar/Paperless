@@ -35,6 +35,7 @@ namespace Paperless.OutlookPlugin
         {
             //Usuario[] arrUsuarios = DataAccess.Instance.ObtenerTodosUsuarios();
             //int i = 15;
+            int i = 0;
             foreach (Usuario m in arrUsuarios)
             {
                 /*CheckBox newCheckBox = new CheckBox();
@@ -43,8 +44,13 @@ namespace Paperless.OutlookPlugin
                 newCheckBox.Name = m.Username;
                 newCheckBox.Location = new System.Drawing.Point(grpUsuarios.Location.X * i, grpUsuarios.Location.Y+5);
                 grpUsuarios.Controls.Add(newCheckBox);*/
-                lstUsuarios.Items.Add(m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido);
-                _UsuariosDestinatarios.Add(m);
+                grdViewUsuarios.Rows.Add();
+                DataGridViewRow row = (DataGridViewRow)grdViewUsuarios.Rows[i];
+                row.Cells["Username"].Value = m.Username;
+                row.Cells["Nombre"].Value = m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido;
+                i++;
+                /*lstUsuarios.Items.Add(m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido);
+                _UsuariosDestinatarios.Add(m);*/
             }
         }
 
@@ -60,7 +66,8 @@ namespace Paperless.OutlookPlugin
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            if (File.Exists(txtFilePath.Text)&& lstUsuarios.SelectedItems.Count>0)
+            //if (File.Exists(txtFilePath.Text)&& lstUsuarios.SelectedItems.Count>0)
+            if (File.Exists(txtFilePath.Text))
             {
                 Documento documentoEnviar = new Documento()
                 {
@@ -72,7 +79,25 @@ namespace Paperless.OutlookPlugin
                 };
                 byte[] documento = File.ReadAllBytes(txtFilePath.Text);
                 List<Usuario> lstDestinatarios = new List<Usuario>();
-                for (int i = 0; i < lstUsuarios.Items.Count; i++)
+                Usuario destinatario;
+                foreach (DataGridViewRow item in grdViewUsuarios.Rows)
+                {
+                    if (item.Cells["IsFirma"].Value == null ? false : (bool)item.Cells["IsFirma"].Value)
+                    {
+                        destinatario = new Usuario();
+                        destinatario.Username = item.Cells["Username"].Value.ToString();
+                        destinatario.TipoEnvio = Usuario.TipoEnvioEnum.Firma;
+                        lstDestinatarios.Add(destinatario);
+                    }
+                    else if (item.Cells["IsLectura"].Value == null ? false : (bool)item.Cells["IsLectura"].Value)
+                    {
+                        destinatario = new Usuario();
+                        destinatario.Username = item.Cells["Username"].Value.ToString();
+                        destinatario.TipoEnvio = Usuario.TipoEnvioEnum.Lectura;
+                        lstDestinatarios.Add(destinatario);
+                    }
+                }
+                /*for (int i = 0; i < lstUsuarios.Items.Count; i++)
                 {
                     if (lstUsuarios.GetItemChecked(i))
                     {
@@ -81,7 +106,7 @@ namespace Paperless.OutlookPlugin
                         lstDestinatarios.Add(new Usuario { Username = BuscarUsername(str),  });
 
                     }
-                }
+                }*/
                 int idDocumento = DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
                 if (idDocumento!=-1)
                 {
@@ -89,6 +114,10 @@ namespace Paperless.OutlookPlugin
                     {
                         new FormFirmarDocumento(idDocumento).Show(this);
                         this.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Documento enviado correctamente");
                     }
                 }
                 else
@@ -123,8 +152,11 @@ namespace Paperless.OutlookPlugin
         }
 
 
+
+
         #region Variables
         List<Usuario> _UsuariosDestinatarios = new List<Usuario>();
         #endregion
+
     }
 }
