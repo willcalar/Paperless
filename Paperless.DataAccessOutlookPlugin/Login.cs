@@ -7,11 +7,11 @@ namespace Paperless.DataAccessPlugins
 {
     public class Login
     {
-        #region Methods
+        #region Métodos
 
-        public void LoginUsuario(string usuario)
+        public void LoginUsuario(string pUsuario)
         {
-            _NombreUsuario = usuario;
+            _NombreUsuario = pUsuario;
         }
 
         public void LogoutUsuario()
@@ -52,13 +52,13 @@ namespace Paperless.DataAccessPlugins
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile Login instance;
         private static object syncRoot = new Object();
         private String _NombreUsuario;
         #endregion
 
-        #region Properties
+        #region Propiedades
         public String NombreUsuario
         {
             get { return _NombreUsuario; }

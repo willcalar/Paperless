@@ -33,6 +33,13 @@ namespace Paperless.OutlookPlugin
         #endregion 
 
         #region Construtor
+        /// <summary>
+        /// Constructor del objeto
+        /// </summary>
+        /// <param name="pIdDocumento">Id del Documento</param>
+        /// <param name="pUserControlOwner">Form creador</param>
+        /// <param name="pEstado">Estado del documento</param>
+        /// <param name="pLeido">Indica si el usuario logueado ha leido el documento</param>
         public FormDetalleDocumento(int pIdDocumento, UserControlRecibirDocumentos pUserControlOwner, int pEstado, bool pLeido)
         {
             InitializeComponent();
@@ -51,6 +58,10 @@ namespace Paperless.OutlookPlugin
         #endregion
 
         #region Métodos
+
+        /// <summary>
+        /// Llena el datagrid con la información necesaria
+        /// </summary>
         public void LlenarDataGrid()
         {
             Filas.Clear();
@@ -73,11 +84,10 @@ namespace Paperless.OutlookPlugin
             Filas[0].Cells[1].Value = detalles[0].NombreDocumento;
         }
 
-        public bool FirmarDocumento()
-        {
-            return true;
-        }
-
+        /// <summary>
+        /// Abre el archivo que representa el objeto Documento
+        /// </summary>
+        /// <param name="pDocumento"> Objeto Documento</param>
         private void abrirArchivo(Documento pDocumento)
         {
             try
@@ -95,7 +105,9 @@ namespace Paperless.OutlookPlugin
 
         }
 
-
+        /// <summary>
+        /// Marca el documento como leído
+        /// </summary>
         private void MarcarDocumentoLeido()
         {
             DataAccess.Instance.MarcarLeido(_IdDocumento);

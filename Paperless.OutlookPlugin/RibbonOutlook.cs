@@ -13,9 +13,12 @@ namespace Paperless.OutlookPlugin
 {
     public partial class RibbonOutlook
     {
+        #region Atributos
         private CustomTaskPane _taskPanel;
         private int _accion;
+        #endregion 
 
+        #region eventos
         private void RibbonOutlook_Load(object sender, RibbonUIEventArgs e)
         {
             
@@ -41,9 +44,27 @@ namespace Paperless.OutlookPlugin
                 _accion = 1;
                 mostrarUserControlLogin();
             }
-        }        
+        }
 
+        private void buttonIniciarSesion_Click(object sender, RibbonControlEventArgs e)
+        {
+            mostrarUserControlLogin();
+        }
 
+        private void buttonCerrarSesion_Click(object sender, RibbonControlEventArgs e)
+        {
+            buttonCerrarSesion.Visible = false;
+            buttonIniciarSesion.Visible = true;
+            Login.Instance.LogoutUsuario();
+            ocultarTaskPanel();
+        }
+        #endregion
+
+        #region Métodos
+
+        /// <summary>
+        /// Abre la región donde se muestran los doucumentos recibidos por el usuario
+        /// </summary>
         private void mostrarUserControlRecibirDocumentos()
         {
             if (_taskPanel != null)
@@ -53,6 +74,9 @@ namespace Paperless.OutlookPlugin
             mostrarTaskPanel(220);
         }
 
+        /// <summary>
+        /// Muestra la region para enviar un documento
+        /// </summary>
         private void mostrarUserControlEnviarDocumentos()
         {   
             if (_taskPanel != null)
@@ -62,6 +86,9 @@ namespace Paperless.OutlookPlugin
             mostrarTaskPanel(240);
         }
 
+        /// <summary>
+        /// Muestra la región para realizar el login
+        /// </summary>
         private void mostrarUserControlLogin()
         {
             if (_taskPanel != null)
@@ -72,7 +99,10 @@ namespace Paperless.OutlookPlugin
             
         }
 
-
+        /// <summary>
+        /// Brinda las propiedades de la región
+        /// </summary>
+        /// <param name="width">Ancho deseado de la región</param>
         private void mostrarTaskPanel(int width)
         {
             _taskPanel.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
@@ -80,11 +110,18 @@ namespace Paperless.OutlookPlugin
             _taskPanel.Visible = true;
         }
 
+        /// <summary>
+        /// Oculta ela región que se muestra actualmente
+        /// </summary>
         private void ocultarTaskPanel()
         {
             _taskPanel.Visible = false;
         }
 
+        /// <summary>
+        /// Reintenta la operación que se intentaba realizar previo a realizar el login
+        /// </summary>
+        /// <param name="loguear"></param>
         public void reintentarOperacion(bool loguear)
         {
             if (loguear)
@@ -104,20 +141,7 @@ namespace Paperless.OutlookPlugin
             _accion = 0;
         }
 
-        private void buttonIniciarSesion_Click(object sender, RibbonControlEventArgs e)
-        {
-            mostrarUserControlLogin();
-        }
+        #endregion
 
-        private void buttonCerrarSesion_Click(object sender, RibbonControlEventArgs e)
-        {
-            buttonCerrarSesion.Visible = false;
-            buttonIniciarSesion.Visible = true;
-            Login.Instance.LogoutUsuario();
-            ocultarTaskPanel();
-        }
-
-        
-                
     }
 }

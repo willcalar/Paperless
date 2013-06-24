@@ -15,13 +15,21 @@ namespace Paperless.OutlookPlugin
 {
     public partial class UserControlEnviarDocumento : UserControl
     {
+        #region Constructores
+        /// <summary>
+        /// Constructuor del objeto
+        /// </summary>
         public UserControlEnviarDocumento()
         {
             InitializeComponent();
-            //LlenarListaDestinatarios();
             LlenarListaDepartamentos();
         }
+        #endregion 
 
+        #region Métodos
+        /// <summary>
+        /// Llena la lista de departamentos para seleccionar los destinaarios
+        /// </summary>
         private void LlenarListaDepartamentos()
         {
             String[] arrDepartamentos = DataAccess.Instance.ObtenerDepartamentos();
@@ -30,30 +38,41 @@ namespace Paperless.OutlookPlugin
                 lstDepartamentos.Items.Add(m);
             }
         }
-
+        
+        /// <summary>
+        /// Llena la lista de los posibles destinaarios
+        /// </summary>
+        /// <param name="arrUsuarios"></param>
         private void LlenarListaDestinatarios(List<Usuario> arrUsuarios)
         {
-            //Usuario[] arrUsuarios = DataAccess.Instance.ObtenerTodosUsuarios();
-            //int i = 15;
             int i = 0;
             foreach (Usuario m in arrUsuarios)
             {
-                /*CheckBox newCheckBox = new CheckBox();
-                newCheckBox.ThreeState = true;
-                newCheckBox.Text = m.NombreUsuario + " " + m.PrimerApellido;
-                newCheckBox.Name = m.Username;
-                newCheckBox.Location = new System.Drawing.Point(grpUsuarios.Location.X * i, grpUsuarios.Location.Y+5);
-                grpUsuarios.Controls.Add(newCheckBox);*/
                 grdViewUsuarios.Rows.Add();
                 DataGridViewRow row = (DataGridViewRow)grdViewUsuarios.Rows[i];
                 row.Cells["Username"].Value = m.Username;
                 row.Cells["Nombre"].Value = m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido;
                 i++;
-                /*lstUsuarios.Items.Add(m.NombreUsuario + " " + m.PrimerApellido + " " + m.SegundoApellido);
-                _UsuariosDestinatarios.Add(m);*/
             }
         }
+    
+        /// <summary>
+        /// Busca el usuario
+        /// </summary>
+        /// <param name="pNombreCompleto">Nombre completo del usuario</param>
+        /// <returns></returns>
+        private string BuscarUsername(string pNombreCompleto)
+        {
+            string []nombreTokens = pNombreCompleto.Split(' ');
+            return (from users in _UsuariosDestinatarios
+                    where users.NombreUsuario == nombreTokens[0]
+                    && users.PrimerApellido == nombreTokens[1]
+                    && users.SegundoApellido == nombreTokens[2]
+                    select users).First().Username;
+        }
+        #endregion
 
+        #region eventos
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             OpenFileDialog oFileDialog = new OpenFileDialog();
@@ -66,7 +85,6 @@ namespace Paperless.OutlookPlugin
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            //if (File.Exists(txtFilePath.Text)&& lstUsuarios.SelectedItems.Count>0)
             if (File.Exists(txtFilePath.Text))
             {
                 Documento documentoEnviar = new Documento()
@@ -97,18 +115,8 @@ namespace Paperless.OutlookPlugin
                         lstDestinatarios.Add(destinatario);
                     }
                 }
-                /*for (int i = 0; i < lstUsuarios.Items.Count; i++)
-                {
-                    if (lstUsuarios.GetItemChecked(i))
-                    {
-                        string str = (string)lstUsuarios.Items[i];
-
-                        lstDestinatarios.Add(new Usuario { Username = BuscarUsername(str),  });
-
-                    }
-                }*/
                 int idDocumento = DataAccess.Instance.EnviarDocumento(lstDestinatarios, documentoEnviar);
-                if (idDocumento!=-1)
+                if (idDocumento != -1)
                 {
                     if (chkFirmado.Checked)
                     {
@@ -131,16 +139,6 @@ namespace Paperless.OutlookPlugin
             }
         }
 
-        private string BuscarUsername(string pNombreCompleto)
-        {
-            string []nombreTokens = pNombreCompleto.Split(' ');
-            return (from users in _UsuariosDestinatarios
-                    where users.NombreUsuario == nombreTokens[0]
-                    && users.PrimerApellido == nombreTokens[1]
-                    && users.SegundoApellido == nombreTokens[2]
-                    select users).First().Username;
-        }
-
         private void lstDepartamentos_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             LlenarListaDestinatarios(DataAccess.Instance.ObtenerUsuarioPorDepartamento(lstDepartamentos.Items[e.Index].ToString()));
@@ -150,11 +148,9 @@ namespace Paperless.OutlookPlugin
         {
 
         }
+        #endregion
 
-
-
-
-        #region Variables
+        #region Atributos
         List<Usuario> _UsuariosDestinatarios = new List<Usuario>();
         #endregion
 

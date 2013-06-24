@@ -20,17 +20,21 @@ namespace Paperless.OutlookPlugin
         #endregion 
 
         #region Constructor
-        public FormFirmarDocumento(int idDocumento)
+        /// <summary>
+        /// Constructor del objeto
+        /// </summary>
+        /// <param name="pIdDocumento">Id del documento a firmar</param>
+        public FormFirmarDocumento(int pIdDocumento)
         {
             InitializeComponent();
-            _IdDocumento = idDocumento;
+            _IdDocumento = pIdDocumento;
         }
         #endregion
 
         #region Eventos
         private void buttonFirmar_Click(object sender, EventArgs e)
         {
-            bool resultado = DataAccess.Instance.FirmarDocumento(_IdDocumento, textBoxPassword.Text);
+            bool resultado = FirmarDocumento();
             if (resultado)
             {
                 Cerrar();
@@ -47,7 +51,6 @@ namespace Paperless.OutlookPlugin
             openFileDialog1.ShowDialog();
         }
 
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Cerrar();
@@ -62,6 +65,18 @@ namespace Paperless.OutlookPlugin
         #endregion
 
         #region Métodos
+        /// <summary>
+        /// Firma el doucmento
+        /// </summary>
+        /// <returns>Booleano que representa el resultado de la operación de la firma</returns>
+        private bool FirmarDocumento()
+        {
+            return DataAccess.Instance.FirmarDocumento(_IdDocumento, textBoxPassword.Text); ;
+        }
+
+        /// <summary>
+        /// Cierra la ventana
+        /// </summary>
         private void Cerrar()
         {
             MessageBox.Show("El proceso de firma del documento se ha realizado con éxito.",

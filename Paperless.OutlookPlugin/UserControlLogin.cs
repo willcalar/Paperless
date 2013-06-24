@@ -12,15 +12,19 @@ namespace Paperless.OutlookPlugin
 {
     public partial class UserControlLogin : UserControl
     {
+        #region Atributos
         private RibbonOutlook _parent;
+        #endregion
 
+        #region Constructores
         public UserControlLogin(RibbonOutlook parent)
         {
             InitializeComponent();
             _parent = parent;
-
         }
+        #endregion
 
+        #region Eventos
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
         {
             if (validarDatosUsuario())
@@ -41,14 +45,20 @@ namespace Paperless.OutlookPlugin
                     MessageBox.Show("Se ha perdido comunicación con el sistema. Reintente la operación.", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-
+        #region Métodos
+        /// <summary>
+        /// Verifica que se hayan introducido todos los datos requeridos
+        /// </summary>
+        /// <returns></returns>
         private bool validarDatosUsuario()
         {
             return ((!NombreUsuario.Equals(String.Empty)) && (!Password.Equals(String.Empty)));
         }
+        #endregion
 
-
+        #region Propiedades
         public String NombreUsuario
         {
             get { return textBoxNombreUsuario.Text; }
@@ -58,6 +68,6 @@ namespace Paperless.OutlookPlugin
         {
             get { return textBoxPassword.Text; }
         }
-
+        #endregion
     }
 }

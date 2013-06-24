@@ -30,6 +30,9 @@ namespace Paperless.OutlookPlugin
         #endregion
 
         #region Métodos
+        /// <summary>
+        /// Llena el listview que muestra la lista de los documentos recibidos por el usuario
+        /// </summary>
         public void LlenarListView()
         {
             _idDocumentos = new List<int>();
@@ -71,19 +74,7 @@ namespace Paperless.OutlookPlugin
             }
         }
         #endregion
-
-        
-
-  
-
-        
-
-        
-
-        
-
-
-        
+ 
 
     }
 }

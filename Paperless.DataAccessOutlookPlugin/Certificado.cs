@@ -8,6 +8,11 @@ namespace Paperless.DataAccessPlugins
 {
     public static class Certificado
     {
+        #region Métodos
+        /// <summary>
+        /// Chequea el certificado de Paperless para permitir la firma de documentos
+        /// </summary>
+        /// <returns></returns>
         public static bool ChequearCertificado()
         {
             X509Store store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
@@ -24,6 +29,7 @@ namespace Paperless.DataAccessPlugins
                 return true;
             }
         }
+        #endregion
 
     }
 }

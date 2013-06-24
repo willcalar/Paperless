@@ -11,63 +11,57 @@ namespace Paperless.DataAccessPlugins
     public class DataAccess
     {
      
-        #region Methods
+        #region Métodos
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
         /// </summary>
-        /// <param name="usuario">Nombre de usuario</param>
+        /// <param name="pUsuario">Nombre de usuario</param>
         /// <returns>Lista de documentos del usuario</returns>
-        public Documento[] ObtenerDocumentosDeUsuario(string usuario)
+        public Documento[] ObtenerDocumentosDeUsuario(string pUsuario)
         {
-            return _AccesoWS.ObtenerDocumentosDeUsuario(usuario);
+            return _AccesoWS.ObtenerDocumentosDeUsuario(pUsuario);
         }
 
         /// <summary>
         /// Obtiene el documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Documento asociado al id indicado</returns>
-        public Documento ObtenerDocumento(int idDocumento)
+        public Documento ObtenerDocumento(int pIdDocumento)
         {
-            return _AccesoWS.ObtenerDocumento(idDocumento);
+            return _AccesoWS.ObtenerDocumento(pIdDocumento);
         }
 
         /// <summary>
         /// Obtiene el documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Documento asociado al id indicado</returns>
-        public void MarcarLeido(int idDocumento)
+        public void MarcarLeido(int pIdDocumento)
         {
-             _AccesoWS.MarcarLeido(idDocumento, Login.Instance.NombreUsuario);
+            _AccesoWS.MarcarLeido(pIdDocumento, Login.Instance.NombreUsuario);
         }
 
         /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Lista de estados del documento para los diferentes receptores del mismo</returns>
-        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento)
+        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int pIdDocumento)
         {
-            return _AccesoWS.ObtenerDetalleDocumento(idDocumento);
-        }
-
-        // Qué es esto xD?
-        public Usuario[] ObtenerListaUsuarios()
-        {
-            return _AccesoWS.ObtenerUsuario("jalvarez");
+            return _AccesoWS.ObtenerDetalleDocumento(pIdDocumento);
         }
 
         /// <summary>
         /// Verifica el login del usuario
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
-        /// <param name="contrasena">Contraseña del usuario</param>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
+        /// <param name="pPassword">Contraseña del usuario</param>
         /// <returns>Nombre del funcionario</returns>
-        public string LogIn(string nombreUsuario, string password)
+        public string LogIn(string pNombreUsuario, string pPassword)
         {
-            return _AccesoWS.LogIn(nombreUsuario, password);
+            return _AccesoWS.LogIn(pNombreUsuario, pPassword);
         }
 
         /// <summary>
@@ -77,19 +71,13 @@ namespace Paperless.DataAccessPlugins
         public Usuario[] ObtenerTodosUsuarios()
         {
             return _AccesoWS.ObtenerTodosUsuarios();
-        }
+        }       
 
-        /*public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
-        {
-            List<Usuario> lstUsuario = (List<Usuario>)_CacheManager.GetItem(_CACHE_PREFIX+pDepartamento);
-            if (lstUsuario == null)
-            {
-                lstUsuario = _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
-                _CacheManager.AddItems(_CACHE_PREFIX + pDepartamento,lstUsuario,new TimeSpan(24,0,0));
-            }
-            return lstUsuario;
-        }*/
-
+        /// <summary>
+        /// Obtiene la lista de usuarios de un departamento
+        /// </summary>
+        /// <param name="pDepartamento">Nombre del departamento</param>
+        /// <returns>Lista de usuarios del departamento solicitado</returns>
         public List<Usuario> ObtenerUsuarioPorDepartamento(string pDepartamento)
         {
             return _AccesoWS.ObtenerUsuariosXDepartamento(pDepartamento).ToList();
@@ -98,15 +86,16 @@ namespace Paperless.DataAccessPlugins
         /// <summary>
         /// Envía un documento a los destinatarios correspondientes
         /// </summary>
-        /// <param name="pLstDestinatarios">Lista de destinatarios</param>
+        /// <param name="pListaDestinatarios">Lista de destinatarios</param>
         /// <param name="pDocumento">Documento a enviar</param>
         /// <returns></returns>
-        public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
+        public int EnviarDocumento(List<Usuario> pListaDestinatarios, Documento pDocumento)
         {
-            return _AccesoWS.EnviarDocumento(pLstDestinatarios.ToArray(),pDocumento);
+            return _AccesoWS.EnviarDocumento(pListaDestinatarios.ToArray(), pDocumento);
         }
+        
         /// <summary>
-        /// 
+        /// Obtiene la lista de departamentos registrados en el sistema
         /// </summary>
         /// <returns></returns>
         public String[] ObtenerDepartamentos()
@@ -117,14 +106,13 @@ namespace Paperless.DataAccessPlugins
         /// <summary>
         /// Marca como firmado por un usuario un documento
         /// </summary>
-        /// <param name="idDocumento">id del documento</param>
-        /// <param name="nombreUsuario">username del usuario</param>
-        /// <param name="password">password del usuario</param>
-        public bool FirmarDocumento(int idDocumento, string password)
+        /// <param name="pIdDocumento">id del documento</param>
+        /// <param name="pPassword">password del usuario</param>
+        public bool FirmarDocumento(int pIdDocumento, string pPassword)
         {
             if (Certificado.ChequearCertificado())
             {
-                return _AccesoWS.FirmarDocumento(idDocumento, Login.Instance.NombreUsuario, password);
+                return _AccesoWS.FirmarDocumento(pIdDocumento, Login.Instance.NombreUsuario, pPassword);
             }
             else
             {
@@ -148,7 +136,6 @@ namespace Paperless.DataAccessPlugins
                     {
                         instance = new DataAccess();
                         instance._AccesoWS = new ServiceContractClient();
-                        //instance._CacheManager = new CacheManager();
                     }
                 }
                 }
@@ -159,7 +146,7 @@ namespace Paperless.DataAccessPlugins
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile DataAccess instance;
         private static object syncRoot = new Object();
         private ServiceContractClient _AccesoWS;

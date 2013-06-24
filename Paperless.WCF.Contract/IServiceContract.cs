@@ -15,10 +15,10 @@ namespace Paperless.WCF.Contract
 
         #region Metodos Documentos
         [OperationContract]
-        Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción);
+        Documento[] ObtenerDocumentosAuditoria(string pUsuarioEmisor, string pUsuarioReceptor, string pDepartamento, string pTipoDocumento, DateTime pFechaEmision, DateTime pFechaRecepción);
 
         [OperationContract]
-        DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento);
+        DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string pNombreDocumento);
 
         [OperationContract]
         Documento[] ObtenerTodosDocumentosAuditoria();
@@ -27,30 +27,30 @@ namespace Paperless.WCF.Contract
         Documento[] ObtenerDocumentosPorMigrar();
 
         [OperationContract]
-        bool ActualizarEstadoDocumento(int idDocumento);
+        bool ActualizarEstadoDocumento(int pIdDocumento);
 
         [OperationContract]
-        Documento[] ObtenerDocumentosDeUsuario(string nombreUsuario);
+        Documento[] ObtenerDocumentosDeUsuario(string pNombreUsuario);
 
         [OperationContract]
         Documento ObtenerDocumento(int idDocumento);
 
         [OperationContract]
-        DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento);
+        DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int pIdDocumento);
 
         [OperationContract]
-        void MarcarLeido(int idDocumento, string nombreUsuario);
+        void MarcarLeido(int pIdDocumento, string pNombreUsuario);
 
         [OperationContract]
-        bool FirmarDocumento(int idDocumento, string nombreUsuario, string password);
+        bool FirmarDocumento(int pIdDocumento, string pNombreUsuario, string pPassword);
         #endregion
 
         #region Metodos Usuario
         [OperationContract]
-        String LogIn(string nombreUsuario, string contrasena);
+        String LogIn(string pNombreUsuario, string pContrasena);
 
         [OperationContract]
-        Usuario[] ObtenerUsuario(String nombreUsuario);
+        Usuario[] ObtenerUsuario(String pNombreUsuario);
 
         [OperationContract]
         Usuario[] ObtenerTodosUsuarios();
@@ -59,10 +59,10 @@ namespace Paperless.WCF.Contract
         Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento);
 
         [OperationContract]
-        DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario);
+        DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string pNombreUsuario);
 
         [OperationContract]
-        int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento);
+        int EnviarDocumento(List<Usuario> pListaDestinatarios, Documento pDocumento);
         #endregion
 
         #region Metodos Eventos
