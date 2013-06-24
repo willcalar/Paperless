@@ -97,7 +97,7 @@ namespace LogManager.DataAccess
 
 
 				//pType, pMessage, pSourceId, Identity.GetInstance().MachineName, string.Empty, Environment.NickName, pReferenceObjectId,
-                _AccesoDB.ExecuteNonQuery("dbo.PLSSP_EscribirLog", new List<SqlParameter>()
+                _AccesoDB.EjecutarNonQuery("dbo.PLSSP_EscribirLog", new List<SqlParameter>()
 				                                   	{
 				                                   		new SqlParameter("@tipoActividad", pType),
 				                                   		new SqlParameter("@descripcion", pMessage),
@@ -121,7 +121,7 @@ namespace LogManager.DataAccess
 		/// <returns>Dataset with the latest log</returns>
 		public DataSet GetLatestLog()
 		{
-            var dsLatestLog = _AccesoDB.ExecuteQuery("dbo.PLSSP_ObtenerUltimoLog", new List<SqlParameter>());
+            var dsLatestLog = _AccesoDB.EjecutarQuery("dbo.PLSSP_ObtenerUltimoLog", new List<SqlParameter>());
 			return dsLatestLog;
 		}
 
@@ -140,7 +140,7 @@ namespace LogManager.DataAccess
             {
                 var cantRegistros = new SqlParameter("@CantidadRegistros", 0);
 
-                var dsLogActivities = _AccesoDB.ExecuteQuery("dbo.PLSSP_ObtenerLogActividad", new List<SqlParameter>() { 
+                var dsLogActivities = _AccesoDB.EjecutarQuery("dbo.PLSSP_ObtenerLogActividad", new List<SqlParameter>() { 
                     new SqlParameter("@tipoFiltro", (byte)pFilterType),
                     new SqlParameter("@NombreCategoriaActividad", pCategoryName),
                     new SqlParameter("@TopRecordCount", pAmountOfRecordsToReturn),                    

@@ -65,20 +65,20 @@ namespace Paperless.Library
         }
 
         /// <summary>
-        /// 
+        /// Constructor de la clase
         /// </summary>
-        /// <param name="fecha"></param>
-        /// <param name="nombreDocumento"></param>
-        /// <param name="emisor"></param>
-        /// <param name="receptor"></param>
-        /// <param name="estadoFirmas"></param>
-        public DocumentoDetalleRecibo(DateTime fecha, string nombreDocumento, string emisor, string receptor, int estadoFirmas)
+        /// <param name="pFecha">Fecha de creación del documento</param>
+        /// <param name="pNombreDocumento">Nombre del documento</param>
+        /// <param name="pEmisor">Nombre de usuario del emisor</param>
+        /// <param name="pReceptor">Nombre de usuario del receptor</param>
+        /// <param name="pEstadoFirmas">Estado de las firmas del documento</param>
+        public DocumentoDetalleRecibo(DateTime pFecha, string pNombreDocumento, string pEmisor, string pReceptor, int pEstadoFirmas)
         {
-            _Fecha = fecha;
-            _NombreDocumento = nombreDocumento;
-            _Emisor = emisor;
-            _Receptor = receptor;
-            _EstadoFirmas = estadoFirmas;
+            _Fecha = pFecha;
+            _NombreDocumento = pNombreDocumento;
+            _Emisor = pEmisor;
+            _Receptor = pReceptor;
+            _EstadoFirmas = pEstadoFirmas;
         }
 
         #endregion

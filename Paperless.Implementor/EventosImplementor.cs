@@ -12,7 +12,7 @@ namespace Paperless.Implementor
     public class EventosImplementor
     {
         
-        #region Methods
+        #region Métodos
 
         /// <summary>
         /// Obtiene la lista de eventos irregulares presentados en el sistema
@@ -20,7 +20,7 @@ namespace Paperless.Implementor
         /// <returns>Lista de eventos irregulares presentados en el sistema</returns>
         public Evento[] ObtenerEventosIrregulares()
         {
-            DataSet dsResul = _AccesoDB.ExecuteQuery("PLSSP_ObtenerEventosIrregulares", new List<SqlParameter>());
+            DataSet dsResul = _AccesoDB.EjecutarQuery("PLSSP_ObtenerEventosIrregulares", new List<SqlParameter>());
             if (dsResul != null)
             {
                 List<Evento> lstEvento = new List<Evento>();
@@ -63,7 +63,7 @@ namespace Paperless.Implementor
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile EventosImplementor instance;
         private static object syncRoot = new Object();
         private DataAccess.DataAccess _AccesoDB;

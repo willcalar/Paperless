@@ -60,7 +60,7 @@ namespace Paperless.Library
         
         #endregion
 
-        #region Contructores
+        #region Constructores
         /// <summary>
         /// Constructor vacio de la clase
         /// </summary>
@@ -68,22 +68,21 @@ namespace Paperless.Library
         {
         }
 
-        
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="nombreDocumento">nombre del documento</param>
-        /// <param name="fecha">Fecha del movimiento del documento</param>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
-        /// <param name="tipoAccion"></param>
-        /// <param name="ruta"></param>
-        public DocumentoDetalleMovimiento(string nombreDocumento, DateTime fecha,  string nombreUsuario, string tipoAccion, string ruta)
+        /// <param name="pNombreDocumento">nombre del documento</param>
+        /// <param name="pFecha">Fecha del movimiento del documento</param>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
+        /// <param name="pTipoAccion"></param>
+        /// <param name="pRuta"></param>
+        public DocumentoDetalleMovimiento(string pNombreDocumento, DateTime pFecha,  string pNombreUsuario, string pTipoAccion, string pRuta)
         {
-            _NombreDocumento = nombreDocumento;
-            _Fecha = fecha;
-            _Usuario = nombreUsuario;
-            _TipoAccion = tipoAccion;
-            _Ruta = ruta;
+            _NombreDocumento = pNombreDocumento;
+            _Fecha = pFecha;
+            _Usuario = pNombreUsuario;
+            _TipoAccion = pTipoAccion;
+            _Ruta = pRuta;
            
         }
         #endregion

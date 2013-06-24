@@ -103,62 +103,70 @@ namespace Paperless.Library
         /// <summary>
         /// Constructor del objeto
         /// </summary>
-        /// <param name="nombreUsuarioEmisor">Nombre de usuario del emisor</param>
-        /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
-        /// <param name="departamento">Nombre del departamento</param>
-        /// <param name="tipoDocumento">Tipo de documento</param>
-        /// <param name="fechaEmision">Fecha de emisión del documento</param>
-        /// <param name="fechaRecepcion">Fecha de recepción del documento</param>
-        public Documento(string nombreDocumento, DateTime fecha, string tipoDocumento, string nombreUsuarioEmisor, string nombreUsuarioReceptor)
+        /// <param name="pNombreDocumento">Nombre del documento</param>
+        /// <param name="pFecha">Fecha de creación del documento</param>
+        /// <param name="pTipoDocumento">Tipo del documento</param>
+        /// <param name="pNombreUsuarioEmisor">Nombre del usuario emisor</param>
+        /// <param name="pNombreUsuarioReceptor">Nombre del usuario receptor</param>
+        public Documento(string pNombreDocumento, DateTime pFecha, string pTipoDocumento, string pNombreUsuarioEmisor, string pNombreUsuarioReceptor)
         {
-            _NombreDocumento = nombreDocumento;
-            _Fecha = fecha;
-            _TipoDocumento = tipoDocumento;
-            _NombreUsuarioEmisor = nombreUsuarioEmisor;
-            _NombreUsuarioReceptor = nombreUsuarioReceptor;
+            _NombreDocumento = pNombreDocumento;
+            _Fecha = pFecha;
+            _TipoDocumento = pTipoDocumento;
+            _NombreUsuarioEmisor = pNombreUsuarioEmisor;
+            _NombreUsuarioReceptor = pNombreUsuarioReceptor;
            
         }
 
         /// <summary>
         /// Constructor del objeto
         /// </summary>
-        /// <param name="nombreUsuarioEmisor">Nombre de usuario del emisor</param>
-        /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
-        /// <param name="departamento">Nombre del departamento</param>
-        /// <param name="tipoDocumento">Tipo de documento</param>
-        /// <param name="fechaEmision">Fecha de emisión del documento</param>
-        /// <param name="fechaRecepcion">Fecha de recepción del documento</param>
-        public Documento(int idDocumento, string nombreDocumento, DateTime fecha, string tipoDocumento, string nombreUsuarioEmisor, string nombreUsuarioReceptor)
+        /// <param name="pIdDocumento">Id del documento</param>
+        /// <param name="pNombreDocumento">Nombre del documento</param>
+        /// <param name="pFecha">Fecha de creación del documento</param>
+        /// <param name="pTipoDocumento">Tipo del documento</param>
+        /// <param name="pNombreUsuarioEmisor">Nombre del usuario emisor</param>
+        /// <param name="pNombreUsuarioReceptor">Nombre del usuario receptor</param>
+        public Documento(int pIdDocumento, string pNombreDocumento, DateTime pFecha, string pTipoDocumento, string pNombreUsuarioEmisor, string pNombreUsuarioReceptor)
         {
-            _IdDocumento = idDocumento;
-            _NombreDocumento = nombreDocumento;
-            _Fecha = fecha;
-            _TipoDocumento = tipoDocumento;
-            _NombreUsuarioEmisor = nombreUsuarioEmisor;
-            _NombreUsuarioReceptor = nombreUsuarioReceptor;
+            _IdDocumento = pIdDocumento;
+            _NombreDocumento = pNombreDocumento;
+            _Fecha = pFecha;
+            _TipoDocumento = pTipoDocumento;
+            _NombreUsuarioEmisor = pNombreUsuarioEmisor;
+            _NombreUsuarioReceptor = pNombreUsuarioReceptor;
         }
-
 
         /// <summary>
         /// Constructor del objeto
         /// </summary>
-        /// <param name="nombreUsuarioReceptor">Nombre de usuario del receptor</param>
-        public Documento(int idDocumento, string nombreDocumento, DateTime fecha,  string usuario, int estadoFirmas, bool leido)
+        /// <param name="pIdDocumento">Id del documento</param>
+        /// <param name="pNombreDocumento">Nombre del documento</param>
+        /// <param name="pFecha">Fecha de creación del documento</param>
+        /// <param name="pUsuario">Nombre del usuario solicitante</param>
+        /// <param name="pEstadoFirmas">Estado de las firmas del documento</param>
+        /// <param name="pLeido">Booleano que indica si el usuario solicitante ha leido el documento</param>
+        public Documento(int pIdDocumento, string pNombreDocumento, DateTime pFecha,  string pUsuario, int pEstadoFirmas, bool pLeido)
         {
-            _IdDocumento = idDocumento;
-            _NombreDocumento = nombreDocumento;
-            _Fecha = fecha;
-            _NombreUsuarioEmisor = usuario;
-            _EstadoFirmas = estadoFirmas;
-            _Leido = leido;
+            _IdDocumento = pIdDocumento;
+            _NombreDocumento = pNombreDocumento;
+            _Fecha = pFecha;
+            _NombreUsuarioEmisor = pUsuario;
+            _EstadoFirmas = pEstadoFirmas;
+            _Leido = pLeido;
         }
 
-
-        public Documento(string nombreDocumento, String formatoArchivo, Byte[] archivo)
+        /// <summary>
+        /// Constructor del objeto
+        /// </summary>
+        /// <param name="pNombreDocumento">Nombre del documento</param>
+        /// <param name="pFormatoArchivo">El formato del documento</param>
+        /// <param name="pArchivo">El contenido del archivo que representa el documento</param>
+        public Documento(string pNombreDocumento, String pFormatoArchivo, Byte[] pArchivo)
         {
-            _NombreDocumento = nombreDocumento;
-            _Formato = formatoArchivo;
-            _Archivo = archivo;
+            _NombreDocumento = pNombreDocumento;
+            _Formato = pFormatoArchivo;
+            _Archivo = pArchivo;
         }
         #endregion
     }

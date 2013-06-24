@@ -13,35 +13,35 @@ namespace Paperless.Implementor
     public class DocumentosImplementor
     {
 
-        #region Methods
+        #region Métodos
 
         /// <summary>
         /// Obtiene los documentos para la pantalla de Auditoía de Documentos
         /// </summary>
-        /// <param name="usuarioEmisor">Parámetro de búsqueda</param>
-        /// <param name="usuarioReceptor">Parámetro de búsqueda</param>
-        /// <param name="departamento">Parámetro de búsqueda</param>
-        /// <param name="tipoDocumento">Parámetro de búsqueda</param>
-        /// <param name="fechaEmision">Parámetro de búsqueda</param>
-        /// <param name="fechaRecepcion">Parámetro de búsqueda</param>
+        /// <param name="pUsuarioEmisor">Parámetro de búsqueda</param>
+        /// <param name="pUsuarioReceptor">Parámetro de búsqueda</param>
+        /// <param name="pDepartamento">Parámetro de búsqueda</param>
+        /// <param name="pTipoDocumento">Parámetro de búsqueda</param>
+        /// <param name="pFechaEmision">Parámetro de búsqueda</param>
+        /// <param name="pFechaRecepcion">Parámetro de búsqueda</param>
         /// <returns>Arreglo de Documentos que cumple con los parametros de la búsqueda</returns>
-        public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepcion)
+        public Documento[] ObtenerDocumentosAuditoria(string pUsuarioEmisor, string pUsuarioReceptor, string pDepartamento, string pTipoDocumento, DateTime pFechaEmision, DateTime pFechaRecepcion)
         {
-            if (usuarioEmisor == null) usuarioEmisor = "null";
-            if (usuarioReceptor == null) usuarioReceptor = "null";
-            if (departamento.Equals(CUALQUIERA)) departamento = "null";
-            if (tipoDocumento.Equals(CUALQUIERA)) departamento = "null";
-            if (fechaEmision.Equals(DateTime.MinValue)) fechaEmision = DateTime.Now;
-            if (fechaRecepcion.Equals(DateTime.MinValue)) fechaRecepcion = DateTime.Now;
+            if (pUsuarioEmisor == null) pUsuarioEmisor = "null";
+            if (pUsuarioReceptor == null) pUsuarioReceptor = "null";
+            if (pDepartamento.Equals(CUALQUIERA)) pDepartamento = "null";
+            if (pTipoDocumento.Equals(CUALQUIERA)) pTipoDocumento = "null";
+            if (pFechaEmision.Equals(DateTime.MinValue)) pFechaEmision = DateTime.Now;
+            if (pFechaRecepcion.Equals(DateTime.MinValue)) pFechaRecepcion = DateTime.Now;
 
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosAuditoria", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDocumentosAuditoria", new List<SqlParameter>()
             {
-                new SqlParameter("usuarioEmisor", usuarioEmisor),
-                new SqlParameter("usuarioReceptor", usuarioReceptor),
-                new SqlParameter("departamento", departamento),
-                new SqlParameter("tipoDocumento", tipoDocumento),
-                new SqlParameter("fechaEmision", fechaEmision),
-                new SqlParameter("fechaRecepcion", fechaRecepcion)
+                new SqlParameter("usuarioEmisor", pUsuarioEmisor),
+                new SqlParameter("usuarioReceptor", pUsuarioReceptor),
+                new SqlParameter("departamento", pDepartamento),
+                new SqlParameter("tipoDocumento", pTipoDocumento),
+                new SqlParameter("fechaEmision", pFechaEmision),
+                new SqlParameter("fechaRecepcion", pFechaRecepcion)
             });
 
             if (result != null)
@@ -64,7 +64,7 @@ namespace Paperless.Implementor
         /// <returns>Lista de todos los documentos ingresados en el sistema</returns>
         public Documento[] ObtenerDocumentosAuditoria()
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerTodosDocumentosAuditoria", new List<SqlParameter>());
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerTodosDocumentosAuditoria", new List<SqlParameter>());
             if (result != null)
             {
                 var documentos = new List<Documento>();
@@ -81,13 +81,13 @@ namespace Paperless.Implementor
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un documento
         /// </summary>
-        /// <param name="nombreDocumento">nombre del documento a consultar</param>
+        /// <param name="pNombreDocumento">nombre del documento a consultar</param>
         /// <returns>Lista de movimientos asociados al documento solicitado</returns>
-        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
+        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string pNombreDocumento)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDetalleDocumentoAuditoria", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDetalleDocumentoAuditoria", new List<SqlParameter>()
             {
-                new SqlParameter("nombreDocumento", nombreDocumento)
+                new SqlParameter("nombreDocumento", pNombreDocumento)
             });
 
             if (result != null)
@@ -96,10 +96,10 @@ namespace Paperless.Implementor
                 foreach (DataRow fila in result.Tables[0].Rows)
                     movimientos.Add(new DocumentoDetalleMovimiento(fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), fila["TipoEntrada"].ToString(), fila["Ruta"].ToString()));
 
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_MOVIMIENTOS_DOCUMENTO, nombreDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_MOVIMIENTOS_DOCUMENTO, pNombreDocumento);
                 return movimientos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_MOVIMIENTOS_DOCUMENTO, nombreDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_MOVIMIENTOS_DOCUMENTO, pNombreDocumento);
             return null;
 
         }
@@ -110,7 +110,7 @@ namespace Paperless.Implementor
         /// <returns>Lista de documentos que deberían migrarse</returns>
         public Documento[] ObtenerDocumentosPorMigrar()
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDocumentosMigracion", new List<SqlParameter>());
             if (result != null)
             {
                 var documentos = new List<Documento>();
@@ -127,34 +127,34 @@ namespace Paperless.Implementor
         /// <summary>
         /// Actualiza el estado de un documento que fue migrado en el sistema
         /// </summary>
-        /// <param name="nombreDocumento">id del documento</param>
+        /// <param name="pIdDocumento">id del documento</param>
         /// <returns>Verdadero si actulizo con exito o Falso de lo contrario</returns>
-        public bool ActualizarEstadoDocumento(int idDocumento)
+        public bool ActualizarEstadoDocumento(int pIdDocumento)
         {
-            var result = _AccesoDB.ExecuteNonQuery("PLSSP_ActualizarEstadoDocumento", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarNonQuery("PLSSP_ActualizarEstadoDocumento", new List<SqlParameter>()
             {
-                new SqlParameter("idDocumento", idDocumento)
+                new SqlParameter("idDocumento", pIdDocumento)
             });
 
             if (result != null)
             {
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.ACTUALIZAR_ESTADO_DOCUMENTO, idDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.ACTUALIZAR_ESTADO_DOCUMENTO, pIdDocumento);
                 return true;
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_ACTUALIZAR_ESTADO_DOCUMENTO, idDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_ACTUALIZAR_ESTADO_DOCUMENTO, pIdDocumento);
             return false;
         }
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <param name="pUsuario">Nombre de usuario</param>
         /// <returns>Lista de documentos del usuario</returns>
-        public Documento[] ObtenerDocumentosDeUsuario(string usuario)
+        public Documento[] ObtenerDocumentosDeUsuario(string pUsuario)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumentosDeUsuario", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDocumentosDeUsuario", new List<SqlParameter>()
             {
-                new SqlParameter("usuario", usuario)
+                new SqlParameter("usuario", pUsuario)
             });
 
             if (result != null)
@@ -163,23 +163,23 @@ namespace Paperless.Implementor
                 foreach (DataRow fila in result.Tables[0].Rows)
                     documentos.Add(new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), (int)fila["EstadoFirmas"], (bool)fila["Leido"]));
 
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_DE_USUARIO, usuario);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
                 return documentos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_DE_USUARIO, usuario);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
             return null;
         }
 
         /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Lista de estados del documento para los diferentes receptores del mismo</returns>
-        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento)
+        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int pIdDocumento)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDetalleDocumento", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDetalleDocumento", new List<SqlParameter>()
             {
-                new SqlParameter("idDocumento", idDocumento)
+                new SqlParameter("idDocumento", pIdDocumento)
             });
 
             if (result != null)
@@ -188,47 +188,47 @@ namespace Paperless.Implementor
                 foreach (DataRow fila in result.Tables[0].Rows)
                     detalles.Add(new DocumentoDetalleRecibo(DateTime.Parse(fila["Fecha"].ToString()), fila["Documento"].ToString(), fila["Emisor"].ToString(), fila["Receptor"].ToString(), (int)fila["EstadoFirmas"]));
 
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DETALLE_DOCUMENTO, idDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DETALLE_DOCUMENTO, pIdDocumento);
                 return detalles.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DETALLE_DOCUMENTO, idDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DETALLE_DOCUMENTO, pIdDocumento);
             return null;
         }
 
         /// <summary>
         /// Obtiene el documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Documento asociado al id indicado</returns>
-        public Documento ObtenerDocumento(int idDocumento)
+        public Documento ObtenerDocumento(int pIdDocumento)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDocumento", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDocumento", new List<SqlParameter>()
             {
-                new SqlParameter("idDocumento", idDocumento)
+                new SqlParameter("idDocumento", pIdDocumento)
             });
 
             if (result != null)
             {
                 DataRow fila = result.Tables[0].Rows[0];
                 var documento = new Documento(fila["Documento"].ToString(), fila["Formato"].ToString(), (byte[]) fila["Archivo"]);
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTO, idDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTO, pIdDocumento);
                 return documento;
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTO, idDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTO, pIdDocumento);
             return null;
         }
 
         /// <summary>
         /// Marca como leido por un usuario un documento
         /// </summary>
-        /// <param name="idDocumento">id del documento</param>
-        /// <param name="nombreUsuario">username del usuario</param>
-        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        /// <param name="pIdDocumento">id del documento</param>
+        /// <param name="pNombreUsuario">username del usuario</param>
+        public void MarcarLeido(int pIdDocumento, string pNombreUsuario)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_MarcarLeido", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_MarcarLeido", new List<SqlParameter>()
             {
-                new SqlParameter("idDocumento", idDocumento),
-                new SqlParameter("nombreUsuario", nombreUsuario)
+                new SqlParameter("idDocumento", pIdDocumento),
+                new SqlParameter("nombreUsuario", pNombreUsuario)
 
             });
         }
@@ -236,35 +236,41 @@ namespace Paperless.Implementor
         /// <summary>
         /// Marca como firmado por un usuario un documento
         /// </summary>
-        /// <param name="idDocumento">id del documento</param>
-        /// <param name="nombreUsuario">username del usuario</param>
-        /// <param name="password">password del usuario</param>
-        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password)
+        /// <param name="pIdDocumento">id del documento</param>
+        /// <param name="pNombreUsuario">username del usuario</param>
+        /// <param name="pPassword">password del usuario</param>
+        public bool FirmarDocumento(int pIdDocumento, string pNombreUsuario, string pPassword)
         {
-            var result = _AccesoDB.ExecuteQuery("PLSSP_FirmarDocumento", new List<SqlParameter>()
+            var result = _AccesoDB.EjecutarQuery("PLSSP_FirmarDocumento", new List<SqlParameter>()
             {
-                new SqlParameter("idDocumento", idDocumento),
-                new SqlParameter("nombreUsuario", nombreUsuario),
-                new SqlParameter("password", password)
+                new SqlParameter("idDocumento", pIdDocumento),
+                new SqlParameter("nombreUsuario", pNombreUsuario),
+                new SqlParameter("password", pPassword)
 
             });
             if (result != null)
             {
                 DataRow fila = result.Tables[0].Rows[0];
                 var resultado = int.Parse(fila["Resultado"].ToString());
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.FIRMAR_DOCUMENTO, idDocumento);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.FIRMAR_DOCUMENTO, pIdDocumento);
                 if (resultado == 1)
                     return true;
                 else
                     return false;
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_FIRMAR_DOCUMENTO, idDocumento);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_FIRMAR_DOCUMENTO, pIdDocumento);
             return false;
         }
 
+        /// <summary>
+        /// Envia un documento
+        /// </summary>
+        /// <param name="pLstDestinatarios"> Lista de destinatarios que recibirán el documento</param>
+        /// <param name="pDocumento">Objeto que representa el documento que se enviará</param>
+        /// <returns>El id del documento enviado o un -1 en caso de error</returns>
         public int EnviarDocumento(List<Usuario> pLstDestinatarios, Documento pDocumento)
         {
-            DataSet result = _AccesoDB.ExecuteQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){
+            DataSet result = _AccesoDB.EjecutarQuery("PLSSP_InsertarDocumento", new List<SqlParameter> (){
                 new SqlParameter("@nombre", pDocumento.NombreDocumento),
                 new SqlParameter("@archivo", pDocumento.Archivo),
                 new SqlParameter("@fechaingreso", pDocumento.Fecha),
@@ -303,7 +309,7 @@ namespace Paperless.Implementor
         /// <returns></returns>
         private bool InsertarEventoBitacora(string pUsername, string pDescripcion ,int pIdDocumento, int pTipoEntradaBitacora)
         {
-           return _AccesoDB.ExecuteNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
+           return _AccesoDB.EjecutarNonQuery("PLSSP_InsertarBitacoraDocumento", new List<SqlParameter>()
                     {
                         new SqlParameter("@fecha", DateTime.Now),
                         new SqlParameter("@descripcion", pDescripcion),
@@ -315,9 +321,6 @@ namespace Paperless.Implementor
                     });
         }
 
-        private bool RegistrarEventoBitacora(){
-            return false;
-        }
         #endregion
 
         #region Singleton
@@ -345,13 +348,13 @@ namespace Paperless.Implementor
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile DocumentosImplementor instance;
         private static object syncRoot = new Object();
         private DataAccess.DataAccess _AccesoDB;
         #endregion
 
-        #region Constants
+        #region Constantes
         public const string CUALQUIERA = "Cualquiera";
         private const int _VALUE_RECEPCION_DOCUMENTO = 2;
         private const int _VALUE_FIRMA_DOCUMENTO = 9;

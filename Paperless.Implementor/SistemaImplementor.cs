@@ -9,8 +9,7 @@ namespace Paperless.Implementor
 {
     public class SistemaImplementor
     {
-        #region Methods
-
+        #region Métodos
         /// <summary>
         /// Obtiene los tipos de documentos registrados en el sistema
         /// </summary>
@@ -18,7 +17,7 @@ namespace Paperless.Implementor
         public String[] ObtenerTiposDocumento()
         {
             var tiposDocumento = new List<String>();
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerTiposDocumento", new List<SqlParameter>());
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerTiposDocumento", new List<SqlParameter>());
             if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
             {
                 foreach (DataRow fila in result.Tables[0].Rows)
@@ -53,7 +52,7 @@ namespace Paperless.Implementor
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile SistemaImplementor instance;
         private static object syncRoot = new Object();
         private DataAccess.DataAccess _AccesoDB;

@@ -77,18 +77,18 @@ namespace Paperless.Library
         /// <summary>
         /// Constructor del objeto
         /// </summary>
-        /// <param name="tipoEvento">Tipo de evento</param>
-        /// <param name="descripcion">Descripción del evento</param>
-        /// <param name="fechaHora">Fecha y hora del evento</param>
-        /// <param name="nombreUsuario">Nombre del usuario involucrado</param>
-        /// <param name="nombreDocumento">Nombre del documento involucrado</param>
-        public Evento(string tipoEvento, string descripcion, DateTime fechaHora, string nombreUsuario, string nombreDocumento)
+        /// <param name="pTipoEvento">Tipo de evento</param>
+        /// <param name="pDescripcion">Descripción del evento</param>
+        /// <param name="pFechaHora">Fecha y hora del evento</param>
+        /// <param name="pNombreUsuario">Nombre del usuario involucrado</param>
+        /// <param name="pNombreDocumento">Nombre del documento involucrado</param>
+        public Evento(string pTipoEvento, string pDescripcion, DateTime pFechaHora, string pNombreUsuario, string pNombreDocumento)
         {
-            _TipoEvento = tipoEvento;
-            _Descripcion = descripcion;
-            _FechaHora = fechaHora;
-            _NombreUsuario = nombreUsuario;
-            _NombreDocumento = nombreDocumento;
+            _TipoEvento = pTipoEvento;
+            _Descripcion = pDescripcion;
+            _FechaHora = pFechaHora;
+            _NombreUsuario = pNombreUsuario;
+            _NombreDocumento = pNombreDocumento;
         }
         #endregion
     }

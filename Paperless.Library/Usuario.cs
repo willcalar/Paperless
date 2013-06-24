@@ -75,19 +75,18 @@ namespace Paperless.Library
         /// <summary>
         /// Constructor del objeto
         /// </summary>
-        /// <param name="nombreUsuario">Nombre del usuario</param>
-        /// <param name="primerApellido">Primer apellido del usuario</param>
-        /// <param name="segundoApellido">Segundo apellido del usuario</param>
-        /// <param name="departamento">Departamento del usuario</param>
-        public Usuario(string nombreUsuario, string primerApellido, string segundoApellido, string departamento)
+        /// <param name="pNombreUsuario">Nombre del usuario</param>
+        /// <param name="pPrimerApellido">Primer apellido del usuario</param>
+        /// <param name="pSegundoApellido">Segundo apellido del usuario</param>
+        /// <param name="pDepartamento">Departamento del usuario</param>
+        public Usuario(string pNombreUsuario, string pPrimerApellido, string pSegundoApellido, string pDepartamento)
         {
-            _NombreUsuario = nombreUsuario;
-            _PrimerApellido = primerApellido;
-            _SegundoApellido = segundoApellido;
-            _Departamento = departamento;
+            _NombreUsuario = pNombreUsuario;
+            _PrimerApellido = pPrimerApellido;
+            _SegundoApellido = pSegundoApellido;
+            _Departamento = pDepartamento;
         }
         #endregion
-
 
         public enum TipoEnvioEnum { Lectura, Firma }
 

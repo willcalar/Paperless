@@ -14,7 +14,7 @@ namespace Paperless.Implementor
     public class UsuariosImplementor
     {
 
-        #region Methods
+        #region Métodos
         /// <summary>
         /// Verifica el nombre de Usuario y contraseña de un usuario, permitiendo loguearse en el sistema 
         /// </summary>
@@ -23,7 +23,7 @@ namespace Paperless.Implementor
         /// <returns>Nombre del Funcionario logueado</returns>
         public String LogInUsuario(string pNombreUsuario, string pPassword)
         {
-            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_LoginUsuario", new List<SqlParameter>()
+            DataSet dsResul = _AccesoDatos.EjecutarQuery("PLSSP_LoginUsuario", new List<SqlParameter>()
             {
                 new SqlParameter("@nombreUsuario",pNombreUsuario),
                 new SqlParameter("@password",pPassword)
@@ -51,7 +51,7 @@ namespace Paperless.Implementor
         /// <returns>Objeto de tipo Usuario asociado al nombre de usuario indicado</returns>
         public Usuario[] ObtenerUsuario(string pNombreUsuario)
         {
-            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuario", new List<SqlParameter>()
+            DataSet dsResul = _AccesoDatos.EjecutarQuery("PLSSP_ObtenerUsuario", new List<SqlParameter>()
             {
                 new SqlParameter("@criterioBusqueda",pNombreUsuario)
             });
@@ -83,7 +83,7 @@ namespace Paperless.Implementor
         /// <returns>Lista de todos los usuarios registrados en el sistema</returns>
         public Usuario[] ObtenerTodosUsuarios()
         {
-            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuarioAll", new List<SqlParameter>());
+            DataSet dsResul = _AccesoDatos.EjecutarQuery("PLSSP_ObtenerUsuarioAll", new List<SqlParameter>());
             try
             {
                 List<Usuario> lstUsuario = new List<Usuario>();
@@ -106,14 +106,14 @@ namespace Paperless.Implementor
             }
         }
 
-
         /// <summary>
-        /// Obtiene todos los usuarios registrados en el sistema
+        /// Obtiene todos los usuarios de un determinado departamento
         /// </summary>
-        /// <returns>Lista de todos los usuarios registrados en el sistema</returns>
+        /// <param name="pDepartamento">Nombre del departamento</param>
+        /// <returns>Lista de todos los usuarios del departamento solicitado</returns>
         public Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento)
         {
-            DataSet dsResul = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerUsuariosDepartamento", new List<SqlParameter>(){
+            DataSet dsResul = _AccesoDatos.EjecutarQuery("PLSSP_ObtenerUsuariosDepartamento", new List<SqlParameter>(){
                 new SqlParameter("@Departamento", pDepartamento)
             });
             try
@@ -138,17 +138,16 @@ namespace Paperless.Implementor
             }
         }
 
-
         /// <summary>
         /// Obtiene el detalle de los movimientos realizados el usuario asociado al nombre de usuario indicado
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de Usuario</param>
+        /// <param name="pNombreUsuario">Nombre de Usuario</param>
         /// <returns>Lista de movimientos asociados al usuario consultado</returns>
-        public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario)
+        public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string pNombreUsuario)
         {
-            var result = _AccesoDatos.ExecuteQuery("PLSSP_ObtenerDetalleUsuarioAuditoria", new List<SqlParameter>()
+            var result = _AccesoDatos.EjecutarQuery("PLSSP_ObtenerDetalleUsuarioAuditoria", new List<SqlParameter>()
             {
-                new SqlParameter("nombreUsuario", nombreUsuario)
+                new SqlParameter("nombreUsuario", pNombreUsuario)
             });
 
             if (result != null)
@@ -157,10 +156,10 @@ namespace Paperless.Implementor
                 foreach (DataRow fila in result.Tables[0].Rows)
                     movimientos.Add(new DocumentoDetalleMovimiento(fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), fila["TipoEntrada"].ToString(), fila["Ruta"].ToString()));
 
-                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.USUARIOS, MensajesLog.OBTENER_MOVIMIENTOS_USUARIO, nombreUsuario);
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.USUARIOS, MensajesLog.OBTENER_MOVIMIENTOS_USUARIO, pNombreUsuario);
                 return movimientos.ToArray();
             }
-            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.USUARIOS, MensajesLog.ERROR_OBTENER_MOVIMIENTOS_USUARIO, nombreUsuario);
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.USUARIOS, MensajesLog.ERROR_OBTENER_MOVIMIENTOS_USUARIO, pNombreUsuario);
             return null;
         }
 
@@ -191,7 +190,7 @@ namespace Paperless.Implementor
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile UsuariosImplementor instance;
         private static object syncRoot = new Object();
         private static DataAccess.DataAccess _AccesoDatos;

@@ -10,31 +10,23 @@ namespace Paperless.DataAccess
     public class DataAccess
     {
         #region Constructor
-        /*
-        public DataAccess(string pConnectionString)
-        {
-            _Connection = new SqlConnection(pConnectionString);
-        }
-         */
-
         public DataAccess()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            _Connection = new SqlConnection(connectionString);
+            var conexionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            _Conexion = new SqlConnection(conexionString);
         }
-
         #endregion
 
         #region Metodos
 
         /// <summary>
-        /// Open the connection with the DB
+        /// Abre la conexión con la Base de Datos
         /// </summary>
-        private void OpenConnection()
+        private void AbrirConexion()
         {
             try
             {
-                _Connection.Open();
+                _Conexion.Open();
             }
             catch (Exception ex)
             {
@@ -44,21 +36,21 @@ namespace Paperless.DataAccess
         }
 
         /// <summary>
-        /// Creates the command to be executed
+        /// Crea el comando a ser ejecutado
         /// </summary>
-        /// <param name="pProcedureName">Name of the SP</param>
-        /// <param name="pParameters">Params of the SP</param>
-        /// <returns>Object of type SQLCommand that represents the SP</returns>
-        private SqlCommand CreateCommand(string pProcedureName, IEnumerable<SqlParameter> pParameters)
+        /// <param name="pNombreProcedimiento">Nombre del SP</param>
+        /// <param name="pParametros">Parametros el SP</param>
+        /// <returns>Objeto de tipo SQLCommand que representa el SP</returns>
+        private SqlCommand CrearComando(string pNombreProcedimiento, IEnumerable<SqlParameter> pParametros)
         {
             var command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = pProcedureName;
-            command.Connection = _Connection;
+            command.CommandText = pNombreProcedimiento;
+            command.Connection = _Conexion;
 
-            if (pParameters != null)
+            if (pParametros != null)
             {
-                foreach (var parameter in pParameters)
+                foreach (var parameter in pParametros)
                 {
                     command.Parameters.Add(parameter);
                 }
@@ -68,19 +60,19 @@ namespace Paperless.DataAccess
         }
 
         /// <summary>
-        /// Executes a SP that returns data
+        /// Ejecuta un SP que retorna datos
         /// </summary>
-        /// <param name="pProcedureName">Name of the SP</param>
-        /// <param name="pParameters">Params of the SP</param>
-        /// <returns>A DataSet with the data returned by the SP</returns>
-        public DataSet ExecuteQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
+        /// <param name="pNombreProcedimiento">Nombre del SP</param>
+        /// <param name="pParametros">Parametros el SP</param>
+        /// <returns>Un DataSet con los datos que retornó el SP</returns>
+        public DataSet EjecutarQuery(string pNombreProcedimiento, IEnumerable<SqlParameter> pParametros = null)
         {
             var dataset = new DataSet();
-            OpenConnection();
+            AbrirConexion();
             try
             {
 
-                var command = CreateCommand(pProcedureName, pParameters);
+                var command = CrearComando(pNombreProcedimiento, pParametros);
                 var adapter = new SqlDataAdapter(command);
                 var commandBuilder = new SqlCommandBuilder(adapter);
 
@@ -88,68 +80,68 @@ namespace Paperless.DataAccess
 
                 command.Dispose();
 
-                _Connection.Close();
+                _Conexion.Close();
             }
             catch (Exception ex)
             {
                 dataset = null;
                 ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
-                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP], pProcedureName), false);
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP], pNombreProcedimiento), false);
                 
             }
             finally
             {
-                if (_Connection.State == ConnectionState.Open)
+                if (_Conexion.State == ConnectionState.Open)
                 {
-                    _Connection.Close();
+                    _Conexion.Close();
                 }
             }
             return dataset;
         }
 
         /// <summary>
-        /// Executes a SP that doesnt return data
+        /// Ejecuta un SP que no retorna datos
         /// </summary>
-        /// <param name="pProcedureName">Name of the SP</param>
-        /// <param name="pParameters">Params of the SP</param>
+        /// <param name="pNombreProcedimiento">Nombre del SP</param>
+        /// <param name="pParametros">Parametros el SP</param>
         /// <returns></returns>
-        public bool ExecuteNonQuery(string pProcedureName, IEnumerable<SqlParameter> pParameters = null)
+        public bool EjecutarNonQuery(string pNombreProcedimiento, IEnumerable<SqlParameter> pParametros = null)
         {
             int result;
-            OpenConnection();
+            AbrirConexion();
             try
             {
-                
-                var command = CreateCommand(pProcedureName, pParameters);
+
+                var command = CrearComando(pNombreProcedimiento, pParametros);
                 result = command.ExecuteNonQuery();
-                _Connection.Close();
+                _Conexion.Close();
             }
             catch (Exception ex)
             {
                 ExceptionManager.HandleException(ex, Policy.DATA_ACCESS, ex.GetType(),
-                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP] , pProcedureName),false);
+                    (int)ErrorCode.ERROR_EXECUTING_SP, String.Format(ExceptionMessages.Instance[ErrorCode.ERROR_EXECUTING_SP], pNombreProcedimiento), false);
                 return false;
             }
             finally
             {
-                if (_Connection.State == ConnectionState.Open)
+                if (_Conexion.State == ConnectionState.Open)
                 {
-                    _Connection.Close();
+                    _Conexion.Close();
                 }
             }
             return true;
         }
 
         /// <summary>
-        /// Try the connection with the DB
+        /// Prueba la conexión con la BD
         /// </summary>
-        /// <returns>Bool that represents the state of the connection</returns>
-        public bool TryConnection()
+        /// <returns>Booleano que representa el resultado de la prueba</returns>
+        public bool ProbarConexion()
         {
             try
             {
-                _Connection.Open();
-                _Connection.Close();
+                _Conexion.Open();
+                _Conexion.Close();
             }
             catch
             {
@@ -162,7 +154,7 @@ namespace Paperless.DataAccess
 
         #region Atributos
 
-        private SqlConnection _Connection;
+        private SqlConnection _Conexion;
 
         #endregion
      

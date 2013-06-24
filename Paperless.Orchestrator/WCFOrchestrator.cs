@@ -15,16 +15,16 @@ namespace Paperless.Orchestrator
         /// <summary>
         /// Obtiene los documentos para la pantalla de Auditoía de Documentos
         /// </summary>
-        /// <param name="usuarioEmisor">Parámetro de búsqueda</param>
-        /// <param name="usuarioReceptor">Parámetro de búsqueda</param>
-        /// <param name="departamento">Parámetro de búsqueda</param>
-        /// <param name="tipoDocumento">Parámetro de búsqueda</param>
-        /// <param name="fechaEmision">Parámetro de búsqueda</param>
-        /// <param name="fechaRecepcion">Parámetro de búsqueda</param>
+        /// <param name="pUsuarioEmisor">Parámetro de búsqueda</param>
+        /// <param name="pUsuarioReceptor">Parámetro de búsqueda</param>
+        /// <param name="pDepartamento">Parámetro de búsqueda</param>
+        /// <param name="pTipoDocumento">Parámetro de búsqueda</param>
+        /// <param name="pFechaEmision">Parámetro de búsqueda</param>
+        /// <param name="pFechaRecepcion">Parámetro de búsqueda</param>
         /// <returns>Arreglo de Documentos que cumple con los parametros de la búsqueda</returns>
-        public Documento[] ObtenerDocumentosAuditoria(string usuarioEmisor, string usuarioReceptor, string departamento, string tipoDocumento, DateTime fechaEmision, DateTime fechaRecepción)
+        public Documento[] ObtenerDocumentosAuditoria(string pUsuarioEmisor, string pUsuarioReceptor, string pDepartamento, string pTipoDocumento, DateTime pFechaEmision, DateTime pFechaRecepción)
         {
-            return DocumentosImplementor.Instance.ObtenerDocumentosAuditoria(usuarioEmisor, usuarioReceptor, departamento, tipoDocumento, fechaEmision, fechaRecepción);
+            return DocumentosImplementor.Instance.ObtenerDocumentosAuditoria(pUsuarioEmisor, pUsuarioReceptor, pDepartamento, pTipoDocumento, pFechaEmision, pFechaRecepción);
         }  
 
         /// <summary>
@@ -39,11 +39,11 @@ namespace Paperless.Orchestrator
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un documento
         /// </summary>
-        /// <param name="nombreDocumento">nombre del documento</param>
+        /// <param name="pNombreDocumento">nombre del documento</param>
         /// <returns></returns>
-        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string nombreDocumento)
+        public DocumentoDetalleMovimiento[] ObtenerDetalleDocumentoAuditoria(string pNombreDocumento)
         {
-            return DocumentosImplementor.Instance.ObtenerDetalleDocumentoAuditoria(nombreDocumento);
+            return DocumentosImplementor.Instance.ObtenerDetalleDocumentoAuditoria(pNombreDocumento);
         }
 
         /// <summary>
@@ -58,62 +58,62 @@ namespace Paperless.Orchestrator
         /// <summary>
         /// Actualiza el estado de un documento que fue migrado en el sistema
         /// </summary>
-        /// <param name="nombreDocumento">id del documento</param>
+        /// <param name="pIdDocumento">id del documento</param>
         /// <returns>Verdadero si actulizo con exito o Falso de lo contrario</returns>
-        public bool ActualizarEstadoDocumento(int idDocumento)
+        public bool ActualizarEstadoDocumento(int pIdDocumento)
         {
-            return DocumentosImplementor.Instance.ActualizarEstadoDocumento(idDocumento);
+            return DocumentosImplementor.Instance.ActualizarEstadoDocumento(pIdDocumento);
         }  
 
         /// <summary>
         /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
         /// <returns>Lista de documentos del usuario</returns>
-        public Documento[] ObtenerDocumentosDeUsuario(string nombreUsuario)
+        public Documento[] ObtenerDocumentosDeUsuario(string pNombreUsuario)
         {
-            return DocumentosImplementor.Instance.ObtenerDocumentosDeUsuario(nombreUsuario);
+            return DocumentosImplementor.Instance.ObtenerDocumentosDeUsuario(pNombreUsuario);
         }
 
         /// <summary>
         /// Obtiene el documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Documento asociado al id indicado</returns>
-        public Documento ObtenerDocumento(int idDocumento)
+        public Documento ObtenerDocumento(int pIdDocumento)
         {
-            return DocumentosImplementor.Instance.ObtenerDocumento(idDocumento);
+            return DocumentosImplementor.Instance.ObtenerDocumento(pIdDocumento);
         }
 
         /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
+        /// <param name="pIdDocumento">Id de documento a consultar</param>
         /// <returns>Lista de estados del documento para los diferentes receptores del mismo</returns>
-        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int idDocumento)
+        public DocumentoDetalleRecibo[] ObtenerDetalleDocumento(int pIdDocumento)
         {
-            return DocumentosImplementor.Instance.ObtenerDetalleDocumento(idDocumento);
+            return DocumentosImplementor.Instance.ObtenerDetalleDocumento(pIdDocumento);
         }
 
         /// <summary>
-        /// Obtiene el documento asociado al id indicado
+        /// Marca como leido el documento por un usuario
         /// </summary>
-        /// <param name="idDocumento">Id de documento a consultar</param>
-        /// <returns>Documento asociado al id indicado</returns>
-        public void MarcarLeido(int idDocumento, string nombreUsuario)
+        /// <param name="pIdDocumento">Id del documento</param>
+        /// <param name="pNombreUsuario">Nombre del usuario que leyó el documento</param>
+        public void MarcarLeido(int pIdDocumento, string pNombreUsuario)
         {
-            DocumentosImplementor.Instance.MarcarLeido(idDocumento, nombreUsuario);
+            DocumentosImplementor.Instance.MarcarLeido(pIdDocumento, pNombreUsuario);
         }
 
         /// <summary>
         /// Marca como firmado por un usuario un documento
         /// </summary>
-        /// <param name="idDocumento">id del documento</param>
-        /// <param name="nombreUsuario">username del usuario</param>
-        /// <param name="password">password del usuario</param>
-        public bool FirmarDocumento(int idDocumento, string nombreUsuario, string password)
+        /// <param name="pIdDocumento">id del documento</param>
+        /// <param name="pNombreUsuario">username del usuario</param>
+        /// <param name="pPassword">password del usuario</param>
+        public bool FirmarDocumento(int pIdDocumento, string pNombreUsuario, string pPassword)
         {
-            return DocumentosImplementor.Instance.FirmarDocumento(idDocumento, nombreUsuario, password);
+            return DocumentosImplementor.Instance.FirmarDocumento(pIdDocumento, pNombreUsuario, pPassword);
         }
 
         #endregion
@@ -122,22 +122,22 @@ namespace Paperless.Orchestrator
         /// <summary>
         /// Verifica el login del usuario
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
-        /// <param name="contrasena">Contraseña del usuario</param>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
+        /// <param name="pContrasena">Contraseña del usuario</param>
         /// <returns>Nombre del funcionario</returns>
-        public String LogIn(string nombreUsuario, string contrasena)
+        public String LogIn(string pNombreUsuario, string pContrasena)
         {
-            return UsuariosImplementor.Instance.LogInUsuario(nombreUsuario, contrasena);
+            return UsuariosImplementor.Instance.LogInUsuario(pNombreUsuario, pContrasena);
         }
 
         /// <summary>
         /// Obtiene una lista de usuarios con el siguiente nombre de usuario (parcial o no parcial)
         /// </summary>
-        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
         /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
-        public Usuario[] ObtenerUsuario(string nombreUsuario)
+        public Usuario[] ObtenerUsuario(string pNombreUsuario)
         {
-            return UsuariosImplementor.Instance.ObtenerUsuario(nombreUsuario);
+            return UsuariosImplementor.Instance.ObtenerUsuario(pNombreUsuario);
         }
 
         /// <summary>
@@ -150,9 +150,10 @@ namespace Paperless.Orchestrator
         }
 
         /// <summary>
-        /// Obtiene todos los usuarios activo
+        /// Obtiene todos los usuarios de un determinado departamento
         /// </summary>
-        /// <returns>Lista de usuarios que concuerda con el parametro ingresado</returns>
+        /// <param name="pDepartamento">Nombre del departamento</param>
+        /// <returns>Lista de todos los usuarios del departamento solicitado</returns>
         public Usuario[] ObtenerUsuariosXDepartamento(string pDepartamento)
         {
             return UsuariosImplementor.Instance.ObtenerUsuariosXDepartamento(pDepartamento);
@@ -162,11 +163,11 @@ namespace Paperless.Orchestrator
         /// <summary>
         /// Obtiene la lista de movimientos asociados a un usuario
         /// </summary>
-        /// <param name="nombreUsuario">nombre del usuario</param>
+        /// <param name="pNombreUsuario">nombre del usuario</param>
         /// <returns></returns>
-        public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string nombreUsuario)
+        public DocumentoDetalleMovimiento[] ObtenerDetalleUsuarioAuditoria(string pNombreUsuario)
         {
-            return UsuariosImplementor.Instance.ObtenerDetalleUsuarioAuditoria(nombreUsuario);
+            return UsuariosImplementor.Instance.ObtenerDetalleUsuarioAuditoria(pNombreUsuario);
         }
 
         /// <summary>
@@ -179,7 +180,6 @@ namespace Paperless.Orchestrator
         {
             return DocumentosImplementor.Instance.EnviarDocumento(pLstDestinatarios, pDocumento);
         }
-
 
         #endregion
 

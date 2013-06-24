@@ -46,7 +46,6 @@
     <Compile Include="DocumentoDetalleMovimiento.cs" />
     <Compile Include="DocumentoDetalleRecibo.cs" />
     <Compile Include="Evento.cs" />
-    <Compile Include="Historial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

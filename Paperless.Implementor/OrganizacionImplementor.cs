@@ -10,7 +10,7 @@ namespace Paperless.Implementor
     public class OrganizacionImplementor
     {
 
-        #region Methods
+        #region Métodos
 
         /// <summary>
         /// Obtiene la lista de departamentos de la organización que utiliza del sistema
@@ -18,9 +18,8 @@ namespace Paperless.Implementor
         /// <returns>Lista de departamentos existentes en la organización</returns>
         public String[] ObtenerDepartamentos()
         {
-
             var departamentos = new List<String>();
-            var result = _AccesoDB.ExecuteQuery("PLSSP_ObtenerDepartamentos", new List<SqlParameter>());
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDepartamentos", new List<SqlParameter>());
 
             if (result != null && result.Tables != null && result.Tables[0] != null && result.Tables[0].Rows != null)
             {
@@ -61,7 +60,7 @@ namespace Paperless.Implementor
 
         #endregion
 
-        #region Attributes
+        #region Atributos
         private static volatile OrganizacionImplementor instance;
         private static object syncRoot = new Object();
         private DataAccess.DataAccess _AccesoDB;
