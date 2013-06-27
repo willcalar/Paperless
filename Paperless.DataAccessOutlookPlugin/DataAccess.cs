@@ -18,9 +18,29 @@ namespace Paperless.DataAccessPlugins
         /// </summary>
         /// <param name="pUsuario">Nombre de usuario</param>
         /// <returns>Lista de documentos del usuario</returns>
-        public Documento[] ObtenerDocumentosDeUsuario(string pUsuario)
+        public Documento[] ObtenerDocumentosDeUsuario()
         {
-            return _AccesoWS.ObtenerDocumentosDeUsuario(pUsuario);
+            return _AccesoWS.ObtenerDocumentosDeUsuario( Login.Instance.NombreUsuario);
+        }
+
+        /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public int ObtenerNumeroPaginasDocumentosUsuario()
+        {
+            return _AccesoWS.ObtenerNumeroPaginasDocumentosUsuario(Login.Instance.NombreUsuario);
+        }
+
+        /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public Documento[] ObtenerDocumentosDeUsuarioPorPagina( int pNumPagina)
+        {
+            return _AccesoWS.ObtenerDocumentosDeUsuarioPorPagina(Login.Instance.NombreUsuario, pNumPagina);
         }
 
         /// <summary>

@@ -76,6 +76,26 @@ namespace Paperless.Orchestrator
         }
 
         /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public int ObtenerNumeroPaginasDocumentosUsuario(string pNombreUsuario)
+        {
+           return DocumentosImplementor.Instance.ObtenerNumeroPaginasDocumentosUsuario(pNombreUsuario);
+        }
+
+        /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pNombreUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public Documento[] ObtenerDocumentosDeUsuarioPorPagina(string pNombreUsuario, int pNumPagina)
+        {
+            return DocumentosImplementor.Instance.ObtenerDocumentosDeUsuarioPorPagina(pNombreUsuario,pNumPagina);
+        }
+
+        /// <summary>
         /// Obtiene el documento asociado al id indicado
         /// </summary>
         /// <param name="pIdDocumento">Id de documento a consultar</param>

@@ -171,6 +171,54 @@ namespace Paperless.Implementor
         }
 
         /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public int ObtenerNumeroPaginasDocumentosUsuario(string pUsuario)
+        {
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerNumeroPaginasDocumentosUsuario", new List<SqlParameter>()
+            {
+                new SqlParameter("usuario", pUsuario)
+            });
+
+            if (result != null)
+            {
+                int numPaginas = (int)result.Tables[0].Rows[0].ItemArray[0];
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
+                return numPaginas;
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
+            return 0;
+        }
+
+        /// <summary>
+        /// Obtiene la lista de documentos en que un usuario participó como emisor o receptor
+        /// </summary>
+        /// <param name="pUsuario">Nombre de usuario</param>
+        /// <returns>Lista de documentos del usuario</returns>
+        public Documento[] ObtenerDocumentosDeUsuarioPorPagina(string pUsuario, int pNumPagina)
+        {
+            var result = _AccesoDB.EjecutarQuery("PLSSP_ObtenerDocumentosDeUsuarioPorPagina", new List<SqlParameter>()
+            {
+                new SqlParameter("usuario", pUsuario),
+                new SqlParameter("numPag", pNumPagina)
+            });
+
+            if (result != null)
+            {
+                var documentos = new List<Documento>();
+                foreach (DataRow fila in result.Tables[0].Rows)
+                    documentos.Add(new Documento((int)fila["IdDocumento"], fila["Documento"].ToString(), DateTime.Parse(fila["Fecha"].ToString()), fila["Usuario"].ToString(), (int)fila["EstadoFirmas"], (bool)fila["Leido"]));
+
+                LogManager.Implementor.LogManager.LogActivity(0, 1, TipoLog.DOCUMENTOS, MensajesLog.OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
+                return documentos.ToArray();
+            }
+            LogManager.Implementor.LogManager.LogActivity(1, 1, TipoLog.DOCUMENTOS, MensajesLog.ERROR_OBTENER_DOCUMENTOS_DE_USUARIO, pUsuario);
+            return null;
+        }
+
+        /// <summary>
         /// Obtiene el detalle del estado del documento asociado al id indicado
         /// </summary>
         /// <param name="pIdDocumento">Id de documento a consultar</param>

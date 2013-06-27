@@ -16,6 +16,8 @@ namespace Paperless.OutlookPlugin
         #region Atributos
         public List<int> _idDocumentos;
         public List<Documento> _Documentos;
+        public int _PaginaActual;
+        public int _NumPaginas;
         #endregion
 
         #region Propiedades
@@ -25,6 +27,12 @@ namespace Paperless.OutlookPlugin
         public UserControlRecibirDocumentos()
         {
             InitializeComponent();
+            _PaginaActual = 1;
+            _NumPaginas = DataAccess.Instance.ObtenerNumeroPaginasDocumentosUsuario();
+            if (_PaginaActual == _NumPaginas)
+            {
+                buttonSiguiente.Visible = false;
+            }
             LlenarListView();
         }
         #endregion
@@ -38,7 +46,7 @@ namespace Paperless.OutlookPlugin
             _idDocumentos = new List<int>();
             _Documentos = new List<Documento>();
             listView1.Items.Clear();
-            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuario(Login.Instance.NombreUsuario);
+            Documento[] docs = DataAccess.Instance.ObtenerDocumentosDeUsuarioPorPagina( _PaginaActual);
             ImageList listaImagenes = new ImageList();
             listaImagenes.Images.Add("R", Properties.Resources.flag_red);
             listaImagenes.Images.Add("Y", Properties.Resources.flag_yellow);
@@ -48,11 +56,12 @@ namespace Paperless.OutlookPlugin
             foreach (Documento doc in docs)
             {
                 ListViewItem item = listView1.Items.Add(doc.IdDocumento.ToString(), doc.Fecha.ToShortDateString() + " - " + doc.NombreDocumento, doc.EstadoFirmas - 1);
+                item.Group = listView1.Groups[doc.EstadoFirmas - 1];
                 _idDocumentos.Add(doc.IdDocumento);
                 _Documentos.Add(doc);
                 if (doc.Leido)
                 {
-                    item.ForeColor = Color.LightGray;
+                    item.ForeColor = Color.DarkGray;
                 }
                 else
                 {
@@ -74,6 +83,28 @@ namespace Paperless.OutlookPlugin
             }
         }
         #endregion
+
+        private void buttonSiguiente_Click(object sender, EventArgs e)
+        {
+            _PaginaActual++;
+            LlenarListView();
+            if (_PaginaActual == _NumPaginas)
+            {
+                buttonSiguiente.Visible = false;
+            }
+            buttonAnterior.Visible = true;
+        }
+
+        private void buttonAnterior_Click(object sender, EventArgs e)
+        {
+            _PaginaActual--;
+            LlenarListView();
+            if (_PaginaActual == 1)
+            {
+                buttonAnterior.Visible = false;
+            }
+            buttonSiguiente.Visible = true;
+        }
  
 
     }

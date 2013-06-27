@@ -73,13 +73,16 @@ namespace Paperless.OutlookPlugin
             foreach (DocumentoDetalleRecibo detalle in detalles)
             {
                 Filas.Add(detalle.Fecha.ToString(),string.Empty, detalle.Emisor, detalle.Receptor, listaImagenes.Images[detalle.EstadoFirmas - 1]);
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
                 if ((Filas.Count - 1) % 2 == 0)
                 {
-                    DataGridViewCellStyle style = new DataGridViewCellStyle();
                     style.BackColor= Color.AliceBlue;
-                    Filas[Filas.Count - 1].DefaultCellStyle = style;
-                        
                 }
+                else
+                {
+                    style.BackColor = Color.LightGray;
+                }
+                Filas[Filas.Count - 1].DefaultCellStyle = style;
             }
             Filas[0].Cells[1].Value = detalles[0].NombreDocumento;
         }

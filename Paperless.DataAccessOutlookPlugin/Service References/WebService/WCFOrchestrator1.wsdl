@@ -44,6 +44,18 @@
   <wsdl:message name="IServiceContract_ObtenerDocumentosDeUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumentosDeUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerNumeroPaginasDocumentosUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNumeroPaginasDocumentosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerNumeroPaginasDocumentosUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNumeroPaginasDocumentosUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDocumentosDeUsuarioPorPagina_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentosDeUsuarioPorPagina" />
+  </wsdl:message>
+  <wsdl:message name="IServiceContract_ObtenerDocumentosDeUsuarioPorPagina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDocumentosDeUsuarioPorPaginaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceContract_ObtenerDocumento_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerDocumento" />
   </wsdl:message>
@@ -147,6 +159,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuario" message="tns:IServiceContract_ObtenerDocumentosDeUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuarioResponse" message="tns:IServiceContract_ObtenerDocumentosDeUsuario_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerNumeroPaginasDocumentosUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerNumeroPaginasDocumentosUsuario" message="tns:IServiceContract_ObtenerNumeroPaginasDocumentosUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerNumeroPaginasDocumentosUsuarioResponse" message="tns:IServiceContract_ObtenerNumeroPaginasDocumentosUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentosDeUsuarioPorPagina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuarioPorPagina" message="tns:IServiceContract_ObtenerDocumentosDeUsuarioPorPagina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuarioPorPaginaResponse" message="tns:IServiceContract_ObtenerDocumentosDeUsuarioPorPagina_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ObtenerDocumento">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumento" message="tns:IServiceContract_ObtenerDocumento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceContract/ObtenerDocumentoResponse" message="tns:IServiceContract_ObtenerDocumento_OutputMessage" />
@@ -249,6 +269,24 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerDocumentosDeUsuario">
       <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNumeroPaginasDocumentosUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerNumeroPaginasDocumentosUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDocumentosDeUsuarioPorPagina">
+      <soap:operation soapAction="http://tempuri.org/IServiceContract/ObtenerDocumentosDeUsuarioPorPagina" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

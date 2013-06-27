@@ -33,6 +33,12 @@ namespace Paperless.WCF.Contract
         Documento[] ObtenerDocumentosDeUsuario(string pNombreUsuario);
 
         [OperationContract]
+        int ObtenerNumeroPaginasDocumentosUsuario(string pNombreUsuario);
+
+        [OperationContract]
+        Documento[] ObtenerDocumentosDeUsuarioPorPagina(string pNombreUsuario, int pNumPagina);
+
+        [OperationContract]
         Documento ObtenerDocumento(int idDocumento);
 
         [OperationContract]

@@ -5,12 +5,12 @@
   <xs:element name="ObtenerDocumentosAuditoria">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="usuarioEmisor" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="usuarioReceptor" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="departamento" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="fechaEmision" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="fechaRecepción" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pUsuarioEmisor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pUsuarioReceptor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pDepartamento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pTipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pFechaEmision" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pFechaRecepción" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -24,7 +24,7 @@
   <xs:element name="ObtenerDetalleDocumentoAuditoria">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreDocumento" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +62,7 @@
   <xs:element name="ActualizarEstadoDocumento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdDocumento" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -76,7 +76,7 @@
   <xs:element name="ObtenerDocumentosDeUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -84,6 +84,35 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentosDeUsuarioResult" nillable="true" type="q5:ArrayOfDocumento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNumeroPaginasDocumentosUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNumeroPaginasDocumentosUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerNumeroPaginasDocumentosUsuarioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosDeUsuarioPorPagina">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNumPagina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDocumentosDeUsuarioPorPaginaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentosDeUsuarioPorPaginaResult" nillable="true" type="q6:ArrayOfDocumento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -97,29 +126,29 @@
   <xs:element name="ObtenerDocumentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentoResult" nillable="true" type="q6:Documento" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDocumentoResult" nillable="true" type="q7:Documento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerDetalleDocumento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
+        <xs:element minOccurs="0" name="pIdDocumento" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerDetalleDocumentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleDocumentoResult" nillable="true" type="q7:ArrayOfDocumentoDetalleRecibo" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleDocumentoResult" nillable="true" type="q8:ArrayOfDocumentoDetalleRecibo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MarcarLeido">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pIdDocumento" type="xs:int" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -131,9 +160,9 @@
   <xs:element name="FirmarDocumento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idDocumento" type="xs:int" />
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pIdDocumento" type="xs:int" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pPassword" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -147,8 +176,8 @@
   <xs:element name="LogIn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pContrasena" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -162,14 +191,14 @@
   <xs:element name="ObtenerUsuario">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerUsuarioResult" nillable="true" type="q8:ArrayOfUsuario" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerUsuarioResult" nillable="true" type="q9:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -181,7 +210,7 @@
   <xs:element name="ObtenerTodosUsuariosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerTodosUsuariosResult" nillable="true" type="q9:ArrayOfUsuario" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerTodosUsuariosResult" nillable="true" type="q10:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,29 +224,29 @@
   <xs:element name="ObtenerUsuariosXDepartamentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerUsuariosXDepartamentoResult" nillable="true" type="q10:ArrayOfUsuario" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerUsuariosXDepartamentoResult" nillable="true" type="q11:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerDetalleUsuarioAuditoria">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pNombreUsuario" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerDetalleUsuarioAuditoriaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleUsuarioAuditoriaResult" nillable="true" type="q11:ArrayOfDocumentoDetalleMovimiento" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerDetalleUsuarioAuditoriaResult" nillable="true" type="q12:ArrayOfDocumentoDetalleMovimiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="EnviarDocumento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pLstDestinatarios" nillable="true" type="q12:ArrayOfUsuario" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pDocumento" nillable="true" type="q13:Documento" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pListaDestinatarios" nillable="true" type="q13:ArrayOfUsuario" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="pDocumento" nillable="true" type="q14:Documento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -236,7 +265,7 @@
   <xs:element name="ObtenerEventosIrregularesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosIrregularesResult" nillable="true" type="q14:ArrayOfEvento" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Paperless.Library" minOccurs="0" name="ObtenerEventosIrregularesResult" nillable="true" type="q15:ArrayOfEvento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -248,7 +277,7 @@
   <xs:element name="ObtenerDepartamentosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerDepartamentosResult" nillable="true" type="q15:ArrayOfstring" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerDepartamentosResult" nillable="true" type="q16:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -260,7 +289,7 @@
   <xs:element name="ObtenerTiposDocumentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerTiposDocumentoResult" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObtenerTiposDocumentoResult" nillable="true" type="q17:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
