@@ -58,14 +58,14 @@ namespace Paperless.UI.Controllers
         /// URL: /WebAdmin/DocumentMigration/
         /// </summary>
         /// <returns>View Actualizada</returns>
-        public ActionResult MigrateDocument(int id)
+        public ActionResult MigrateDocument(int pid)
         {
             try
             {
                 Documento Documento = new Documento();
-                Documento = clienteWCF.ObtenerDocumento(id);
+                Documento = clienteWCF.ObtenerDocumento(pid);
            
-                clienteWCF.ActualizarEstadoDocumento(id);
+                clienteWCF.ActualizarEstadoDocumento(pid);
             }
             catch (Exception ex)
             {
@@ -123,9 +123,9 @@ namespace Paperless.UI.Controllers
         /// <param name="receptionDate">Fecha de recepción</param>
         /// <returns>Se redirige a la otra página con los parámetros debidos</returns>
         [HttpPost]
-        public ActionResult SearchDocuments(DocumentAuditModel model)
+        public ActionResult SearchDocuments(DocumentAuditModel pmodel)
         {
-            return RedirectToAction("DocumentResults", model);
+            return RedirectToAction("DocumentResults", pmodel);
         }
 
         /// <summary>
@@ -134,14 +134,14 @@ namespace Paperless.UI.Controllers
         /// </summary>
         /// <param name="docs">Lista de documentos resultantes</param>
         /// <returns>View</returns>
-        public ActionResult DocumentResults(DocumentAuditModel model)
+        public ActionResult DocumentResults(DocumentAuditModel pmodel)
         {
             Documento[] docs = null;
             try
             {
-                if (!this.IsSearchParamsEmpty(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate))
+                if (!this.IsSearchParamsEmpty(pmodel.UserSender, pmodel.UserReciever, pmodel.Department, pmodel.DocumentType, pmodel.IssueDate, pmodel.ReceptionDate))
                 {
-                    docs = clienteWCF.ObtenerDocumentosAuditoria(model.UserSender, model.UserReciever, model.Department, model.DocumentType, model.IssueDate, model.ReceptionDate);
+                    docs = clienteWCF.ObtenerDocumentosAuditoria(pmodel.UserSender, pmodel.UserReciever, pmodel.Department, pmodel.DocumentType, pmodel.IssueDate, pmodel.ReceptionDate);
                 }
                 else
                 {
@@ -159,12 +159,12 @@ namespace Paperless.UI.Controllers
 
 
 
-        public ActionResult DetailsDocumentResults(string id)
+        public ActionResult DetailsDocumentResults(string pid)
         {
             DocumentoDetalleMovimiento[] movs = null;
             try
             {
-                movs = clienteWCF.ObtenerDetalleDocumentoAuditoria(id);
+                movs = clienteWCF.ObtenerDetalleDocumentoAuditoria(pid);
             }
             catch (Exception ex)
             {
@@ -189,9 +189,9 @@ namespace Paperless.UI.Controllers
         /// <param name="model">Modelo de usuario</param>
         /// <returns>El view con la lista de resultados</returns>
         [HttpPost]
-        public ActionResult SearchUsers(UserAuditModel model)
+        public ActionResult SearchUsers(UserAuditModel pmodel)
         {
-            return RedirectToAction("UserResults", model);
+            return RedirectToAction("UserResults", pmodel);
         }
 
         /// <summary>
@@ -200,12 +200,12 @@ namespace Paperless.UI.Controllers
         /// </summary>
         /// <param name="docs">Lista de usuarios resultantes</param>
         /// <returns>View</returns>
-        public ActionResult UserResults(UserAuditModel model)
+        public ActionResult UserResults(UserAuditModel pmodel)
         {
             Usuario[] lstUsuarios = null;
             try
             {
-                lstUsuarios = clienteWCF.ObtenerUsuario(model.UserName);
+                lstUsuarios = clienteWCF.ObtenerUsuario(pmodel.UserName);
             }
             catch (Exception ex)
             {
@@ -216,12 +216,12 @@ namespace Paperless.UI.Controllers
             return View(lstUsuarios.ToList());
         }
 
-        public ActionResult DetailsUserResults(string id)
+        public ActionResult DetailsUserResults(string pid)
         {
             DocumentoDetalleMovimiento[] movs = null;
             try
             {
-                movs = clienteWCF.ObtenerDetalleUsuarioAuditoria(id);
+                movs = clienteWCF.ObtenerDetalleUsuarioAuditoria(pid);
             }
             catch (Exception ex)
             {
@@ -231,11 +231,11 @@ namespace Paperless.UI.Controllers
             return View(movs);
         }
 
-        public ActionResult CheckEvent(string origen, string id)
+        public ActionResult CheckEvent(string porigen, string pid)
         {
             Evento eventoRevisar=new Evento();
-            eventoRevisar.Origen = origen;
-            eventoRevisar.IDReferencia = Convert.ToInt32(id);
+            eventoRevisar.Origen = porigen;
+            eventoRevisar.IDReferencia = Convert.ToInt32(pid);
             //FUNCION QUE ENVIA CORREO AL ADMIN DEL SISTEMA
 
             return View(eventoRevisar);
@@ -250,60 +250,60 @@ namespace Paperless.UI.Controllers
         /// </summary>
         /// <returns>Si se encuentran TODOS vacíos retorna verdadero
         /// al contrario retorna falso</returns>
-        public bool IsSearchParamsEmpty(string userSender, string userReciever, string department, string docType, DateTime issueDate, DateTime receptionDate)
+        public bool IsSearchParamsEmpty(string puserSender, string puserReciever, string pdepartment, string pdocType, DateTime pissueDate, DateTime preceptionDate)
         {
-            if (String.IsNullOrEmpty(userSender) && String.IsNullOrEmpty(userReciever) && department.Equals(CUALQUIERA) && docType.Equals(CUALQUIERA) && issueDate.Equals(DateTime.MinValue) && receptionDate.Equals(DateTime.MinValue))
+            if (String.IsNullOrEmpty(puserSender) && String.IsNullOrEmpty(puserReciever) && pdepartment.Equals(CUALQUIERA) && pdocType.Equals(CUALQUIERA) && pissueDate.Equals(DateTime.MinValue) && preceptionDate.Equals(DateTime.MinValue))
                 return true;
             else
                 return false;
         }
 
-        public Evento[] IsEmptyResult(Evento[] result)
+        public Evento[] IsEmptyResult(Evento[] presult)
         {
-            if (result == null)
+            if (presult == null)
             {
                 ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
                 return new Evento[] { };
 
             }
-            else if (result.Length == 0)
+            else if (presult.Length == 0)
             {
                 ViewData["Message"] = "No hay resultados que mostrar.";
 
             }
-            return result;
+            return presult;
         }
 
-        public Documento[] IsEmptyResult(Documento[] result)
+        public Documento[] IsEmptyResult(Documento[] presult)
         {
-            if (result == null)
+            if (presult == null)
             {
                 ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
                 return new Documento[] { };
 
             }
-            else if (result.Length == 0)
+            else if (presult.Length == 0)
             {
                 ViewData["Message"] = "No hay resultados que mostrar.";
 
             }
-            return result;
+            return presult;
         }
 
-        public Usuario[] IsEmptyResult(Usuario[] result)
+        public Usuario[] IsEmptyResult(Usuario[] presult)
         {
-            if (result == null)
+            if (presult == null)
             {
                 ViewData["Message"] = "Ha ocurrido un error en la búsqueda. Por favor intente de nuevo.";
                 return new Usuario[] { };
 
             }
-            else if (result.Length == 0)
+            else if (presult.Length == 0)
             {
                 ViewData["Message"] = "No hay resultados que mostrar.";
 
             }
-            return result;
+            return presult;
         }
         #endregion
 

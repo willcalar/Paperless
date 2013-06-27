@@ -7,8 +7,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <form id="formBut" action="MigrateDocument" runat="server" method="post">
 
-<asp:Button ID="bla" runat=server Text="Hola"/> 
-
 <script>
     $(document).ready(function () {
         $("table").tablesorterPager({ container: $("#pager") });
@@ -64,7 +62,7 @@
                 <%: item.NombreUsuarioReceptor %>
             </td>
             <td>
-                <%: Html.ActionLink("Imprimir", "MigrateDocument", new { id = item.IdDocumento })%>   
+                <%: Html.ActionLink("Imprimir", "MigrateDocument", new { pid = item.IdDocumento })%>   
             </td>
         </tr>
     

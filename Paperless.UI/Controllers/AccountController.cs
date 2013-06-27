@@ -27,6 +27,7 @@ namespace Paperless.UI.Controllers
             base.Initialize(requestContext);
         }
 
+        #region Action Results
         // **************************************
         // URL: /Account/LogOn
         // **************************************
@@ -37,16 +38,16 @@ namespace Paperless.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public ActionResult LogOn(LogOnModel pmodel, string preturnUrl)
         {
             if (ModelState.IsValid)
             {
-                if (MembershipService.ValidateUser(model.UserName, model.Password))
+                if (MembershipService.ValidateUser(pmodel.UserName, pmodel.Password))
                 {
-                    FormsService.SignIn(model.UserName, model.RememberMe);
-                    if (!String.IsNullOrEmpty(returnUrl))
+                    FormsService.SignIn(pmodel.UserName, pmodel.RememberMe);
+                    if (!String.IsNullOrEmpty(preturnUrl))
                     {
-                        return Redirect(returnUrl);
+                        return Redirect(preturnUrl);
                     }
                     else
                     {
@@ -60,7 +61,7 @@ namespace Paperless.UI.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(pmodel);
         }
 
         // **************************************
@@ -85,16 +86,16 @@ namespace Paperless.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterModel pmodel)
         {
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
+                MembershipCreateStatus createStatus = MembershipService.CreateUser(pmodel.UserName, pmodel.Password, pmodel.Email);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
+                    FormsService.SignIn(pmodel.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -105,7 +106,7 @@ namespace Paperless.UI.Controllers
 
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
-            return View(model);
+            return View(pmodel);
         }
 
         // **************************************
@@ -121,11 +122,11 @@ namespace Paperless.UI.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult ChangePassword(ChangePasswordModel model)
+        public ActionResult ChangePassword(ChangePasswordModel pmodel)
         {
             if (ModelState.IsValid)
             {
-                if (MembershipService.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
+                if (MembershipService.ChangePassword(User.Identity.Name, pmodel.OldPassword, pmodel.NewPassword))
                 {
                     return RedirectToAction("ChangePasswordSuccess");
                 }
@@ -137,7 +138,7 @@ namespace Paperless.UI.Controllers
 
             // If we got this far, something failed, redisplay form
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
-            return View(model);
+            return View(pmodel);
         }
 
         // **************************************
@@ -148,6 +149,8 @@ namespace Paperless.UI.Controllers
         {
             return View();
         }
+
+        #endregion
 
     }
 }
