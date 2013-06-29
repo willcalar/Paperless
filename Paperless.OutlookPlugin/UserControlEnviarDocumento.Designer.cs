@@ -37,14 +37,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chkFirmado = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lstDepartamentos = new System.Windows.Forms.CheckedListBox();
             this.grdViewUsuarios = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsLectura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IsFirma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lstDepartamentos = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdViewUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -130,33 +130,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Destinatarios";
             // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Location = new System.Drawing.Point(58, 137);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(114, 20);
-            this.txtFiltro.TabIndex = 7;
-            this.txtFiltro.Tag = "Filtro";
-            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Departamento";
-            // 
-            // lstDepartamentos
-            // 
-            this.lstDepartamentos.FormattingEnabled = true;
-            this.lstDepartamentos.Location = new System.Drawing.Point(4, 39);
-            this.lstDepartamentos.Name = "lstDepartamentos";
-            this.lstDepartamentos.Size = new System.Drawing.Size(207, 79);
-            this.lstDepartamentos.TabIndex = 5;
-            this.lstDepartamentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lstDepartamentos_ItemCheck);
-            // 
             // grdViewUsuarios
             // 
             this.grdViewUsuarios.AllowUserToAddRows = false;
@@ -198,6 +171,33 @@
             this.IsFirma.HeaderText = "Firma";
             this.IsFirma.Name = "IsFirma";
             this.IsFirma.Width = 45;
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(58, 137);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(114, 20);
+            this.txtFiltro.TabIndex = 7;
+            this.txtFiltro.Tag = "Filtro";
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Departamento";
+            // 
+            // lstDepartamentos
+            // 
+            this.lstDepartamentos.FormattingEnabled = true;
+            this.lstDepartamentos.Location = new System.Drawing.Point(4, 39);
+            this.lstDepartamentos.Name = "lstDepartamentos";
+            this.lstDepartamentos.Size = new System.Drawing.Size(207, 79);
+            this.lstDepartamentos.TabIndex = 5;
+            this.lstDepartamentos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lstDepartamentos_ItemCheck);
             // 
             // UserControlEnviarDocumento
             // 
